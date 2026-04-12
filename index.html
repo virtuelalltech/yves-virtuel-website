@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yves Virtuel | Expert Automatisation & IA pour PME</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body class="bg-slate-900 text-slate-300 font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <div class="container mx-auto px-4 h-24 flex justify-between items-center">
+        <a href="#" class="flex items-center gap-4">
+            <img src="assets/logo-virtuel-all-tech.png" alt="Logo" class="h-16 md:h-20 w-auto drop-shadow-2xl">
+            <span class="text-xl md:text-2xl font-bold text-blue-500 hidden sm:block tracking-wide" style="font-family: 'Orbitron', sans-serif;">
+                Virtuel All Tech
+            </span>
+        </a>
+
+        <div class="hidden md:flex space-x-8 font-semibold text-base items-center">
+            <a href="#offres" class="text-slate-300 hover:text-blue-400 transition">Mes Services</a>
+            <a href="#ressources" class="text-slate-300 hover:text-blue-400 transition">Ressources</a>
+            <a href="#bio" class="text-slate-300 hover:text-blue-400 transition">Qui suis-je ?</a>
+            <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-500 transition shadow-lg shadow-blue-500/30">Contact</a>
+        </div>
+
+        <button id="menu-toggle" class="md:hidden text-slate-300 p-2">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 w-full p-6 space-y-4 shadow-2xl text-center">
+        <a href="#offres" class="block py-2 text-white hover:text-blue-400">Mes Services</a>
+        <a href="#ressources" class="block py-2 text-white hover:text-blue-400">Ressources</a>
+        <a href="#bio" class="block py-2 text-white hover:text-blue-400">À propos</a>
+        <a href="#contact" class="block text-blue-400 font-bold py-2 border-t border-slate-800 mt-2">Contact</a>
+    </div>
+</nav>
+
+    <header class="pt-40 pb-20 px-4 bg-gradient-to-b from-black to-slate-900 overflow-hidden">
+        <div class="container mx-auto max-w-5xl text-center flex flex-col items-center">
+            <span class="bg-blue-900/50 text-blue-400 border border-blue-800 px-5 py-1.5 rounded-full text-sm font-bold uppercase tracking-wide" data-aos="fade-down">Bienvenue 👋</span>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-8 mb-6 leading-tight" data-aos="fade-up" data-aos-delay="200">
+                L'IA & l'Automatisation au service de votre <span class="text-blue-500 italic">Croissance</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="400">
+                Gagnez du temps et réduisez vos coûts grâce à l'IA générative et aux systèmes connectés. Une automatisation à la fois.
+            </p>
+            
+            <div class="mb-16 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="600">
+                <div class="w-64 h-64 rounded-2xl bg-slate-800 overflow-hidden shadow-2xl shadow-blue-500/20 border-4 border-slate-800 hero-image-container">
+    <img src="assets/yves-profile.jpg" alt="Yves Virtuel" class="w-full h-full object-cover transition-all duration-500 hover:grayscale cursor-pointer">
+</div>
+                <div class="mt-5 bg-slate-800 px-6 py-2.5 rounded-full shadow-lg border border-slate-700 text-slate-300 font-semibold text-sm flex items-center">
+                    <i class="fa-solid fa-envelope text-blue-400 mr-3"></i> eufyves@gmail.com
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-5" data-aos="fade-up" data-aos-delay="800">
+                <a href="#contact" class="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition-colors">Démarrer un projet</a>
+                <a href="#ressources" class="bg-slate-800 border border-slate-700 text-slate-300 px-10 py-4 rounded-xl font-bold hover:bg-slate-700 transition">Voir mes Ebooks</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="offres" class="py-24 bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white" data-aos="fade-up">Mes Services 💼</h2>
+                <div class="h-1 w-16 bg-blue-500 mx-auto mt-4 rounded-full" data-aos="fade-up"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-[2rem] border border-slate-800 bg-slate-800/50 hover:bg-slate-800 hover:border-blue-500 transition-all duration-300 group shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-slate-700 group-hover:border-blue-500 transition-colors">
+                        <i class="fa-solid fa-share-nodes text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="mb-4 text-sm font-bold uppercase tracking-wide text-white">AutoPost Réseaux Sociaux</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Programmation intelligente de vos contenus sur Facebook & LinkedIn.</p>
+                    <span class="text-xs font-bold text-blue-500 uppercase tracking-wider">n8n + API FB/LinkedIn</span>
+                </div>
+                
+                <div class="p-8 rounded-[2rem] border border-slate-800 bg-slate-800/50 hover:bg-slate-800 hover:border-blue-500 transition-all duration-300 group shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-slate-700 group-hover:border-blue-500 transition-colors">
+                        <i class="fa-solid fa-robot text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="mb-4 text-sm font-bold uppercase tracking-wide text-white">Assistant IA RAG</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Un chatbot qui connaît vos documents pour un support client 24/7.</p>
+                    <span class="text-xs font-bold text-blue-500 uppercase tracking-wider">IA Générative + RAG</span>
+                </div>
+                
+                <div class="p-8 rounded-[2rem] border border-slate-800 bg-slate-800/50 hover:bg-slate-800 hover:border-blue-500 transition-all duration-300 group shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-slate-700 group-hover:border-blue-500 transition-colors">
+                        <i class="fa-solid fa-bolt text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="mb-4 text-sm font-bold uppercase tracking-wide text-white">Automatisation Interne</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Connectez vos outils et automatisez vos tâches répétitives sans effort.</p>
+                    <span class="text-xs font-bold text-blue-500 uppercase tracking-wider">Webhooks + n8n + Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ressources" class="py-24 bg-black border-t border-slate-800">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-4 text-white" data-aos="fade-up">🎁 Ressources Gratuites</h2>
+            <p class="text-slate-400 text-center mb-16" data-aos="fade-up" data-aos-delay="200">Des outils pour vous former et automatiser votre quotidien.</p>
+            
+            <div class="space-y-6">
+                <div class="bg-slate-800/80 p-6 rounded-2xl shadow-lg border border-slate-700 flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-up">
+                    <div class="flex items-center gap-5 text-left">
+                        <div class="bg-slate-900 border border-slate-700 p-4 rounded-xl text-blue-400 font-bold">PDF</div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg">L’Alphabet de l’IA & Data 2025</h4>
+                            <p class="text-sm text-slate-400 italic">Le glossaire essentiel pour comprendre les concepts clés.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 w-full md:w-auto">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScZY3uhxbuNbQcCdb31_TB0-moTD7EWQKeTkEYD2XvUcc7u_Q/viewform?usp=dialog" class="flex-1 md:flex-none text-center bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-500 transition">FR</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-S0y6rmAPFpzb45cftKPpZBu6cU0i7eTCvSWORE_DuCTsSw/viewform" class="flex-1 md:flex-none text-center bg-slate-700 text-slate-200 px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-slate-600 transition border border-slate-600">EN</a>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-800/80 p-6 rounded-2xl shadow-lg border border-slate-700 flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex items-center gap-5 text-left">
+                        <div class="bg-slate-900 border border-slate-700 p-4 rounded-xl text-blue-400 font-bold text-xs uppercase tracking-widest">PDF</div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg">20 Prompts prêts à l’emploi</h4>
+                            <p class="text-sm text-slate-400 italic">Gagnez du temps au travail dès aujourd'hui.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 w-full md:w-auto">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScBOIeIABBexYtjmOOAK7B7H5SW5waUnJQVWOjO973vHHz1Tg/viewform?usp=header" class="flex-1 md:flex-none text-center bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-500 transition">FR</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScK3tdYA0dxHaCXSfFLI3c3CfjgEuEjkSnoeLsPqRrfduLIoQ/viewform?usp=header" class="flex-1 md:flex-none text-center bg-slate-700 text-slate-200 px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-slate-600 transition border border-slate-600">EN</a>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl shadow-lg border border-blue-900/50 border-l-4 border-l-blue-500 flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-5 text-left">
+                        <div class="bg-slate-900 border border-slate-700 p-4 rounded-xl text-blue-400 font-bold text-xs uppercase tracking-widest">PDF</div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg">Comprendre le RAG : Guide Complet</h4>
+                            <p class="text-sm text-slate-400 italic">Cas d'usage et applications pratiques.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center md:items-end gap-2 w-full md:w-auto">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSekd-M6k285MsJXHRNF2Gc4XHogAq6K5tY5MmvLiq1e3Yk7kw/viewform?usp=publish-editor" class="w-full md:w-auto text-center bg-blue-600 text-white px-8 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-500 transition">FR</a>
+                        <span class="text-xs text-slate-500 italic mt-1">Version EN bientôt disponible</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bio" class="py-24 bg-slate-900 border-t border-slate-800 overflow-hidden">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-8 text-white">L'Expert derrière le Code 👨‍💼</h2>
+                    <p class="text-slate-400 mb-6 text-lg leading-relaxed">
+                        Moi c'est <strong class="text-white">Yves Virtuel</strong>. Titulaire d’une Licence en Mathématiques fondamentales, je crois que l'IA et la Data doivent être au service des humains, et non l'inverse.
+                    </p>
+                    <p class="text-slate-400 mb-8 text-lg leading-relaxed">
+                        Ma mission est de démocratiser l'IA pour le marché africain. Entre mathématiques et automatisation, je construis les outils de demain.
+                    </p>
+                    
+                    <div class="flex items-center justify-center md:justify-start gap-6 social-links mt-8" data-aos="fade-up">
+                        <a href="https://www.linkedin.com/in/sikati-yves-joseph-039215330" class="text-slate-400 hover:text-blue-500 text-3xl transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61585168010576" class="text-slate-400 hover:text-blue-400 text-3xl transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@virtuel.all.tech" class="text-slate-400 hover:text-white text-3xl transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://wa.me/237673219281" class="text-slate-400 hover:text-green-500 text-3xl transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 bg-slate-800/50 p-10 rounded-[3rem] border border-slate-700 w-full" data-aos="fade-left">
+                    <h3 class="text-xl font-bold mb-8 text-white">Parcours & Certifications 🎓</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-4 items-center bg-slate-900 p-5 rounded-2xl border border-slate-700 shadow-sm">
+                            <i class="fa-solid fa-graduation-cap text-blue-500 text-xl"></i>
+                            <span class="text-sm font-bold uppercase tracking-wide text-white">Anthropic AI Fluency Framework & Foundations (2026)</span>
+                        </li>
+                        <li class="flex gap-4 items-center bg-slate-900 p-5 rounded-2xl border border-slate-700 shadow-sm">
+                            <i class="fa-solid fa-award text-blue-500 text-xl"></i>
+                            <span class="text-sm font-bold uppercase tracking-wide text-white">IBM AI Fundamentals (2025)</span>
+                        </li>
+                        <li class="flex gap-4 items-center bg-slate-900 p-5 rounded-2xl border border-slate-700 shadow-sm">
+                            <i class="fa-solid fa-chart-pie text-blue-500 text-xl"></i>
+                            <span class="text-sm font-bold uppercase tracking-wide text-white">Data Visualisation - Deloitte (2025)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-black text-white pt-24 pb-12 border-t border-slate-800">
+        <div class="container mx-auto px-4 text-center max-w-3xl">
+            <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">Démarrer un projet</h2>
+            <p class="text-slate-400 mb-12 text-lg" data-aos="fade-up" data-aos-delay="200">Prêt à optimiser votre entreprise ? Remplissez le formulaire ci-dessous.</p>
+            
+            <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16 text-left" data-aos="zoom-in" data-aos-delay="400">
+                <input type="text" name="prenom" placeholder="Prénom" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-white col-span-1">
+                <input type="email" name="email" placeholder="Email Professionnel" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-white col-span-1">
+                <input type="text" name="ville" placeholder="Ville" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-white col-span-1">
+                <input type="text" name="pays" placeholder="Pays" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-white col-span-1">
+                <textarea name="message" placeholder="Votre besoin en automatisation..." rows="5" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-white col-span-1 md:col-span-2"></textarea>
+                
+                <button type="submit" class="w-full bg-blue-600 py-4 rounded-xl font-bold text-lg hover:bg-blue-500 transition col-span-1 md:col-span-2 text-white shadow-lg shadow-blue-500/20">Envoyer ma demande</button>
+            </form>
+            <div id="success-message" class="hidden bg-green-500/20 border border-green-500 text-green-400 p-6 rounded-2xl text-center font-bold">
+                Merci ! Votre demande a été envoyée avec succès. 🚀
+            </div>
+            <div class="border-t border-slate-800 pt-10 text-slate-500 text-sm">
+                <p>&copy; 2026 Yves Virtuel - Virtuel All Tech. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>

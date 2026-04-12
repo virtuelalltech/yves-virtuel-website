@@ -1,0 +1,62 @@
+/* --- CONFIGURATION GLOBALE --- */
+:root {
+    --primary-blue: #3b82f6;
+    --dark-bg: #0f172a;
+}
+
+/* Police spécifique pour le branding */
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* --- EFFET PHOTO PROFIL (Couleur -> Noir & Blanc) --- */
+.hero-image-container img {
+    filter: grayscale(0%);
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.hero-image-container img:hover {
+    filter: grayscale(100%);
+    transform: scale(1.05); /* Léger zoom pour le dynamisme */
+}
+
+/* --- NAVIGATION & SCROLL --- */
+.navigation-bar {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Personnalisation de la Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-blue);
+}
+
+/* --- COMPOSANTS --- */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Effet de lueur sur les cartes de services */
+.group:hover {
+    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+}
+
+/* Smooth Scroll pour toute la page */
+html {
+    scroll-behavior: smooth;
+}

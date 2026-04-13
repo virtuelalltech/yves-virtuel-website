@@ -1,31 +1,64 @@
 /* --- CONFIGURATION GLOBALE --- */
 :root {
     --primary-blue: #3b82f6;
+    --primary-green: #22c55e;
     --dark-bg: #0f172a;
+    --slate-800: #1e293b;
+}
+
+/* Éviter le scroll horizontal pendant les animations AOS */
+body {
+    overflow-x: hidden;
+    background-color: var(--dark-bg);
 }
 
 /* Police spécifique pour le branding */
 .font-orbitron {
     font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
 }
 
-/* --- EFFET PHOTO PROFIL (Couleur -> Noir & Blanc) --- */
+/* --- EFFET PHOTO PROFIL --- */
 .hero-image-container img {
     filter: grayscale(0%);
-    transition: filter 0.5s ease, transform 0.5s ease;
+    transition: filter 0.5s ease, transform 0.5s ease, border-color 0.5s ease;
+    border: 2px solid transparent;
 }
 
 .hero-image-container img:hover {
     filter: grayscale(100%);
-    transform: scale(1.05); /* Léger zoom pour le dynamisme */
+    transform: scale(1.03);
+    border-color: var(--primary-blue);
 }
 
-/* --- NAVIGATION & SCROLL --- */
+/* --- NAVIGATION & GLASSMORPHISM --- */
 .navigation-bar {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
 }
 
-/* Personnalisation de la Scrollbar */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-blue);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* --- PERSONNALISATION SCROLLBAR --- */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -35,7 +68,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #1e293b;
+    background: #334155;
     border-radius: 10px;
 }
 
@@ -43,20 +76,32 @@
     background: var(--primary-blue);
 }
 
-/* --- COMPOSANTS --- */
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+/* --- CARTES & COMPOSANTS --- */
+.group {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Effet de lueur sur les cartes de services */
 .group:hover {
-    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.2);
+    transform: translateY(-5px);
 }
 
-/* Smooth Scroll pour toute la page */
+/* Effets pour les badges de ressources (PDF, Langues) */
+.badge-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth Scroll */
 html {
     scroll-behavior: smooth;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-image-container img {
+        max-width: 250px;
+        margin: 0 auto;
+    }
 }

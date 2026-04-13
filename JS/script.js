@@ -1,20 +1,45 @@
 /**
  * Virtuel All Tech - Script Portfolio Officiel 2026
+ * Système de navigation, contact et tracking n8n intégré
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Initialisation des animations AOS
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 900,
-            once: true,
-            offset: 120,
-            easing: 'ease-out-quad'
-        });
+    // --- 1. CONFIGURATION DU TRACKING (Session & Temps) ---
+    const startTime = Date.now();
+    if (!sessionStorage.getItem('session_id')) {
+        sessionStorage.setItem('session_id', 'sess_' + Math.random().toString(36).substr(2, 9));
     }
 
-    // 2. Gestion du Menu Mobile
+    const trackEvent = (type, extraData = {}) => {
+        const payload = {
+            sessionId: sessionStorage.getItem('session_id'),
+            event: type,
+            url: window.location.pathname,
+            timestamp: new Date().toISOString(),
+            ...extraData
+        };
+        // Remplace par ton URL Webhook n8n dédiée au tracking
+        navigator.sendBeacon('https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook-test/stats', JSON.stringify(payload));
+    };
+
+    // Tracking de la visite au chargement
+    trackEvent('page_view', { referrer: document.referrer });
+
+    // Tracking du temps passé à la fermeture de la page
+    window.addEventListener('beforeunload', () => {
+        const timeSpent = Math.round((Date.now() - startTime) / 1000);
+        trackEvent('session_end', { duration_seconds: timeSpent });
+    });
+
+
+    // --- 2. ANIMATIONS & UI (AOS) ---
+    if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 900, once: true, easing: 'ease-out-quad' });
+    }
+
+
+    // --- 3. GESTION DU MENU MOBILE ---
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = menuToggle ? menuToggle.querySelector('i') : null;
@@ -25,106 +50,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (forceClose || !isHidden) {
             mobileMenu.classList.add('hidden');
-            document.body.style.overflow = ''; // Correction : on vide pour remettre par défaut
-            if (menuIcon) {
-                menuIcon.classList.replace('fa-xmark', 'fa-bars');
-            }
+            document.body.style.overflow = '';
+            if (menuIcon) menuIcon.classList.replace('fa-xmark', 'fa-bars');
         } else {
             mobileMenu.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
-            if (menuIcon) {
-                menuIcon.classList.replace('fa-bars', 'fa-xmark');
-            }
+            if (menuIcon) menuIcon.classList.replace('fa-bars', 'fa-xmark');
         }
     };
 
     if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleMenu();
-        });
-
-        // Fermeture automatique au clic sur un lien
+        menuToggle.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => toggleMenu(true));
         });
-
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                toggleMenu(true);
-            }
-        });
     }
 
-    // 3. Animation de la Navbar au Scroll (Optimisée)
-    const navbar = document.querySelector('nav');
-    let scrollTimeout;
 
+    // --- 4. NAVBAR SCROLL EFFECT ---
+    const navbar = document.querySelector('nav');
     window.addEventListener('scroll', () => {
         if (!navbar) return;
-        
-        // Optimisation de performance avec requestAnimationFrame
-        if (!scrollTimeout) {
-            window.requestAnimationFrame(() => {
-                const container = navbar.querySelector('.container');
-                if (window.scrollY > 50) {
-                    navbar.classList.add('py-2', 'bg-slate-900/98', 'shadow-2xl', 'backdrop-blur-md');
-                    if(container) container.classList.replace('h-28', 'h-20');
-                } else {
-                    navbar.classList.remove('py-2', 'bg-slate-900/98', 'shadow-2xl', 'backdrop-blur-md');
-                    if(container) container.classList.replace('h-20', 'h-28');
-                }
-                scrollTimeout = false;
-            });
-            scrollTimeout = true;
+        const container = navbar.querySelector('.container');
+        if (window.scrollY > 50) {
+            navbar.classList.add('py-2', 'bg-slate-900/98', 'shadow-2xl', 'backdrop-blur-md');
+            if(container) container.classList.replace('h-28', 'h-20');
+        } else {
+            navbar.classList.remove('py-2', 'bg-slate-900/98', 'shadow-2xl', 'backdrop-blur-md');
+            if(container) container.classList.replace('h-20', 'h-28');
         }
     });
 
-    // 4. Gestion du Formulaire de Contact & Webhook n8n
+
+    // --- 5. FORMULAIRE DE CONTACT (n8n Webhook) ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-
             const btn = this.querySelector('button[type="submit"]');
             const successMsg = document.getElementById('success-message');
-            if (!btn) return;
-
-            // État visuel : Chargement
+            
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Traitement...';
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Envoi...';
             btn.disabled = true;
-            btn.classList.add('opacity-70', 'cursor-not-allowed');
 
             const formData = new FormData(this);
             const data = Object.fromEntries(formData.entries());
 
             try {
-                // Remplace par ton URL n8n finale
-                const response = await fetch('https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/formwebsite', {
+                const response = await fetch('https://ton-n8n.com/webhook/formwebsite', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),
                 });
 
                 if (response.ok) {
-                    this.reset(); // Nettoyage du formulaire
+                    this.reset();
                     this.classList.add('hidden');
-                    if (successMsg) {
-                        successMsg.classList.remove('hidden');
-                        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                } else {
-                    throw new Error('Réponse serveur incorrecte');
-                }
+                    if (successMsg) successMsg.classList.remove('hidden');
+                    trackEvent('form_submission_success'); // On track aussi le succès
+                } else { throw new Error(); }
             } catch (error) {
-                console.error('Erreur Webhook:', error);
-                alert("Oups ! Un problème de connexion est survenu. Réessayez ou contactez-moi directement via WhatsApp.");
-                
-                // Reset du bouton en cas d'erreur
                 btn.innerHTML = originalText;
                 btn.disabled = false;
-                btn.classList.remove('opacity-70', 'cursor-not-allowed');
+                alert("Erreur d'envoi. Réessayez bientôt.");
             }
         });
     }

@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = Object.fromEntries(formData.entries());
 
             try {
-                const response = await fetch('https://ton-n8n.com/webhook/formwebsite', {
+                const response = await fetch('https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/formwebsite', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),

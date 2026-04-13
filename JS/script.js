@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ...extraData
         };
         // Remplace par ton URL Webhook n8n dédiée au tracking
-        navigator.sendBeacon('https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook-test/stats', JSON.stringify(payload));
+        navigator.sendBeacon('https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/stats', JSON.stringify(payload));
     };
 
     // Tracking de la visite au chargement

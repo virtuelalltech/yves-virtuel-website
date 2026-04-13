@@ -31,6 +31,10 @@ body {
     border-color: var(--primary-blue);
 }
 
+.notranslate {
+    /* Cette classe est reconnue nativement par Google Translate */
+}
+
 /* --- NAVIGATION & GLASSMORPHISM --- */
 .navigation-bar {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);

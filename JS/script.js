@@ -1,38 +1,50 @@
 /**
- * Virtuel All Tech - Script Portfolio Officiel 2026
+ * Yves Virtuel / Virtuel All Tech - Script Portfolio Officiel 2026
  * Système de navigation, contact et tracking n8n intégré
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. CONFIGURATION DU TRACKING (Session & Temps) ---
+    // --- 1. CONFIGURATION DU TRACKING ---
+    const WEBHOOK_TRACKING_URL = 'VOTRE_URL_WEBHOOK_N8N_ICI'; // REMPLACER PAR VOTRE URL REELLE
     const startTime = Date.now();
+
+    // Gestion du Session ID
     if (!sessionStorage.getItem('session_id')) {
         sessionStorage.setItem('session_id', 'sess_' + Math.random().toString(36).substr(2, 9));
     }
 
+    // Fonction de tracking compatible avec n8n
     const trackEvent = (type, extraData = {}) => {
         const payload = {
             sessionId: sessionStorage.getItem('session_id'),
+            brand: "Virtuel All Tech",
             event: type,
             url: window.location.pathname,
             timestamp: new Date().toISOString(),
             ...extraData
         };
-        // Remplace par ton URL Webhook n8n dédiée au tracking
-        navigator.sendBeacon('https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/stats', JSON.stringify(payload));
+
+        // Utilisation de fetch car sendBeacon peut poser des problèmes de CORS ou de Content-Type avec n8n
+        fetch(WEBHOOK_TRACKING_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Évite les erreurs de blocage navigateur
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
     };
 
-    // Tracking de la visite au chargement
-    trackEvent('page_view', { referrer: document.referrer });
+    // Tracking automatique au chargement
+    trackEvent('page_view', { referrer: document.referrer || "Direct Access" });
 
-    // Tracking du temps passé à la fermeture de la page
-    window.addEventListener('beforeunload', () => {
-        const timeSpent = Math.round((Date.now() - startTime) / 1000);
-        trackEvent('session_end', { duration_seconds: timeSpent });
+    // Tracking du temps passé lors du départ
+    window.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+            const timeSpent = Math.round((Date.now() - startTime) / 1000);
+            trackEvent('session_end', { duration_seconds: timeSpent });
+        }
     });
-
-
+    
     // --- 2. ANIMATIONS & UI (AOS) ---
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 900, once: true, easing: 'ease-out-quad' });

@@ -6,7 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- 1. CONFIGURATION DU TRACKING ---
-    const WEBHOOK_TRACKING_URL = 'VOTRE_URL_WEBHOOK_N8N_ICI'; // REMPLACER PAR VOTRE URL REELLE
+    const WEBHOOK_TRACKING_URL = 'https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/stats'; // REMPLACER PAR VOTRE URL REELLE
     const startTime = Date.now();
 
     // Gestion du Session ID
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             trackEvent('session_end', { duration_seconds: timeSpent });
         }
     });
-    
+
     // --- 2. ANIMATIONS & UI (AOS) ---
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 900, once: true, easing: 'ease-out-quad' });

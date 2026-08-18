@@ -100,7 +100,7 @@
                         <a href="connecter-n8n-gmail.html" class="hover:text-blue-400 transition">Comment connecter n8n et Gmail : OAuth2, credentials et premier workflow</a>
                     </h2>
                     <p class="text-slate-400 mb-4">
-                        Automaisez vos emails avec n8n : authentification OAuth2, création des credentials Gmail, puis un premier workflow simple qui envoie un email de bienvenue.
+                        Automatisez vos emails avec n8n : authentification OAuth2, création des credentials Gmail, puis un premier workflow simple qui envoie un email de bienvenue.
                     </p>
                     <a href="connecter-n8n-gmail.html" class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition">
                         Lire l'article <i class="fa-solid fa-arrow-right text-sm"></i>
@@ -124,5 +124,17 @@
             <p class="text-slate-500 text-sm">© 2026 Virtuel All Tech — <a href="../index.html#contact" class="text-slate-400 hover:text-blue-400 transition">Contact</a></p>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../JS/script.js"></script>
+    <script>
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50
+            });
+        }
+    </script>
 </body>
 </html>

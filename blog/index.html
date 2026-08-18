@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Virtuel All Tech — Automatisation & IA générative</title>
+
+    <!-- Meta description -->
+    <meta name="description" content="Blog de Virtuel All Tech : tutoriels pas à pas et guides sur l'automatisation (n8n), l'IA générative et le développement de vos projets pour PME.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Virtuel All Tech">
+    <meta property="fb:app_id" content="1017580981146172">
+    <meta property="og:title" content="Blog | Virtuel All Tech — Automatisation & IA générative">
+    <meta property="og:description" content="Tutoriels pas à pas et guides pour automatiser votre entreprise : n8n, Gmail, IA générative et plus.">
+    <meta property="og:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp">
+    <meta property="og:image:alt" content="Virtuel All Tech — Blog">
+    <meta property="og:url" content="https://yves-virtuel-website.eufyves.workers.dev/blog/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | Virtuel All Tech — Automatisation & IA générative">
+    <meta name="twitter:description" content="Tutoriels pas à pas et guides pour automatiser votre entreprise : n8n, Gmail, IA générative et plus.">
+    <meta name="twitter:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp">
+    <meta name="twitter:image:alt" content="Virtuel All Tech — Blog">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://yves-virtuel-website.eufyves.workers.dev/blog/">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body class="bg-slate-900 text-slate-300 font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <div class="container mx-auto px-3 h-20 flex justify-between items-center">
+    <a href="../index.html" class="flex items-center gap-4">
+        <img src="../assets/logo-virtuel-all-tech.webp" alt="Virtuel All Tech" class="h-16 md:h-20 w-auto drop-shadow-2xl block">
+
+        <span class="notranslate flex flex-col justify-center" translate="no" style="font-family: 'Orbitron', sans-serif;">
+            <span class="text-xl md:text-3xl font-black tracking-wider text-blue-500">
+            Virtuel All Tech
+            </span>
+            <span class="h-0.5 w-12 bg-blue-600/50 mt-1 rounded-full"></span>
+        </span>
+    </a>
+
+        <div class="hidden md:flex space-x-8 font-semibold text-base items-center">
+            <a href="../index.html#offres" class="text-slate-300 hover:text-blue-400 transition">Mes Services</a>
+            <a href="../index.html#ressources" class="text-slate-300 hover:text-blue-400 transition">Resources</a>
+            <a href="../index.html#bio" class="text-slate-300 hover:text-blue-400 transition">Qui suis-je?</a>
+            <a href="../blog/index.html" class="text-blue-400 transition">Blog</a>
+            <a href="../index.html#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-500 transition shadow-lg shadow-blue-500/30">Contact</a>
+        </div>
+
+        <button id="menu-toggle" class="md:hidden text-slate-300 p-2">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 w-full p-6 space-y-4 shadow-2xl text-center">
+        <a href="../index.html#offres" class="block py-2 text-white hover:text-blue-400">Mes Services</a>
+        <a href="../index.html#ressources" class="block py-2 text-white hover:text-blue-400">Resources</a>
+        <a href="../index.html#bio" class="block py-2 text-white hover:text-blue-400">Qui suis-je?</a>
+        <a href="../blog/index.html" class="block py-2 text-blue-400">Blog</a>
+        <a href="../index.html#contact" class="block py-2 text-white hover:text-blue-400">Contact</a>
+    </div>
+    </nav>
+
+    <main class="pt-28 pb-24">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- En-tête de la liste -->
+            <header class="text-center mb-14" data-aos="fade-up">
+                <p class="text-blue-400 font-semibold text-sm tracking-widest uppercase mb-4">Blog</p>
+                <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Guides &amp; tutoriels</h1>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Automatisation, IA générative et astuces concrètes pour faire gagner du temps à votre entreprise.
+                </p>
+            </header>
+
+            <!-- Liste des articles -->
+            <div class="space-y-8">
+
+                <!-- Article 1 -->
+                <article class="bg-slate-800/50 border border-slate-800 rounded-3xl p-6 md:p-8 hover:border-blue-600/50 transition-all duration-300" data-aos="fade-up">
+                    <div class="flex items-center gap-3 text-sm text-slate-500 mb-3">
+                        <span class="text-blue-400 font-semibold">Tutoriel</span>
+                        <span>·</span>
+                        <time datetime="2026-08-18">18 août 2026</time>
+                        <span>·</span>
+                        <span>6 min de lecture</span>
+                    </div>
+                    <h2 class="text-xl md:text-2xl font-bold text-white mb-3">
+                        <a href="connecter-n8n-gmail.html" class="hover:text-blue-400 transition">Comment connecter n8n et Gmail : OAuth2, credentials et premier workflow</a>
+                    </h2>
+                    <p class="text-slate-400 mb-4">
+                        Automaisez vos emails avec n8n : authentification OAuth2, création des credentials Gmail, puis un premier workflow simple qui envoie un email de bienvenue.
+                    </p>
+                    <a href="connecter-n8n-gmail.html" class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition">
+                        Lire l'article <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </article>
+
+                <!-- Placeholder pour les futurs articles -->
+                <div class="text-center py-10 text-slate-500">
+                    <p>📚 D'autres articles arrivent bientôt : intégrations, astuces n8n, IA générative pour PME…</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-800 py-10 bg-black">
+        <div class="container mx-auto px-4 text-center">
+            <a href="../index.html" class="inline-flex items-center justify-center gap-2 mb-4">
+                <img src="../assets/logo-virtuel-all-tech.webp" alt="Virtuel All Tech" class="h-10 w-auto">
+            </a>
+            <p class="text-slate-500 text-sm">© 2026 Virtuel All Tech — <a href="../index.html#contact" class="text-slate-400 hover:text-blue-400 transition">Contact</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecter n8n et Gmail : authentification OAuth2 et premier workflow | Virtuel All Tech</title>
+
+    <!-- Meta description -->
+    <meta name="description" content="Guide pas à pas pour connecter n8n à Gmail : authentification OAuth2, création des credentials et premier workflow d'automatisation email simple.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Virtuel All Tech">
+    <meta property="fb:app_id" content="1017580981146172">
+    <meta property="og:title" content="Connecter n8n et Gmail : authentification OAuth2 et premier workflow">
+    <meta property="og:description" content="Guide pas à pas pour connecter n8n à Gmail : OAuth2, credentials et premier workflow d'automatisation email.">
+    <meta property="og:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp">
+    <meta property="og:image:alt" content="Virtuel All Tech — Connecter n8n et Gmail">
+    <meta property="og:url" content="https://yves-virtuel-website.eufyves.workers.dev/blog/connecter-n8n-gmail.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Connecter n8n et Gmail : authentification OAuth2 et premier workflow">
+    <meta name="twitter:description" content="Guide pas à pas pour connecter n8n à Gmail : OAuth2, credentials et premier workflow.">
+    <meta name="twitter:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp">
+    <meta name="twitter:image:alt" content="Virtuel All Tech — Connecter n8n et Gmail">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://yves-virtuel-website.eufyves.workers.dev/blog/connecter-n8n-gmail.html">
+
+    <!-- Schema.org : Article technique -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Connecter n8n et Gmail : authentification OAuth2 et premier workflow",
+      "description": "Guide pas à pas pour connecter n8n à Gmail : authentification OAuth2, création des credentials et premier workflow d'automatisation email simple.",
+      "image": "https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp",
+      "url": "https://yves-virtuel-website.eufyves.workers.dev/blog/connecter-n8n-gmail.html",
+      "datePublished": "2026-08-18",
+      "inLanguage": "fr",
+      "author": {
+        "@type": "Person",
+        "name": "Sikati Yves Joseph"
+      },
+      "publisher": {
+        "@type": "ProfessionalService",
+        "name": "Virtuel All Tech",
+        "url": "https://yves-virtuel-website.eufyves.workers.dev/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://yves-virtuel-website.eufyves.workers.dev/blog/connecter-n8n-gmail.html"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body class="bg-slate-900 text-slate-300 font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <div class="container mx-auto px-3 h-20 flex justify-between items-center">
+    <a href="../index.html" class="flex items-center gap-4">
+        <img src="../assets/logo-virtuel-all-tech.webp" alt="Virtuel All Tech" class="h-16 md:h-20 w-auto drop-shadow-2xl block">
+
+        <span class="notranslate flex flex-col justify-center" translate="no" style="font-family: 'Orbitron', sans-serif;">
+            <span class="text-xl md:text-3xl font-black tracking-wider text-blue-500">
+            Virtuel All Tech
+            </span>
+            <span class="h-0.5 w-12 bg-blue-600/50 mt-1 rounded-full"></span>
+        </span>
+    </a>
+
+        <div class="hidden md:flex space-x-8 font-semibold text-base items-center">
+            <a href="../index.html#offres" class="text-slate-300 hover:text-blue-400 transition">Mes Services</a>
+            <a href="../index.html#ressources" class="text-slate-300 hover:text-blue-400 transition">Resources</a>
+            <a href="../index.html#bio" class="text-slate-300 hover:text-blue-400 transition">Qui suis-je?</a>
+            <a href="../blog/index.html" class="text-slate-300 hover:text-blue-400 transition">Blog</a>
+            <a href="../index.html#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-500 transition shadow-lg shadow-blue-500/30">Contact</a>
+        </div>
+
+        <button id="menu-toggle" class="md:hidden text-slate-300 p-2">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 w-full p-6 space-y-4 shadow-2xl text-center">
+        <a href="../index.html#offres" class="block py-2 text-white hover:text-blue-400">Mes Services</a>
+        <a href="../index.html#ressources" class="block py-2 text-white hover:text-blue-400">Resources</a>
+        <a href="../index.html#bio" class="block py-2 text-white hover:text-blue-400">Qui suis-je?</a>
+        <a href="../blog/index.html" class="block py-2 text-white hover:text-blue-400">Blog</a>
+        <a href="../index.html#contact" class="block py-2 text-white hover:text-blue-400">Contact</a>
+    </div>
+    </nav>
+
+    <main class="pt-28 pb-24">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <!-- Fil d'Ariane -->
+            <nav class="text-sm text-slate-500 mb-6" aria-label="Fil d'Ariane">
+                <a href="../index.html" class="hover:text-blue-400 transition">Accueil</a>
+                <span class="mx-2">/</span>
+                <a href="../blog/index.html" class="hover:text-blue-400 transition">Blog</a>
+                <span class="mx-2">/</span>
+                <span class="text-slate-300">Connecter n8n et Gmail</span>
+            </nav>
+
+            <!-- En-tête de l'article -->
+            <header class="mb-10" data-aos="fade-up">
+                <p class="text-blue-400 font-semibold text-sm tracking-widest uppercase mb-4">Tutoriel</p>
+                <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">Comment connecter n8n et Gmail : OAuth2, credentials et premier workflow</h1>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    Automatisez vos emails avec n8n : on crée ensemble l'authentification OAuth2, les credentials Gmail, puis un premier workflow simple qui envoie un email de bienvenue.
+                </p>
+                <div class="flex items-center gap-3 mt-6 text-sm text-slate-500">
+                    <span>✍️ Par Sikati Yves Joseph</span>
+                    <span>·</span>
+                    <time datetime="2026-08-18">18 août 2026</time>
+                    <span>·</span>
+                    <span>⏱ 6 min de lecture</span>
+                </div>
+            </header>
+
+            <!-- Sommaire -->
+            <nav class="bg-slate-800/50 border border-slate-800 rounded-2xl p-6 mb-12" data-aos="fade-up">
+                <h2 class="text-lg font-bold text-white mb-4">Au sommaire</h2>
+                <ol class="list-decimal list-inside space-y-2 text-slate-300">
+                    <li><a href="#pourquoi" class="hover:text-blue-400 transition">Pourquoi connecter n8n et Gmail ?</a></li>
+                    <li><a href="#perrequis" class="hover:text-blue-400 transition">Prérequis avant de commencer</a></li>
+                    <li><a href="#oauth2" class="hover:text-blue-400 transition">Créer une application Google et obtenir les credentials OAuth2</a></li>
+                    <li><a href="#credentials-n8n" class="hover:text-blue-400 transition">Ajouter les credentials Gmail dans n8n</a></li>
+                    <li><a href="#premier-workflow" class="hover:text-blue-400 transition">Créer votre premier workflow simple</a></li>
+                    <li><a href="#tester" class="hover:text-blue-400 transition">Tester et vérifier la connexion</a></li>
+                </ol>
+            </nav>
+
+            <!-- Bloc Avertissement -->
+            <div class="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-5 mb-12 text-amber-200 text-sm" role="note">
+                <strong class="text-amber-100">À noter :</strong> ce tutoriel s'appuie sur n8n hébergé soi-même (self-hosted). Les noms exacts des menus peuvent légèrement varier selon la version : n8n publie des mises à jour régulières. Les principes restent les mêmes.
+            </div>
+
+            <article class="prose prose-invert max-w-none text-slate-300 leading-relaxed space-y-8">
+                <!-- 1. Pourquoi -->
+                <section id="pourquoi" class="space-y-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">1. Pourquoi connecter n8n et Gmail ?</h2>
+                    <p>
+                        n8n est une plateforme d'automatisation <em>no-code</em> qui vous permet de connecter des centaines d'applications entre elles. Gmail fait partie des plus utilisées. Les cas d'usage sont nombreux :
+                    </p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Envoyer un email automatiquement lorsqu'un formulaire est rempli.</li>
+                        <li>Classer les emails entrants en fonction de leur contenu.</li>
+                        <li>Créer des tâches dans Trello ou Notion à partir d'un email reçu.</li>
+                        <li>Automatiser une réponse de suivi programmée à vos prospects.</li>
+                    </ul>
+                    <p>
+                        Le point de départ de <strong>toutes</strong> ces automatisations est la <strong>connexion</strong> entre n8n et votre compte Gmail. C'est cette étape que nous allons réussir, proprement, dans ce guide.
+                    </p>
+                </section>
+
+                <!-- 2. Prérequis -->
+                <section id="perrequis" class="space-y-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">2. Prérequis avant de commencer</h2>
+                    <p>Avant de plonger, assurez-vous d'avoir :</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Une instance n8n accessible (locale via <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">docker compose up -d</code>, ou sur un serveur, ou via n8n Cloud).</li>
+                        <li>Un compte Google personnel ou Google Workspace.</li>
+                        <li>L'accès à la <a href="https://console.cloud.google.com" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 underline">Google Cloud Console</a>.</li>
+                        <li>Environ 15 minutes.</li>
+                    </ul>
+                    <div class="bg-sky-500/10 border border-sky-500/30 rounded-xl p-4 text-sky-200">
+                        💡 <strong>Astuce :</strong> le but de cet article est de <em>comprendre la logique</em> OAuth2, pas juste de cliquer. Vous pourrez reproduire le même raisonnement pour n'importe quelle autre application (Google Sheets, Google Calendar, etc.).
+                    </div>
+                </section>
+
+                <!-- 3. Créer app Google + credentials OAuth2 -->
+                <section id="oauth2" class="space-y-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">3. Créer une application Google et ses credentials OAuth2</h2>
+                    <p>
+                        OAuth2 est le protocole d'autorisation sécurisé utilisé par Google. Au lieu de stocker votre mot de passe Gmail dans n8n, Google vous délivre des <strong>tokens</strong> temporaires que n8n peut échanger et re-fraîchir. C'est plus sûr.
+                    </p>
+
+                    <h3 class="text-xl font-bold text-white pt-2">Étape 1 : créer le projet</h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Ouvrez la <a href="https://console.cloud.google.com/" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 underline">Google Cloud Console</a> et connectez-vous.</li>
+                        <li>En haut, créez (ou sélectionnez) un projet, par exemple <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">n8n-integration</code>.</li>
+                    </ol>
+
+                    <h3 class="text-xl font-bold text-white pt-2">Étape 2 : activer l'API Gmail</h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Dans le menu, allez dans <strong>Bibliothèque d'API</strong> (APIs &amp; Services &gt; Library).</li>
+                        <li>Recherchez <strong>Gmail API</strong> puis cliquez <strong>Activer</strong>.</li>
+                    </ol>
+
+                    <h3 class="text-xl font-bold text-white pt-2">Étape 3 : créer l'écran de consentement</h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Dans <em>APIs &amp; Services &gt; Écran de consentement OAuth</em>, sélectionnez le type <strong>Externe</strong> (ou Interne si vous êtes en Workspace).</li>
+                        <li>Renseignez le nom de l'application et téléchargez éventuellement un logo.</li>
+                        <li>Ajoutez votre email en tant qu'<strong>utilisateur de test</strong>, et enregistrez.</li>
+                    </ol>
+
+                    <h3 class="text-xl font-bold text-white pt-2">Étape 4 : créer les credentials OAuth2</h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Allez dans <em>APIs &amp; Services &gt; Identifiants</em> puis <strong>Créer des identifiants &gt; ID client OAuth</strong>.</li>
+                        <li>Choisissez le type <strong>Application Web</strong>.</li>
+                        <li>Dans <strong>URI de redirection autorisés</strong>, ajoutez l'URL de rappel n8n.
+                        <pre class="bg-slate-950 border border-slate-800 rounded-xl p-4 overflow-x-auto text-sm text-slate-200 mt-3">https://VOTRE-DOMAINE-N8N/rest/oauth2-credential/callback</pre>
+                        Par exemple, si votre n8n est sur <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">https://n8n.votre-mail.com</code>, l'URI sera <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">https://n8n.votre-mail.com/rest/oauth2-credential/callback</code>.</li>
+                        <li>Copiez le <strong>Client ID</strong> et le <strong>Client Secret</strong> affichés. Vous en aurez besoin.</li>
+                    </ol>
+                </section>
+
+                <!-- 4. Credentials dans n8n -->
+                <section id="credentials-n8n" class="space-y-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">4. Ajouter les credentials Gmail dans n8n</h2>
+                    <p>Maintenant, créez les credentials côté n8n :</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Ouvrez <code class="bg-slate-800 px-1.5 py-0.5 rounded text-slate-300">n8n &gt; Credentials</code>, puis <strong>Nouveau &gt; Gmail</strong>.</li>
+                        <li>Sélectionnez le type d'authentification : <strong>OAuth2</strong>.</li>
+                        <li>Collez votre <strong>Client ID</strong> et <strong>Client Secret</strong>.</li>
+                        <li>Laissez le scope par défaut <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">https://www.googleapis.com/auth/gmail.send</code> ou ajoutez les scopes probablement nécessaires (ex. <code>gmail.readonly</code>, <code>gmail.modify</code>) selon vos besoins.</li>
+                        <li>Cliquez <strong>Se connecter</strong>.</li>
+                    </ol>
+                    <p class="mt-4">
+                        Une fenêtre Google s'ouvre. Autorisez votre compte Gmail et les permissions demandées. Une fois autorisé, n8n stocke le token de manière sécurisée et affiche <strong>&laquo; Connected &raquo;</strong>. L'authentification est terminée.
+                    </p>
+                </section>
+
+                <!-- 5. Premier workflow -->
+                <section id="premier-workflow" class="space-y-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">5. Créer votre premier workflow simple</h2>
+                    <p>Créons un workflow à deux nodes : un <strong>Webhook</strong> qui déclenche, une action <strong>Gmail</strong> qui envoie l'email.</p>
+
+                    <h3 class="text-xl font-bold text-white pt-2">Étape 1 : node Webhook</h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Dans n8n, <strong>Ajouter un nœud</strong> et choisissez <strong>Webhook</strong>.</li>
+                        <li>Mode <strong>POST</strong>, copiez l'URL générée en bas. Ce sera votre « déclencheur ».</li>
+                        <li>Activez le workflow (toggle en haut à droite) pour rendre l'URL publique.</li>
+                    </ol>
+
+                    <h3 class="text-xl font-bold text-white pt-2">Étape 2 : ajouter le node Gmail</h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Ajoutez un nœud <strong>Gmail</strong> et dans la catégorie <strong>Envoyer</strong>, choisissez l'action <strong>Envoyer un email</strong>.</li>
+                        <li>Choisissez vos credentials Gmail créés ci-dessus.</li>
+                        <li>Dans <strong>To</strong>, mettez <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">{{ $json.body.to }}</code>.</li>
+                        <li>Dans <strong>Subject</strong>, par exemple <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">{{ $json.body.subject }}</code>.</li>
+                        <li>Dans <strong>Body</strong>, le texte que vous voulez envoyer.</li>
+                    </ol>
+
+                    <h3 class="text-xl font-bold text-white pt-2">Étape 3 : relier les nodes</h3>
+                    <p>
+                        Reliez <code>Webhook</code> → <code>Gmail</code>. C'est ce lien qui « transmet » les données reçues par le webhook vers l'action Gmail. Les expressions <code>{{ $json.body.... }}</code> renvoient le corps JSON reçu.
+                    </p>
+                </section>
+
+                <!-- 6. Tester -->
+                <section id="tester" class="space-y-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">6. Tester et vérifier la connexion</h2>
+                    <p>Pour tester votre workflow :</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Envoyez un <code>POST</code> vers l'URL du webhook avec un corps JSON :
+                        <pre class="bg-slate-950 border border-slate-800 rounded-xl p-4 overflow-x-auto text-sm text-slate-200 mt-3">curl -X POST https://VOTRE-URL-WEBHOOK \
+  -H "Content-Type: application/json" \
+  -d '{"to": "client@exemple.com", "subject": "Votre demande", "message": "Bonjour, nous avons bien reçu votre message."}'</pre>
+                        </li>
+                        <li>Un email devrait arriver à l'adresse <code>client@exemple.com</code>.</li>
+                        <li>Si ce n'est pas le cas, ouvrez la node Gmail et regardez l'onglet <strong>Output</strong> : il affichera l'erreur exacte (permissions, token expiré, etc.).</li>
+                    </ol>
+
+                    <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4 text-emerald-200">
+                        ✅ <strong>Votre connexion est en place.</strong> Vous pouvez maintenant remplacer le webhook par n'importe quel autre déclencheur n8n (horaire, formulaire, Slack…) et déclencher de véritables automatisations Gmail.
+                    </div>
+                </section>
+            </article>
+
+            <!-- Publication -->
+            <footer class="mt-12 pt-8 border-t border-slate-800">
+                <h2 class="text-xl font-bold text-white mb-4">Un doute ? Ou un besoin d'accompagnement ?</h2>
+                <p class="text-slate-400 mb-6">
+                    Cet article est un exemple pour comprendre la logique. L'automatisation avancée demande du temps et des mises en place précises.
+                </p>
+                <a href="../index.html#contact" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-500/30">
+                    <i class="fa-solid fa-envelope"></i> Me contacter
+                </a>
+            </footer>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-800 py-10 bg-black">
+        <div class="container mx-auto px-4 text-center">
+            <a href="../index.html" class="inline-flex items-center justify-center gap-2 mb-4">
+                <img src="../assets/logo-virtuel-all-tech.webp" alt="Virtuel All Tech" class="h-10 w-auto">
+            </a>
+            <p class="text-slate-500 text-sm">© 2026 Virtuel All Tech — <a href="../index.html#contact" class="text-slate-400 hover:text-blue-400 transition">Contact</a></p>
+        </div>
+    </footer>
+</body>
+</html>

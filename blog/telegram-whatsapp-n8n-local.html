@@ -3,61 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utiliser Telegram avec n8n en local : guide complet | Virtuel All Tech</title>
+    <title>Utiliser Telegram & WhatsApp avec n8n en local | Virtuel All Tech</title>
 
     <!-- Meta description -->
-    <meta name="description" content="Connectez Telegram à n8n en local via ngrok : architecture, tunnel, webhooks et premier workflow. Guide pas à pas pour vos automatisations.">
+    <meta name="description" content="Guide pas à pas : utiliser Telegram et WhatsApp avec n8n en local via ngrok. Architecture du système, tunnel, webhooks et configuration.">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Virtuel All Tech">
     <meta property="fb:app_id" content="1017580981146172">
-    <meta property="og:title" content="Utiliser Telegram avec n8n en local : guide complet">
-    <meta property="og:description" content="Architecture, configuration ngrok, webhooks et premier workflow : connectez Telegram à n8n en local étape par étape.">
-    <meta property="og:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/blog/telegram-whatsapp/image1.png">
-    <meta property="og:image:alt" content="Architecture système n8n Telegram local">
+    <meta property="og:title" content="Utiliser Telegram & WhatsApp avec n8n en local">
+    <meta property="og:description" content="Guide pas à pas : utiliser Telegram et WhatsApp avec n8n en local via ngrok. Architecture, tunnel et webhooks.">
+    <meta property="og:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp">
+    <meta property="og:image:alt" content="Virtuel All Tech — Telegram & n8n en local">
     <meta property="og:url" content="https://yves-virtuel-website.eufyves.workers.dev/blog/telegram-whatsapp-n8n-local.html">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Utiliser Telegram avec n8n en local : guide complet">
-    <meta name="twitter:description" content="Architecture, configuration ngrok, webhooks et premier workflow : connectez Telegram à n8n en local étape par étape.">
-    <meta name="twitter:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/blog/telegram-whatsapp/image1.png">
-    <meta name="twitter:image:alt" content="Architecture système n8n Telegram local">
+    <meta name="twitter:title" content="Utiliser Telegram & WhatsApp avec n8n en local">
+    <meta name="twitter:description" content="Guide pas à pas : utiliser Telegram et WhatsApp avec n8n en local via ngrok.">
+    <meta name="twitter:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp">
+    <meta name="twitter:image:alt" content="Virtuel All Tech — Telegram & n8n en local">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://yves-virtuel-website.eufyves.workers.dev/blog/telegram-whatsapp-n8n-local.html">
-
-    <!-- Schema.org : Article de blog -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Utiliser Telegram avec n8n en local : guide complet",
-      "description": "Connectez Telegram à n8n en local via ngrok : architecture, tunnel, webhooks et premier workflow. Guide pas à pas pour vos automatisations.",
-      "image": "https://yves-virtuel-website.eufyves.workers.dev/assets/blog/telegram-whatsapp/image1.png",
-      "datePublished": "2026-08-18",
-      "dateModified": "2026-08-18",
-      "author": {
-        "@type": "Person",
-        "name": "Sikati Yves Joseph",
-        "url": "https://yves-virtuel-website.eufyves.workers.dev/#yves-virtuel"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Virtuel All Tech",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://yves-virtuel-website.eufyves.workers.dev/blog/telegram-whatsapp-n8n-local.html"
-      }
-    }
-    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -104,156 +74,110 @@
     </nav>
 
     <main class="pt-28 pb-24">
-        <!-- Fil d'Ariane -->
-        <div class="container mx-auto px-4 max-w-4xl mb-8" data-aos="fade-up">
-            <nav class="flex items-center gap-2 text-sm text-slate-500" aria-label="Fil d'Ariane">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- Fil d'Ariane -->
+            <nav class="flex items-center gap-2 text-sm text-slate-500 mb-8" data-aos="fade-up">
                 <a href="../index.html" class="hover:text-blue-400 transition">Accueil</a>
                 <i class="fa-solid fa-chevron-right text-xs"></i>
                 <a href="../blog/index.html" class="hover:text-blue-400 transition">Blog</a>
                 <i class="fa-solid fa-chevron-right text-xs"></i>
-                <span class="text-white" aria-current="page">Utiliser Telegram avec n8n en local</span>
+                <span class="text-white" aria-current="page">Utiliser Telegram & WhatsApp avec n8n en local</span>
             </nav>
-        </div>
 
-        <article class="container mx-auto px-4 max-w-4xl">
             <!-- En-tête article -->
             <header class="mb-12" data-aos="fade-up">
                 <div class="flex items-center gap-3 text-sm text-slate-500 mb-4">
-                    <span class="text-blue-400 font-semibold">Tutoriel</span>
+                    <span class="text-blue-400 font-semibold">Guide</span>
                     <span>·</span>
-                    <time datetime="2026-08-18">18 août 2026</time>
-                    <span>·</span>
-                    <span>7 min de lecture</span>
+                    <time datetime="2026-08-18">2026</time>
                 </div>
-                <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">Utiliser Telegram avec n8n en local : guide complet</h1>
-                <p class="text-slate-400 text-lg max-w-2xl">
-                    Connectez Telegram à votre instance n8n locale via ngrok : architecture, tunnel HTTPS, configuration des webhooks et premier workflow de test. Tout en images.
+                <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">📖 GUIDE : UTILISER TELEGRAM & WHATSAPP AVEC N8N EN LOCAL</h1>
+                <p class="text-slate-400 text-sm italic">
+                    Par : Yves Virtuel / Virtuel All Tech
                 </p>
             </header>
 
-            <!-- Sommaire -->
-            <nav class="bg-slate-800/50 border border-slate-800 rounded-2xl p-6 mb-10" data-aos="fade-up">
-                <h2 class="text-lg font-bold text-white mb-4">Au sommaire</h2>
-                <ol class="list-decimal list-inside space-y-2 text-slate-300">
-                    <li><a href="#architecture" class="hover:text-blue-400 transition">🏛️ Architecture du système</a></li>
-                    <li><a href="#ngrok" class="hover:text-blue-400 transition">⚙️ Configuration du tunnel ngrok</a></li>
-                </ol>
-            </nav>
-
-            <!-- Section 1 : Architecture -->
-            <section id="architecture" class="mb-16" data-aos="fade-up">
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">🏛️ Architecture du système</h2>
+            <!-- Section 1 : Architecture du Système -->
+            <section class="mb-16" data-aos="fade-up">
+                <h2 class="text-2xl font-bold text-white mb-6">🏛️ 1. Architecture du Système</h2>
 
                 <p class="text-slate-400 mb-6 leading-relaxed">
-                    Pour faire communiquer Telegram avec votre instance n8n locale, il faut comprendre le flux de données. n8n tourne sur votre machine (localhost:5678), mais Telegram ne peut pas atteindre une adresse locale. Il nous faut un tunnel public HTTPS.
+                    Pour que n8n fonctionne en local, nous utilisons la structure suivante :
                 </p>
 
-                <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 mb-8">
-                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-diagram-project text-blue-400"></i> Flux global
-                    </h3>
-                    <div class="space-y-3 text-slate-300 text-sm">
-                        <p><strong>1.</strong> L'utilisateur envoie un message sur Telegram</p>
-                        <p><strong>2.</strong> Telegram appelle votre webhook public (URL ngrok)</p>
-                        <p><strong>3.</strong> ngrok transmet la requête à votre n8n local (localhost:5678/webhook/...)</p>
-                        <p><strong>4.</strong> n8n exécute le workflow et répond</p>
-                        <p><strong>5.</strong> La réponse remonte jusqu'à Telegram → l'utilisateur</p>
-                    </div>
-                </div>
+                <ul class="space-y-2 text-slate-300 mb-6">
+                    <li><span class="font-bold">n8n :</span> Le cerveau (Local).</li>
+                    <li><span class="font-bold">ngrok :</span> Le tunnel (Le pont vers l'extérieur).</li>
+                    <li><span class="font-bold">Webhooks :</span> Les messagers (Les déclencheurs).</li>
+                </ul>
 
-                <!-- Image 1 : Architecture -->
-                <figure class="rounded-2xl overflow-hidden border border-slate-700 mb-8">
-                    <img src="../assets/blog/telegram-whatsapp/image1.png" alt="Architecture système n8n local + ngrok + Telegram" class="w-full h-auto">
-                    <figcaption class="text-center text-slate-500 text-sm py-3 bg-slate-800/50">Architecture : Telegram → ngrok → n8n local</figcaption>
+                <h3 class="text-lg font-bold text-white mb-3">Qu'est-ce qu'un webhook ?</h3>
+                <p class="text-slate-400 mb-4 leading-relaxed">
+                    Un <span class="font-bold">webhook</span> est un moyen pour des applications de s'envoyer automatiquement des données en temps réel lorsqu'un événement spécifique se produit.
+                </p>
+
+                <p class="text-slate-400 mb-6 leading-relaxed">
+                    <span class="font-bold">Schéma du flux :</span>
+                    <code class="bg-slate-800 px-2 py-1 rounded text-blue-300 text-sm">Utilisateur -> Telegram/WhatsApp -> URL ngrok -> n8n (Local)</code>
+                </p>
+
+                <figure class="rounded-2xl overflow-hidden border border-slate-700">
+                    <img src="../assets/blog/telegram-whatsapp/image1.png" alt="Architecture système n8n + ngrok + Telegram" class="w-full h-auto">
                 </figure>
-
-                <div class="bg-amber-900/30 border border-amber-800 rounded-xl p-4 mb-6">
-                    <h4 class="text-amber-300 font-semibold mb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-triangle-exclamation"></i> Point d'attention
-                    </h4>
-                    <p class="text-amber-200 text-sm">
-                        L'URL ngrok change à chaque redémarrage (plan gratuit). Pour la production, utilisez un domaine personnalisé ngrok ou un VPS avec domaine fixe.
-                    </p>
-                </div>
             </section>
 
-            <!-- Section 2 : Configuration ngrok -->
-            <section id="ngrok" class="mb-16" data-aos="fade-up">
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">⚙️ Configuration du tunnel ngrok</h2>
+            <hr class="border-slate-800 mb-16">
 
-                <h3 class="text-xl font-bold text-white mb-4">Étape 1 : S'inscrire et installer ngrok</h3>
-                <ol class="list-decimal list-inside space-y-3 text-slate-300 mb-6">
-                    <li>Créez un compte sur <a href="https://ngrok.com" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 underline">ngrok.com</a></li>
-                    <li>Téléchargez ngrok pour votre OS (Windows / Mac / Linux)</li>
-                    <li>Dézippez et placez l'exécutable dans un dossier accessible (ex. <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">C:\ngrok\</code>)</li>
-                    <li>Authentifiez-vous : <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">ngrok config add-authtoken VOTRE_TOKEN</code></li>
-                </ol>
+            <!-- Section 2 : Configuration du Tunnel ngrok -->
+            <section class="mb-16" data-aos="fade-up">
+                <h2 class="text-2xl font-bold text-white mb-6">⚙️ 2. Configuration du Tunnel (ngrok)</h2>
 
-                <h3 class="text-xl font-bold text-white mb-4">Étape 2 : Lancer le tunnel</h3>
-                <p class="text-slate-400 mb-4">
-                    Ouvrez un terminal <strong>séparé</strong> de celui de n8n (ngrok doit tourner en continu) :
-                </p>
-                <pre class="bg-slate-800 border border-slate-700 rounded-xl p-4 overflow-x-auto mb-6"><code class="text-blue-300">ngrok http 5678</code></pre>
-                <p class="text-slate-400 mb-6">
-                    ngrok affiche deux URLs publiques (http + https). <strong>Copiez l'URL HTTPS</strong> (ex. <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">https://abc123.ngrok-free.app</code>).
-                </p>
+                <ol class="list-decimal list-inside space-y-6 text-slate-300">
+                    <li>
+                        <span class="font-bold">Lancer n8n :</span> <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">n8n start</code> (via le terminal).
+                    </li>
 
-                <!-- Image 2 : ngrok terminal -->
-                <figure class="rounded-2xl overflow-hidden border border-slate-700 mb-8">
-                    <img src="../assets/blog/telegram-whatsapp/image2.png" alt="Terminal ngrok montrant l'URL HTTPS publique" class="w-full h-auto">
-                    <figcaption class="text-center text-slate-500 text-sm py-3 bg-slate-800/50">Terminal ngrok — récupérez l'URL HTTPS</figcaption>
-                </figure>
+                    <li>
+                        <span class="font-bold">Aller sur le site ngrok,</span> s'inscrire, puis accéder à la section <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">Setup &amp; installation</code>
+                        <p class="text-slate-500 text-sm mt-2 ml-6">Voilà ce qui devrait s'afficher après un scroll vers le bas :</p>
+                        <figure class="rounded-2xl overflow-hidden border border-slate-700 mt-3">
+                            <img src="../assets/blog/telegram-whatsapp/image2.png" alt="Section Setup & installation sur ngrok" class="w-full h-auto">
+                        </figure>
+                    </li>
 
-                <h3 class="text-xl font-bold text-white mb-4">Étape 3 : Configurer le webhook Telegram</h3>
-                <ol class="list-decimal list-inside space-y-3 text-slate-300 mb-6">
-                    <li>Créez un bot via <a href="https://t.me/BotFather" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 underline">@BotFather</a> sur Telegram (<code>/newbot</code>)</li>
-                    <li>Récupérez le <strong>token du bot</strong></li>
-                    <li>Définissez le webhook : ouvrez cette URL dans votre navigateur (remplacez <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">VOTRE_TOKEN</code> et <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">VOTRE_URL_NGROK</code>) :
+                    <li>
+                        <span class="font-bold">Ouvrir</span> un nouveau terminal et copier les commandes sur l'image précédente dans l'ordre.
+                        <p class="text-slate-500 text-sm mt-2 ml-6">Pour la première commande, copier sans changement.</p>
+                        <p class="text-slate-500 text-sm ml-6">Pour la deuxième commande, remplacer juste <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">80</code> par <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">5678</code> ou bien copier et coller ceci : <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">ngrok http 5678</code></p>
+                        <p class="text-slate-500 text-sm mt-2 ml-6">Voilà ce qui devrait s'afficher :</p>
+                    </li>
+
+                    <li>
+                        <span class="font-bold">Fermer n8n :</span> Dans le terminal où n8n a été lancé, taper <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">CTRL+C</code>
+                    </li>
+
+                    <li>
+                        <span class="font-bold">URL à vérifier :</span> l'adresse qui est devant <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">https://localhost:5678</code>.
+                        <p class="text-slate-500 text-sm mt-2 ml-6"><span class="font-bold">Variable à voir :</span> <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">WEBHOOK_URL=https://*********.ngrok-free.app</code> où l'URL est celle du point 5 précédent.</p>
+                    </li>
+
+                    <li>
+                        <span class="font-bold">Lancer n8n à nouveau</span> dans le même terminal : <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">n8n start</code> ou <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">n8n</code> ou <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">npx n8n</code> (via le même terminal).
+                    </li>
+
+                    <li>
+                        Ensuite, dans un workflow, mettez le nœud Telegram et vérifier que l'URL dans <span class="font-bold">WEBHOOK_URL</span> a changé par celui défini précédemment.
                     </li>
                 </ol>
-                <pre class="bg-slate-800 border border-slate-700 rounded-xl p-4 overflow-x-auto mb-6"><code class="text-blue-300">https://api.telegram.org/botVOTRE_TOKEN/setWebhook?url=https://VOTRE_URL_NGROK/webhook/telegram</code></pre>
-                <p class="text-slate-400 mb-6">
-                    Vous devriez voir <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">{"ok":true,"result":true,"description":"Webhook was set"}</code>.
-                </p>
-
-                <h3 class="text-xl font-bold text-white mb-4">Étape 4 : Créer le workflow n8n</h3>
-                <ol class="list-decimal list-inside space-y-3 text-slate-300 mb-6">
-                    <li>Dans n8n : <strong>Webhook</strong> node → <strong>Path</strong> : <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">telegram</code> → <strong>Method</strong> : POST</li>
-                    <li>Ajoutez un node <strong>Telegram</strong> (ou <strong>Send Message</strong>) : connectez votre credential bot (le token BotFather)</li>
-                    <li>Dans <strong>Chat ID</strong> : <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">{{ $json.message.chat.id }}</code></li>
-                    <li>Dans <strong>Text</strong> : <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">Message reçu : {{ $json.message.text }}</code></li>
-                    <li>Reliez <strong>Webhook</strong> → <strong>Telegram</strong></li>
-                    <li>Cliquez <strong>Execute Workflow</strong> (ou activez-le en production)</li>
-                </ol>
-
-                <div class="bg-green-900/30 border border-green-800 rounded-xl p-4 mb-6">
-                    <h4 class="text-green-300 font-semibold mb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-circle-check"></i> Test
-                    </h4>
-                    <p class="text-green-200 text-sm">
-                        Envoyez un message à votre bot sur Telegram. Si tout est bon, il vous répond avec le texte reçu. Voilà ! 🎉
-                    </p>
-                </div>
-
-                <h3 class="text-xl font-bold text-white mb-4">Variables d'environnement utiles (optionnel)</h3>
-                <p class="text-slate-400 mb-4">Pour éviter de recopier l'URL ngrok partout, créez un fichier <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">.env</code> à la racine de n8n :</p>
-                <pre class="bg-slate-800 border border-slate-700 rounded-xl p-4 overflow-x-auto mb-6"><code class="text-blue-300">WEBHOOK_URL=https://VOTRE_URL_NGROK/webhook/telegram</code></pre>
-                <p class="text-slate-400 mb-6">
-                    Puis dans vos nodes : <code class="bg-slate-800 px-1.5 py-0.5 rounded text-blue-300">{{ $env.WEBHOOK_URL }}</code>.
-                </p>
             </section>
 
-            <!-- CTA -->
-            <section class="bg-slate-800/50 border border-slate-800 rounded-3xl p-8 text-center" data-aos="fade-up">
-                <h2 class="text-xl font-bold text-white mb-4">Besoin d'aide pour vos automatisations ?</h2>
-                <p class="text-slate-400 mb-6 max-w-xl mx-auto">
-                    Je configure vos workflows n8n, connecte vos APIs (Telegram, WhatsApp, Gmail, ERP…) et vous livre des automatisations prêtes à l'emploi.
+            <!-- Pied de page article -->
+            <footer class="pt-8 border-t border-slate-800">
+                <p class="text-slate-500 text-sm italic">
+                    Document édité par <span class="font-bold text-slate-400">Yves Virtuel / Virtuel All Tech</span> - 2026
                 </p>
-                <a href="../index.html#contact" class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-500 transition shadow-lg shadow-blue-500/30 font-semibold">
-                    Me contacter <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </section>
-        </article>
+            </footer>
+        </div>
     </main>
 
     <footer class="border-t border-slate-800 py-10 bg-black">
@@ -272,7 +196,7 @@
             AOS.init({
                 duration: 800,
                 once: true,
-                offset: 50
+                offset:50
             });
         }
     </script>

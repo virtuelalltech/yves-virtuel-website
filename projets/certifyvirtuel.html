@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CertifyVirtuel — étude de cas | Virtuel All Tech</title>
+    <meta
+      name="description"
+      content="Infrastructure de confiance cryptographique pour sceller des documents PDF et lutter contre la fraude documentaire."
+    />
+    <link
+      rel="canonical"
+      href="https://yves-virtuel-website.eufyves.workers.dev/projets/certifyvirtuel.html"
+    />
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Virtuel All Tech" />
+    <meta
+      property="og:title"
+      content="CertifyVirtuel — étude de cas | Virtuel All Tech"
+    />
+    <meta
+      property="og:description"
+      content="Infrastructure de confiance cryptographique pour sceller des documents PDF et lutter contre la fraude documentaire."
+    />
+    <meta
+      property="og:url"
+      content="https://yves-virtuel-website.eufyves.workers.dev/projets/certifyvirtuel.html"
+    />
+    <meta
+      property="og:image"
+      content="https://yves-virtuel-website.eufyves.workers.dev/assets/og-image.png"
+    />
+    <meta property="og:image:alt" content="Logo Virtuel All Tech" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves",
+            "name": "Yves Joseph SIKATI",
+            "jobTitle": "Concepteur de solutions métier intelligentes",
+            "email": "eufyves@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Yaoundé",
+              "addressCountry": "CM"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/sikati-yves-joseph-039215330",
+              "https://github.com/virtuelalltech",
+              "https://www.tiktok.com/@virtuel.all.tech"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "name": "Virtuel All Tech",
+            "url": "https://yves-virtuel-website.eufyves.workers.dev/",
+            "areaServed": "CM",
+            "founder": {
+              "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves"
+            }
+          }
+        ]
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Aller au contenu</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="wrap container">
+        <a href="../index.html" class="brand notranslate" translate="no"
+          ><img
+            src="../assets/logo-mark.webp"
+            alt=""
+            width="40"
+            height="32"
+          /><span>Virtuel All Tech</span></a
+        >
+        <div class="links">
+          <a href="../index.html">Accueil</a
+          ><a href="../index.html#apropos">À propos</a
+          ><a href="../index.html#domaines">Domaines</a
+          ><a href="../index.html#projets">Projets</a
+          ><a href="../index.html#competences">Compétences</a
+          ><a href="../index.html#ressources">Ressources</a
+          ><a href="../blog/index.html">Blog</a
+          ><a
+            href="../index.html#contact"
+            class="btn-primary"
+            style="padding: 9px 20px; color: #fff"
+            >Contact</a
+          >
+        </div>
+        <button
+          id="menu-toggle"
+          class="burger"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-menu hidden">
+        <a href="../index.html">Accueil</a
+        ><a href="../index.html#apropos">À propos</a
+        ><a href="../index.html#domaines">Domaines</a
+        ><a href="../index.html#projets">Projets</a
+        ><a href="../index.html#competences">Compétences</a
+        ><a href="../index.html#ressources">Ressources</a
+        ><a href="../blog/index.html">Blog</a
+        ><a href="../index.html#demarche">Ma démarche</a
+        ><a
+          href="../index.html#contact"
+          style="color: var(--blue); font-weight: 600"
+          >Contact</a
+        >
+      </div>
+    </nav>
+    <main id="main" class="case">
+      <div class="wrap">
+        <nav class="crumb" aria-label="Fil d'Ariane">
+          <a href="../index.html">Accueil</a> ›
+          <a href="../index.html#projets">Projets</a> ›
+          <span aria-current="page">CertifyVatDoc</span>
+        </nav>
+        <div class="row" style="margin-top: 20px">
+          <span class="st st-proto"
+            ><i class="fa-solid fa-flask" aria-hidden="true"></i>Prototype</span
+          >
+        </div>
+        <h1>CertifyVatDoc</h1>
+        <p class="lead2">
+          Infrastructure de confiance cryptographique pour sceller des documents PDF et lutter contre la fraude documentaire.
+        </p>
+        <div class="chips">
+          <span>Python</span><span>PyHanko</span><span>Cryptography</span><span>FastAPI</span>
+        </div>
+        
+        <h2>Contexte</h2>
+        <p>
+          À l'ère de l'intelligence artificielle générative, il est devenu extrêmement facile de falsifier des documents (fausses factures, faux diplômes, faux contrats). Les méthodes traditionnelles comme les signatures scannées ou les logos ne prouvent plus rien.
+        </p>
+        
+        <h2>Le problème</h2>
+        <p>
+          Comment une entreprise, une université ou un particulier peut-il prouver mathématiquement qu'un document numérique (PDF) provient bien de lui et n'a pas été altéré après sa création ?
+        </p>
+        
+        <h2>L'objectif</h2>
+        <p>
+          Fournir un service de certification qui scelle le document avec une signature cryptographique standard (PAdES) et intègre un QR code permettant à n'importe qui de vérifier son intégrité en quelques secondes, même sans compétences techniques.
+        </p>
+        
+        <h2>L'approche technique</h2>
+        <p>
+          Le système lit le PDF, calcule une empreinte numérique unique (hash SHA-256) et l'insère dans les métadonnées. Il génère ensuite un QR code (contenant une URL de vérification et le logo du client) qui est inséré dans le document. Enfin, le fichier est scellé avec <code>pyHanko</code> (standard PAdES) en mode <em>NO_CHANGES</em>. Si le fichier est modifié, la signature casse.
+        </p>
+        
+        <h2>Fonctionnalités réellement développées</h2>
+        <ul class="bul">
+          <li>Génération de clés et certificats X.509 avec <code>cryptography</code></li>
+          <li>Signature cryptographique de PDF validée par Adobe Acrobat</li>
+          <li>Génération de QR codes avec logo intégré (Pillow)</li>
+          <li>Pipeline de fusion des métadonnées (conservation de l'historique)</li>
+        </ul>
+        
+        <h2>Résultats observés</h2>
+        <p>
+          Le système produit des PDF dont la signature est reconnue comme "Valide" par Adobe Acrobat. Toute modification du contenu (même une virgule) invalide immédiatement la signature. Le QR code généré est scannable et pointe vers l'URL de vérification.
+        </p>
+        
+        <div class="limits">
+          <h2 style="margin-top: 0">Limites actuelles</h2>
+          <ul class="bul">
+            <li>Le certificat utilisé est actuellement auto-signé (Adobe affiche "Identité non vérifiée"). Pour une confiance universelle, il faudra un certificat d'une autorité de certification reconnue.</li>
+            <li>L'API de vérification (FastAPI) et la page web dynamique sont en cours de développement. L'URL du QR code pointe pour l'instant vers une page statique.</li>
+            <li>Le déploiement en production (VPS + nom de domaine) n'est pas encore effectué.</li>
+          </ul>
+        </div>
+        
+        <h2>Prochaines étapes</h2>
+        <ul class="bul">
+          <li>Finaliser l'API locale FastAPI avec base de données SQLite pour vérifier les documents en temps réel.</li>
+          <li>Créer l'interface d'administration pour gérer les révocations de documents (ex: annulation d'un diplôme).</li>
+          <li>Déployer sur un serveur (VPS) avec Docker.</li>
+        </ul>
+        
+        <p class="note">
+          Une démonstration du processus de signature et de vérification peut être présentée sur demande.
+        </p>
+        
+        <div class="actions">
+          <a class="btn-primary" href="../index.html#contact"
+            >Discuter de ce projet</a
+          ><a class="btn-ghost" href="../index.html#projets"
+            >Tous les projets</a
+          >
+        </div>
+      </div>
+    </main>
+    <footer class="foot">
+      <div class="wrap">
+        <img
+          src="../assets/logo-mark.webp"
+          alt=""
+          width="40"
+          height="32"
+          style="margin: 0 auto 10px"
+        />
+        <p class="notranslate">
+          <b>Virtuel All Tech</b> — Together, we find a solution.
+        </p>
+        <p style="margin-top: 6px">
+          <a href="../index.html#projets">Projets</a> ·
+          <a href="../blog/index.html">Blog</a> ·
+          <a href="../index.html#contact">Contact</a> ·
+          <a href="https://github.com/virtuelalltech">GitHub</a>
+        </p>
+        <p style="margin-top: 10px">
+          &copy; 2026 SIKATI Yves Joseph. Yaoundé, Cameroun.
+        </p>
+      </div>
+    </footer>
+    <a
+      href="https://wa.me/237673219281"
+      class="wa"
+      aria-label="Écrire sur WhatsApp"
+      ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+    ></a>
+    <script src="../JS/script.js"></script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "db24ebf8fad44c9cbbed8fff01a108ca"}'
+    ></script>
+  </body>
+</html>

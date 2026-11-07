@@ -1,132 +1,44 @@
-/**
- * Yves Virtuel / Virtuel All Tech - Script Portfolio Officiel 2026
- * Système de navigation, contact et tracking n8n intégré
- */
-
+/* Virtuel All Tech — navigation, contact et suivi n8n */
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 1. CONFIGURATION DU TRACKING ---
-    const WEBHOOK_TRACKING_URL = 'https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/stats'; // REMPLACER PAR VOTRE URL REELLE
-    const startTime = Date.now();
+  const HOOK = 'https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/';
+  const start = Date.now();
+  if (!sessionStorage.getItem('session_id')) sessionStorage.setItem('session_id', 'sess_' + Math.random().toString(36).slice(2, 11));
+  const track = (event, extra = {}) => fetch(HOOK + 'stats', {
+    method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ sessionId: sessionStorage.getItem('session_id'), brand: 'Virtuel All Tech', event, url: location.pathname, timestamp: new Date().toISOString(), ...extra })
+  }).catch(() => {});
+  track('page_view', { referrer: document.referrer || 'Direct Access' });
+  addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') track('session_end', { duration_seconds: Math.round((Date.now() - start) / 1000) });
+  });
 
-    // Gestion du Session ID
-    if (!sessionStorage.getItem('session_id')) {
-        sessionStorage.setItem('session_id', 'sess_' + Math.random().toString(36).substr(2, 9));
-    }
-
-    // Fonction de tracking compatible avec n8n
-    const trackEvent = (type, extraData = {}) => {
-        const payload = {
-            sessionId: sessionStorage.getItem('session_id'),
-            brand: "Virtuel All Tech",
-            event: type,
-            url: window.location.pathname,
-            timestamp: new Date().toISOString(),
-            ...extraData
-        };
-
-        // Utilisation de fetch car sendBeacon peut poser des problèmes de CORS ou de Content-Type avec n8n
-        fetch(WEBHOOK_TRACKING_URL, {
-            method: 'POST',
-            mode: 'no-cors', // Évite les erreurs de blocage navigateur
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
+  const btn = document.getElementById('menu-toggle'), menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    const set = open => {
+      menu.classList.toggle('hidden', !open);
+      btn.setAttribute('aria-expanded', open);
+      btn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      btn.querySelector('i').className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
     };
+    btn.addEventListener('click', () => set(menu.classList.contains('hidden')));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => set(false)));
+    addEventListener('keydown', e => { if (e.key === 'Escape') { set(false); btn.focus(); } });
+  }
 
-    // Tracking automatique au chargement
-    trackEvent('page_view', { referrer: document.referrer || "Direct Access" });
-
-    // Tracking du temps passé lors du départ
-    window.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden') {
-            const timeSpent = Math.round((Date.now() - startTime) / 1000);
-            trackEvent('session_end', { duration_seconds: timeSpent });
-        }
+  const form = document.getElementById('contact-form');
+  if (form) {
+    const err = document.getElementById('form-error'), ok = document.getElementById('success-message'), sb = document.getElementById('submit-btn');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      err.classList.add('hidden');
+      const label = sb.textContent; sb.textContent = 'Envoi en cours…'; sb.disabled = true;
+      try {
+        const res = await fetch(HOOK + 'formwebsite', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(new FormData(form))) });
+        if (!res.ok) throw new Error(res.status);
+        form.reset(); form.classList.add('hidden'); ok.classList.remove('hidden'); track('form_submission_success');
+      } catch (_) {
+        err.classList.remove('hidden'); sb.textContent = label; sb.disabled = false;
+      }
     });
-
-    // --- 2. ANIMATIONS & UI (AOS) ---
-    if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 900, once: true, easing: 'ease-out-quad' });
-    }
-
-
-    // --- 3. GESTION DU MENU MOBILE ---
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = menuToggle ? menuToggle.querySelector('i') : null;
-
-    const toggleMenu = (forceClose = false) => {
-        if (!mobileMenu) return;
-        const isHidden = mobileMenu.classList.contains('hidden');
-
-        if (forceClose || !isHidden) {
-            mobileMenu.classList.add('hidden');
-            document.body.style.overflow = '';
-            if (menuIcon) menuIcon.classList.replace('fa-xmark', 'fa-bars');
-        } else {
-            mobileMenu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            if (menuIcon) menuIcon.classList.replace('fa-bars', 'fa-xmark');
-        }
-    };
-
-    if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => toggleMenu(true));
-        });
-    }
-
-
-    // --- 4. NAVBAR SCROLL EFFECT ---
-    const navbar = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-        if (!navbar) return;
-        const container = navbar.querySelector('.container');
-        if (window.scrollY > 50) {
-            navbar.classList.add('py-2', 'bg-slate-900/98', 'shadow-2xl', 'backdrop-blur-md');
-            if(container) container.classList.replace('h-28', 'h-20');
-        } else {
-            navbar.classList.remove('py-2', 'bg-slate-900/98', 'shadow-2xl', 'backdrop-blur-md');
-            if(container) container.classList.replace('h-20', 'h-28');
-        }
-    });
-
-
-    // --- 5. FORMULAIRE DE CONTACT (n8n Webhook) ---
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('button[type="submit"]');
-            const successMsg = document.getElementById('success-message');
-            
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Envoi...';
-            btn.disabled = true;
-
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-
-            try {
-                const response = await fetch('https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/formwebsite', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data),
-                });
-
-                if (response.ok) {
-                    this.reset();
-                    this.classList.add('hidden');
-                    if (successMsg) successMsg.classList.remove('hidden');
-                    trackEvent('form_submission_success'); // On track aussi le succès
-                } else { throw new Error(); }
-            } catch (error) {
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-                alert("Erreur d'envoi. Réessayez bientôt.");
-            }
-        });
-    }
+  }
 });

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DockFlow — étude de cas | Virtuel All Tech</title>
+    <meta
+      name="description"
+      content="Extraction intelligente de commandes portuaires reçues par e-mail, transformées en données JSON structurées et validées."
+    />
+    <link
+      rel="canonical"
+      href="https://yves-virtuel-website.eufyves.workers.dev/projets/dockflow.html"
+    />
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Virtuel All Tech" />
+    <meta
+      property="og:title"
+      content="DockFlow — étude de cas | Virtuel All Tech"
+    />
+    <meta
+      property="og:description"
+      content="Extraction intelligente de commandes portuaires reçues par e-mail, transformées en données JSON structurées et validées."
+    />
+    <meta
+      property="og:url"
+      content="https://yves-virtuel-website.eufyves.workers.dev/projets/dockflow.html"
+    />
+    <meta
+      property="og:image"
+      content="https://yves-virtuel-website.eufyves.workers.dev/assets/og-image.png"
+    />
+    <meta property="og:image:alt" content="Logo Virtuel All Tech" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves",
+            "name": "Yves Joseph SIKATI",
+            "jobTitle": "Concepteur de solutions métier intelligentes",
+            "email": "eufyves@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Yaoundé",
+              "addressCountry": "CM"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/sikati-yves-joseph-039215330",
+              "https://github.com/virtuelalltech",
+              "https://www.tiktok.com/@virtuel.all.tech"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "name": "Virtuel All Tech",
+            "url": "https://yves-virtuel-website.eufyves.workers.dev/",
+            "areaServed": "CM",
+            "founder": {
+              "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves"
+            }
+          }
+        ]
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Aller au contenu</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="wrap container">
+        <a href="../index.html" class="brand notranslate" translate="no"
+          ><img
+            src="../assets/logo-mark.webp"
+            alt=""
+            width="40"
+            height="32"
+          /><span>Virtuel All Tech</span></a
+        >
+        <div class="links">
+          <a href="../index.html">Accueil</a
+          ><a href="../index.html#apropos">À propos</a
+          ><a href="../index.html#domaines">Domaines</a
+          ><a href="../index.html#projets">Projets</a
+          ><a href="../index.html#competences">Compétences</a
+          ><a href="../index.html#ressources">Ressources</a
+          ><a href="../blog/index.html">Blog</a
+          ><a
+            href="../index.html#contact"
+            class="btn-primary"
+            style="padding: 9px 20px; color: #fff"
+            >Contact</a
+          >
+        </div>
+        <button
+          id="menu-toggle"
+          class="burger"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-menu hidden">
+        <a href="../index.html">Accueil</a
+        ><a href="../index.html#apropos">À propos</a
+        ><a href="../index.html#domaines">Domaines</a
+        ><a href="../index.html#projets">Projets</a
+        ><a href="../index.html#competences">Compétences</a
+        ><a href="../index.html#ressources">Ressources</a
+        ><a href="../blog/index.html">Blog</a
+        ><a href="../index.html#demarche">Ma démarche</a
+        ><a
+          href="../index.html#contact"
+          style="color: var(--blue); font-weight: 600"
+          >Contact</a
+        >
+      </div>
+    </nav>
+    <main id="main" class="case">
+      <div class="wrap">
+        <nav class="crumb" aria-label="Fil d'Ariane">
+          <a href="../index.html">Accueil</a> ›
+          <a href="../index.html#projets">Projets</a> ›
+          <span aria-current="page">DockFlow</span>
+        </nav>
+        <div class="row" style="margin-top: 20px">
+          <span class="st st-dev"
+            ><i class="fa-solid fa-gear" aria-hidden="true"></i>En
+            développement</span
+          >
+        </div>
+        <h1>DockFlow</h1>
+        <p class="lead2">
+          Extraction intelligente de commandes portuaires reçues par e-mail,
+          transformées en données JSON structurées et validées.
+        </p>
+        <div class="chips">
+          <span>Python</span><span>FastAPI</span><span>Pydantic</span
+          ><span>PydanticAI</span>
+        </div>
+        <h2>Contexte</h2>
+        <p>
+          Une entreprise de manutention portuaire (acconier) reçoit ses
+          commandes de dockers par e-mail : nombre de personnes par métier,
+          équipes de jour ou de nuit, durée, client.
+        </p>
+        <h2>Le problème</h2>
+        <p>
+          Ces informations sont écrites en texte libre et doivent être relues
+          puis ressaisies à la main.
+        </p>
+        <h2>L'objectif</h2>
+        <p>
+          Transformer chaque e-mail en données structurées et vérifiées,
+          utilisables ensuite dans un système de gestion.
+        </p>
+        <h2>L'approche technique</h2>
+        <p>
+          Un agent d'extraction (PydanticAI) lit le texte de l'e-mail. Les
+          données sont validées par des modèles Pydantic puis par des règles
+          métier, et exposées par une API FastAPI. Règle prévue : si la
+          validation échoue, le cas est envoyé à une personne pour relecture.
+        </p>
+        <h2>Fonctionnalités réellement développées</h2>
+        <ul class="bul">
+          <li>Extraction testée sur un lot d'e-mails d'essai</li>
+          <li>Validation des données avec des modèles typés</li>
+          <li>Import de données fictives dans un Odoo 19 de test</li>
+        </ul>
+        <h2>Résultats observés</h2>
+        <p>
+          Les résultats de l'extraction sur les e-mails d'essai sont en cours
+          d'analyse. Aucun taux de réussite n'est publié à ce stade.
+        </p>
+        <div class="limits">
+          <h2 style="margin-top: 0">Limites actuelles</h2>
+          <ul class="bul">
+            <li>Projet en développement, non déployé.</li>
+            <li>
+              Testé sur des e-mails d'essai, pas sur des commandes réelles.
+            </li>
+            <li>Aucun client payant confirmé à ce jour.</li>
+            <li>
+              L'intégration Odoo n'est pas réalisée : seul un environnement de
+              test existe.
+            </li>
+          </ul>
+        </div>
+        <h2>Prochaines étapes</h2>
+        <ul class="bul">
+          <li>Analyser et documenter les résultats de l'extraction.</li>
+          <li>Brancher la réception des e-mails via n8n.</li>
+          <li>Intégrer les données validées dans Odoo.</li>
+        </ul>
+        <p class="note">
+          Aucune capture ni démonstration publique n'est affichée pour
+          l'instant. Une démonstration peut être présentée sur demande.
+        </p>
+        <div class="actions">
+          <a class="btn-primary" href="../index.html#contact"
+            >Discuter de ce projet</a
+          ><a class="btn-ghost" href="../index.html#projets"
+            >Tous les projets</a
+          >
+        </div>
+      </div>
+    </main>
+    <footer class="foot">
+      <div class="wrap">
+        <img
+          src="../assets/logo-mark.webp"
+          alt=""
+          width="40"
+          height="32"
+          style="margin: 0 auto 10px"
+        />
+        <p class="notranslate">
+          <b>Virtuel All Tech</b> — Together, we find a solution.
+        </p>
+        <p style="margin-top: 6px">
+          <a href="../index.html#projets">Projets</a> ·
+          <a href="../blog/index.html">Blog</a> ·
+          <a href="../index.html#contact">Contact</a> ·
+          <a href="https://github.com/virtuelalltech">GitHub</a>
+        </p>
+        <p style="margin-top: 10px">
+          &copy; 2026 SIKATI Yves Joseph. Yaoundé, Cameroun.
+        </p>
+      </div>
+    </footer>
+    <a
+      href="https://wa.me/237673219281"
+      class="wa"
+      aria-label="Écrire sur WhatsApp"
+      ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+    ></a>
+    <script src="../JS/script.js"></script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "db24ebf8fad44c9cbbed8fff01a108ca"}'
+    ></script>
+  </body>
+</html>

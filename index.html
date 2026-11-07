@@ -1,445 +1,868 @@
-<!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yves Virtuel | Consultant en Automatisation & IA Générative pour PME</title>
-
-    <!-- Meta description -->
-    <meta name="description" content="Yves Virtuel, alias Virtuel All Tech, consultant en automatisation et IA générative pour PME à Yaoundé. Gagnez du temps et réduisez vos coûts : AutoPost réseaux sociaux, Assistant IA RAG et automatisation sur mesure via n8n et Python.">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="profile">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:site_name" content="Virtuel All Tech">
-    <meta property="fb:app_id" content="1017580981146172">
-    <meta property="og:title" content="Yves Virtuel | Consultant en Automatisation & IA Générative pour PME">
-    <meta property="og:description" content="Gagnez du temps et réduisez vos coûts grâce à l'IA générative et à l'automatisation. AutoPost réseaux sociaux, Assistant IA RAG et automatisation sur mesure via n8n et Python.">
-    <meta property="og:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp">
-    <meta property="og:image:alt" content="Sikati Yves Joseph — Consultant en Automatisation & IA Générative">
-    <meta property="og:url" content="https://yves-virtuel-website.eufyves.workers.dev/">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Yves Virtuel | Consultant en Automatisation & IA Générative pour PME">
-    <meta name="twitter:description" content="Gagnez du temps et réduisez vos coûts grâce à l'IA générative et l'automatisation. AutoPost réseaux sociaux, Assistant IA RAG et automatisation sur mesure via n8n et Python.">
-    <meta name="twitter:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp">
-    <meta name="twitter:image:alt" content="Sikati Yves Joseph — Consultant en Automatisation & IA Générative">
-
-    <!-- Schema.org : Profil + Service professionnel -->
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Yves Joseph SIKATI — Solutions métier intelligentes | Virtuel All Tech
+    </title>
+    <meta
+      name="description"
+      content="Automatisation, API métier, IA appliquée et intégration Odoo : des solutions technologiques pensées pour vos défis métier. Projets, compétences et démarche."
+    />
+    <link
+      rel="canonical"
+      href="https://virtuel-all-tech.pages.dev/"
+    />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Virtuel All Tech" />
+    <meta
+      property="og:title"
+      content="Yves Joseph SIKATI — Solutions métier intelligentes | Virtuel All Tech"
+    />
+    <meta
+      property="og:description"
+      content="Automatisation, API métier, IA appliquée et intégration Odoo : des solutions technologiques pensées pour vos défis métier. Projets, compétences et démarche."
+    />
+    <meta
+      property="og:url"
+      content="https://virtuel-all-tech.pages.dev/"
+    />
+    <meta
+      property="og:image"
+      content="https://virtuel-all-tech.pages.dev/assets/og-image.png"
+    />
+    <meta property="og:image:alt" content="Logo Virtuel All Tech" />
+    <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves-virtuel",
-          "name": "Sikati Yves Joseph",
-          "alternateName": "Yves Virtuel / Virtuel All Tech",
-          "jobTitle": "Consultant en Automatisation & IA Générative pour PME",
-          "email": "eufyves@gmail.com",
-          "image": "https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp",
-          "url": "https://yves-virtuel-website.eufyves.workers.dev/",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Yaoundé",
-            "addressCountry": "CM"
-          },
-          "sameAs": [
-            "https://www.linkedin.com/in/sikati-yves-joseph-039215330",
-            "https://web.facebook.com/profile.php?id=61592080066219",
-            "https://www.tiktok.com/@virtuel.all.tech",
-            "https://whatsapp.com/channel/0029Vb6fWEdCcW4hXGiJyR3b"
-          ],
-          "knowsAbout": ["Automatisation", "IA Générative", "n8n", "Python", "RAG", "Data"]
-        },
-        {
-          "@type": "ProfessionalService",
-          "@id": "https://yves-virtuel-website.eufyves.workers.dev/#service",
-          "name": "Virtuel All Tech",
-          "description": "Consulting en automatisation et IA générative pour PME : AutoPost réseaux sociaux, Assistant IA RAG et automatisation sur mesure.",
-          "image": "https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp",
-          "url": "https://yves-virtuel-website.eufyves.workers.dev/",
-          "email": "eufyves@gmail.com",
-          "areaServed": "Cameroun",
-          "slogan": "L'IA & l'Automatisation au service de votre Croissance",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Yaoundé",
-            "addressCountry": "CM"
-          },
-          "founder": { "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves-virtuel" },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Services d'automatisation et IA",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "AutoPost Réseaux Sociaux",
-                  "description": "Automatisez vos publications Facebook et LinkedIn : planifiez, publiez et économisez jusqu'à plusieurs heures de gestion manuelle par jour. Pour agences et indépendants. Sur base de n8n + API Facebook Graph / LinkedIn."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Assistant IA RAG",
-                  "description": "Assistant IA qui connaît vos documents et répond à vos clients 24h/7. Prototype / démo — ex. assistant juridique (code pénal/civil camerounais) et assistant support client e-commerce. IA générative + RAG."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Automatisation / Automatisation + IA",
-                  "description": "Connectez vos outils et automatisez vos tâches répétitives sans effort — ex. Gmail, Google Calendar ou votre ERP. Webhooks + n8n + Python."
-                }
-              }
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://virtuel-all-tech.pages.dev/#yves",
+            "name": "Yves Joseph SIKATI",
+            "jobTitle": "Concepteur de solutions métier intelligentes",
+            "email": "eufyves@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Yaoundé",
+              "addressCountry": "CM"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/sikati-yves-joseph-039215330",
+              "https://github.com/virtuelalltech",
+              "https://www.tiktok.com/@virtuel.all.tech"
             ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "name": "Virtuel All Tech",
+            "url": "https://virtuel-all-tech.pages.dev/",
+            "areaServed": "CM",
+            "founder": {
+              "@id": "https://virtuel-all-tech.pages.dev/#yves"
+            }
           }
-        }
-      ]
-    }
+        ]
+      }
     </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/style.css">
-</head>
-<body class="bg-slate-900 text-slate-300 font-sans antialiased overflow-x-hidden">
-
-    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
-    <div class="container mx-auto px-3 h-20 flex justify-between items-center">
-    <a href="#" class="flex items-center gap-4">
-        <img src="assets/logo-virtuel-all-tech.webp" alt="Logo" class="h-16 md:h-20 w-auto drop-shadow-2xl block">
-    
-        <span class="notranslate flex flex-col justify-center" translate="no" style="font-family: 'Orbitron', sans-serif;">
-            <span class="text-xl md:text-3xl font-black tracking-wider text-blue-500">
-            Virtuel All Tech
-            </span>
-            <span class="h-0.5 w-12 bg-blue-600/50 mt-1 rounded-full"></span>
-        </span>
-    </a>
-
-        <div class="hidden md:flex space-x-8 font-semibold text-base items-center">
-            <a href="#offres" class="text-slate-300 hover:text-blue-400 transition">Mes Services</a>
-            <a href="#ressources" class="text-slate-300 hover:text-blue-400 transition">Resources</a>
-            <a href="#bio" class="text-slate-300 hover:text-blue-400 transition">Qui suis-je?</a>
-            <a href="blog/index.html" class="text-slate-300 hover:text-blue-400 transition">Blog</a>
-            <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-500 transition shadow-lg shadow-blue-500/30">Contact</a>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Aller au contenu</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="wrap container">
+        <a href="#" class="brand notranslate" translate="no"
+          ><img
+            src="assets/logo-mark.webp"
+            alt=""
+            width="40"
+            height="32"
+          /><span>Virtuel All Tech</span></a
+        >
+        <div class="links">
+          <a href="#" aria-current="page" class="cur">Accueil</a
+          ><a href="#apropos">À propos</a><a href="#domaines">Domaines</a
+          ><a href="#projets">Projets</a><a href="#competences">Compétences</a
+          ><a href="#ressources">Ressources</a><a href="blog/index.html">Blog</a
+          ><a
+            href="#contact"
+            class="btn-primary"
+            style="padding: 9px 20px; color: #fff"
+            >Contact</a
+          >
         </div>
-
-        <button id="menu-toggle" class="md:hidden text-slate-300 p-2">
-            <i class="fa-solid fa-bars text-2xl"></i>
+        <button
+          id="menu-toggle"
+          class="burger"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
-    </div>
-    
-    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 w-full p-6 space-y-4 shadow-2xl text-center">
-        <a href="#offres" class="block py-2 text-white hover:text-blue-400">Mes Services</a>
-        <a href="#ressources" class="block py-2 text-white hover:text-blue-400">Resources</a>
-        <a href="#bio" class="block py-2 text-white hover:text-blue-400">Qui suis-je?</a>
-        <a href="blog/index.html" class="block py-2 text-white hover:text-blue-400">Blog</a>
-        <a href="#contact" class="block text-blue-400 font-bold py-2 border-t border-slate-800 mt-2">Contact</a>
-    </div>
-</nav>
-
-    <header class="pt-40 pb-20 px-4 bg-gradient-to-b from-black to-slate-900 overflow-hidden">
-        <div class="container mx-auto max-w-5xl text-center flex flex-col items-center">
-            <span class="bg-blue-900/50 text-blue-400 border border-blue-800 px-5 py-1.5 rounded-full text-sm font-bold uppercase tracking-wide" data-aos="fade-down">Bienvenue 👋</span>
-            
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-8 mb-6 leading-tight" data-aos="fade-up" data-aos-delay="200">
-                L'IA & l'Automatisation au service de votre <span class="text-blue-500 italic">Croissance</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="400">
-                Gagnez du temps et réduisez vos coûts grâce à l'IA générative et aux systèmes connectés. Une automatisation à la fois.
+      </div>
+      <div id="mobile-menu" class="mobile-menu hidden">
+        <a href="#" aria-current="page" class="cur">Accueil</a
+        ><a href="#apropos">À propos</a><a href="#domaines">Domaines</a
+        ><a href="#projets">Projets</a><a href="#competences">Compétences</a
+        ><a href="#ressources">Ressources</a><a href="blog/index.html">Blog</a
+        ><a href="#demarche">Ma démarche</a
+        ><a href="#contact" style="color: var(--blue); font-weight: 600"
+          >Contact</a
+        >
+      </div>
+    </nav>
+    <main id="main">
+      <header class="hero">
+        <div class="wrap">
+          <div>
+            <p class="hello">
+              SIKATI Yves Joseph · Concepteur de solutions métier intelligentes
             </p>
-            
-            <div class="mb-16 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="600">
-    <div class="w-64 h-64 rounded-2xl bg-slate-800 overflow-hidden shadow-2xl shadow-blue-500/20 border-4 border-slate-800 hero-image-container">
-        <img src="assets/yves-profile.webp" alt="Yves Virtuel" loading="eager" fetchpriority="high" class="w-full h-full object-cover transition-all duration-500 hover:grayscale cursor-pointer">
-    </div>
-    
-    <div class="mt-5 flex flex-wrap justify-center gap-3">
-        <div class="bg-slate-800 px-6 py-2.5 rounded-full shadow-lg border border-slate-700 text-slate-300 font-semibold text-sm flex items-center">
-            <i class="fa-solid fa-envelope text-blue-400 mr-3"></i> eufyves@gmail.com
-        </div>
-
-        <a href="assets/CV _Yves_update02_2026.pdf" target="_blank" class="bg-blue-600/10 px-6 py-2.5 rounded-full shadow-lg border border-blue-500/30 text-blue-400 font-semibold text-sm flex items-center hover:bg-blue-600 hover:text-white transition-all duration-300">
-            <i class="fa-solid fa-file-pdf mr-3"></i> Voir mon CV
-        </a>
-        </div>
-    </div>
-
-            <div class="flex flex-col sm:flex-row justify-center gap-5" data-aos="fade-up" data-aos-delay="800">
-                <a href="#contact" class="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition-colors">Démarrer un projet</a>
-                <a href="#ressources" class="bg-slate-800 border border-slate-700 text-slate-300 px-10 py-4 rounded-xl font-bold hover:bg-slate-700 transition">Voir mes Ebooks</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="offres" class="py-24 bg-slate-900 border-t border-slate-800">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-white" data-aos="fade-up">Mes Services 💼</h2>
-            <div class="h-1 w-16 bg-blue-500 mx-auto mt-4 rounded-full" data-aos="fade-up"></div>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-[2rem] border border-slate-800 bg-slate-800/50 hover:bg-slate-800 hover:border-blue-500 transition-all duration-300 group shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                <div class="bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-slate-700 group-hover:border-blue-500 transition-colors">
-                    <i class="fa-solid fa-share-nodes text-3xl text-blue-400"></i>
-                </div>
-                <h3 class="mb-4 text-sm font-bold uppercase tracking-wide text-white">AutoPost Réseaux Sociaux</h3>
-                <p class="text-slate-400 text-sm mb-3 leading-relaxed">Automatisation intelligente de vos contenus sur Facebook & LinkedIn.</p>
-                <span class="text-xs font-bold text-blue-500 uppercase tracking-wider block mb-3">n8n + API Facebook Graph/LinkedIn</span>
-                <p class="text-slate-500 text-xs leading-relaxed">Résultat client : jusqu'à 4h de gestion manuelle récupérées par jour, pour une agence immobilière à Yaoundé.</p>
-            </div>
-            
-            <div class="p-8 rounded-[2rem] border border-slate-800 bg-slate-800/50 hover:bg-slate-800 hover:border-blue-500 transition-all duration-300 group shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                <div class="bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-slate-700 group-hover:border-blue-500 transition-colors">
-                    <i class="fa-solid fa-robot text-3xl text-blue-400"></i>
-                </div>
-                <h3 class="mb-4 text-sm font-bold uppercase tracking-wide text-white">Assistant IA RAG</h3>
-                <p class="text-slate-400 text-sm mb-3 leading-relaxed">Un assistant intelligent qui connaît vos documents pour un support client 24h/7.</p>
-                <span class="text-xs font-bold text-blue-500 uppercase tracking-wider block mb-3">IA Générative + RAG</span>
-                <p class="text-slate-500 text-xs leading-relaxed">Prototype / Démo | ex. : assistant juridique s'appuyant sur le droit code pénal / civil camerounais etc.</p>
-            </div>
-            
-            <div class="p-8 rounded-[2rem] border border-slate-800 bg-slate-800/50 hover:bg-slate-800 hover:border-blue-500 transition-all duration-300 group shadow-lg" data-aos="fade-up" data-aos-delay="500">
-                <div class="bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-slate-700 group-hover:border-blue-500 transition-colors">
-                    <i class="fa-solid fa-bolt text-3xl text-blue-400"></i>
-                </div>
-                <h3 class="mb-4 text-sm font-bold uppercase tracking-wide text-white">Automatisation / Automatisation + IA</h3>
-                <p class="text-slate-400 text-sm mb-3 leading-relaxed">Connectez vos outils et automatisez vos tâches répétitives sans effort.</p>
-                <span class="text-xs font-bold text-blue-500 uppercase tracking-wider block mb-3">Webhooks + n8n + Python</span>
-                <p class="text-slate-500 text-xs leading-relaxed">Ex. : connexion Gmail, Google Calendar, ou votre ERP à des workflows automatisés.</p>
-            </div>
-        </div>
-
-        <div class="text-center mt-16" data-aos="fade-up">
-            <p class="text-slate-400 text-sm mb-4 italic">Un projet urgent ?</p>
-            <a href="https://wa.me/237673219281" class="inline-flex items-center gap-2 bg-green-600/10 text-green-500 border border-green-600/20 px-6 py-3 rounded-xl hover:bg-green-600 hover:text-white transition-all font-bold">
-                <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp Direct
-            </a>
-        </div>
-        
-    </div>
-</section>
-
-    <section id="ressources" class="py-24 bg-black border-t border-slate-800">
-    <div class="container mx-auto px-4 max-w-4xl">
-        <h2 class="text-3xl font-bold text-center mb-4 text-white" data-aos="fade-up">🎁 Ressources Gratuites</h2>
-        <p class="text-slate-400 text-center mb-16" data-aos="fade-up" data-aos-delay="200">Des outils pour vous former et automatiser votre quotidien.</p>
-        
-        <div class="space-y-6">
-            <div class="bg-slate-800/80 p-6 rounded-2xl shadow-lg border border-slate-700 flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-up">
-                <div class="flex items-center gap-5 text-left">
-                    <div class="bg-slate-900 border border-slate-700 p-4 rounded-xl text-blue-400 font-bold">PDF</div>
-                    <div>
-                        <h4 class="font-bold text-white text-lg">L’Alphabet de l’IA & Data 2025</h4>
-                        <p class="text-sm text-slate-400 italic mb-2">Le glossaire essentiel pour comprendre les concepts clés.</p>
-                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-lg text-[10px] font-bold text-blue-400 uppercase tracking-wider">
-                            <i class="fa-solid fa-download"></i> +200 téléchargements | France 39%
-                        </div>
-                    </div>
-                </div>
-                <div class="flex gap-3 w-full md:w-auto">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScZY3uhxbuNbQcCdb31_TB0-moTD7EWQKeTkEYD2XvUcc7u_Q/viewform?usp=dialog" class="flex-1 md:flex-none text-center bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-500 transition">FR</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-S0y6rmAPFpzb45cftKPpZBu6cU0i7eTCvSWORE_DuCTsSw/viewform" class="flex-1 md:flex-none text-center bg-slate-700 text-slate-200 px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-slate-600 transition border border-slate-600">EN</a>
-                </div>
-            </div>
-            
-            <div class="bg-slate-800/80 p-6 rounded-2xl shadow-lg border border-slate-700 flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-up" data-aos-delay="150">
-                <div class="flex items-center gap-5 text-left">
-                    <div class="bg-slate-900 border border-slate-700 p-4 rounded-xl text-blue-400 font-bold text-xs uppercase tracking-widest">PDF</div>
-                    <div>
-                        <h4 class="font-bold text-white text-lg">20 Prompts prêts à l’emploi</h4>
-                        <p class="text-sm text-slate-400 italic mb-2">Gagnez du temps au travail dès aujourd'hui.</p>
-                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-lg text-[10px] font-bold text-blue-400 uppercase tracking-wider">
-                            <i class="fa-solid fa-download"></i> +178 téléchargements | Cameroun 23%
-                        </div>
-                    </div>
-                </div>
-                <div class="flex gap-3 w-full md:w-auto">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScBOIeIABBexYtjmOOAK7B7H5SW5waUnJQVWOjO973vHHz1Tg/viewform?usp=header" class="flex-1 md:flex-none text-center bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-500 transition">FR</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScK3tdYA0dxHaCXSfFLI3c3CfjgEuEjkSnoeLsPqRrfduLIoQ/viewform?usp=header" class="flex-1 md:flex-none text-center bg-slate-700 text-slate-200 px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-slate-600 transition border border-slate-600">EN</a>
-                </div>
-            </div>
-
-            <div class="bg-slate-800/80 p-6 rounded-2xl shadow-lg border border-blue-900/50 border-l-4 border-l-blue-500 flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="flex items-center gap-5 text-left">
-                    <div class="bg-slate-900 border border-slate-700 p-4 rounded-xl text-blue-400 font-bold text-xs uppercase tracking-widest">PDF</div>
-                    <div>
-                        <h4 class="font-bold text-white text-lg">Comprendre le RAG : Simple Guide </h4>
-                        <p class="text-sm text-slate-400 italic mb-2">Cas d'usage et applications pratiques.</p>
-                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-lg text-[10px] font-bold text-blue-400 uppercase tracking-wider">
-                            <i class="fa-solid fa-download"></i> +50 téléchargements
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center md:items-end gap-2 w-full md:w-auto">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSekd-M6k285MsJXHRNF2Gc4XHogAq6K5tY5MmvLiq1e3Yk7kw/viewform?usp=publish-editor" class="w-full md:w-auto text-center bg-blue-600 text-white px-8 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-500 transition">FR</a>
-                    <span class="text-xs text-slate-500 italic mt-1">Version EN bientôt disponible</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="mt-16 bg-gradient-to-br from-slate-900 to-black p-8 rounded-3xl border border-slate-800 text-center" data-aos="fade-up">
-            <h3 class="text-xl font-bold text-white mb-4">🚀 Découvrir plus de ressources</h3>
-            <p class="text-slate-400 text-sm mb-8 max-w-lg mx-auto">
-                Accédez à mon espace Notion dédié : Documentation MCP , Gemini, outils.
+            <h1>Des solutions technologiques pensées pour vos défis métier.</h1>
+            <p class="lead">
+              Automatisation, intelligence artificielle appliquée et intégration
+              de systèmes. Je conçois des outils simples et fiables, adaptés à
+              la réalité des entreprises.
             </p>
-            <a href="https://safe-taxicab-e9d.notion.site/Centre-de-Ressources-Yves-Virtuel-2a872d336c2e805892d5f712eec114e0" target="_blank" class="inline-flex items-center gap-3 bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-blue-500 hover:text-white transition-all duration-300">
-                <i class="fa-solid fa-up-right-from-square"></i> Explorer sur Notion
-            </a>
-        </div>
-    </div>
-</section>
-    
-    <section id="bio" class="py-24 bg-slate-900 border-t border-slate-800 overflow-hidden">
-    <div class="container mx-auto px-4 max-w-6xl">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">👨‍💼 Qui suis-je ?</h2>
-            <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
-        </div>
-
-        <div class="flex flex-col md:flex-row gap-16 items-center">
-            <div class="md:w-1/2" data-aos="fade-right">
-                <p class="text-slate-400 mb-6 text-lg leading-relaxed">
-                    Moi c’est <strong class="text-white">SIKATI Yves Joseph</strong>. Titulaire d’une Licence en Mathématiques fondamentales, je crois que l’IA et la Data doivent être au service des humains, et non l’inverse.
-                </p>
-                <p class="text-slate-400 mb-6 text-lg leading-relaxed">
-                    Autodidacte en IA et Data, je combine rigueur mathématique et maîtrise de l’IA Générative pour concevoir des solutions d’automatisation concrètes apprises en construisant, pas seulement en théorie.
-                </p>
-                <p class="text-slate-400 mb-8 text-lg leading-relaxed">
-                    Ma mission est de démocratiser l’IA pour le marché africain, aider les entreprises et indépendants à l’intégrer de manière sécurisée et progressive, et gagner du temps en automatisant leurs tâches répétitives.
-                </p>
-
-                <div class="flex items-center gap-6 mt-10">
-                    <span class="text-white font-bold text-sm uppercase tracking-wider">Me suivre :</span>
-                    <div class="flex gap-4">
-                        <a href="https://whatsapp.com/channel/0029Vb6fWEdCcW4hXGiJyR3b" class="text-slate-400 hover:text-green-500 text-2xl transition-all duration-300 hover:-translate-y-1">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/sikati-yves-joseph-039215330" class="text-slate-400 hover:text-blue-500 text-2xl transition-all duration-300 hover:-translate-y-1">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61593783300118" class="text-slate-400 hover:text-blue-400 text-2xl transition-all duration-300 hover:-translate-y-1">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@virtuel.all.tech" class="text-slate-400 hover:text-white text-2xl transition-all duration-300 hover:-translate-y-1">
-                            <i class="fa-brands fa-tiktok"></i>
-                        </a>
-                    </div>
-                </div>
+            <div class="actions">
+              <a href="#projets" class="btn-primary">Voir mes projets</a
+              ><a href="#contact" class="btn-ghost">Discuter d'un besoin</a>
             </div>
-            
-            <div class="md:w-1/2 bg-slate-800/50 p-10 rounded-[3rem] border border-slate-700 w-full" data-aos="fade-left">
-                <h3 class="text-xl font-bold mb-8 text-white text-center md:text-left">Parcours & Certifications 🎓</h3>
-                <ul class="space-y-4">
-                    <li class="flex gap-4 items-center bg-slate-900 p-5 rounded-2xl border border-slate-700 shadow-sm">
-                        <i class="fa-solid fa-graduation-cap text-blue-500 text-xl"></i>
-                        <span class="text-sm font-bold uppercase tracking-wide text-white">Anthropic AI Fluency & Foundations (2026)</span>
-                    </li>
-                    <li class="flex gap-4 items-center bg-slate-900 p-5 rounded-2xl border border-slate-700 shadow-sm">
-                        <i class="fa-solid fa-award text-blue-500 text-xl"></i>
-                        <span class="text-sm font-bold uppercase tracking-wide text-white">IBM AI Fundamentals (2025)</span>
-                    </li>
-                    <li class="flex gap-4 items-center bg-slate-900 p-5 rounded-2xl border border-slate-700 shadow-sm">
-                        <i class="fa-solid fa-chart-pie text-blue-500 text-xl"></i>
-                        <span class="text-sm font-bold uppercase tracking-wide text-white">Data Visualisation - Deloitte (2025)</span>
-                    </li>
+            <p class="status">
+              <i></i><span class="notranslate">Virtuel All Tech</span> —
+              Together, we find a solution.
+            </p>
+          </div>
+          <div class="photo">
+            <img
+              src="assets/logo-virtuel-all-tech.png"
+              alt="Logo de Virtuel All Tech"
+              width="200"
+              height="200"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </header>
+      <section
+        class="alt"
+        style="padding: 40px 0; border-top: 1px solid var(--line)"
+        aria-labelledby="une"
+      >
+        <div class="wrap">
+          <h2 id="une" style="font-size: 1.1rem; margin-bottom: 16px">
+            À la une
+          </h2>
+          <div class="grid g2">
+            <a class="card" href="projets/vatpost.html"
+              ><div class="body">
+                <div class="row">
+                  <span class="st st-done"
+                    ><i class="fa-solid fa-circle-check" aria-hidden="true"></i
+                    >Réalisé</span
+                  >
+                </div>
+                <h3>VATPOST</h3>
+                <p>
+                  Publication automatique de textes et d'images sur plusieurs
+                  pages Facebook à partir d'un Google Sheet, pour une agence
+                  immobilière de Yaoundé.
+                </p>
+              </div></a
+            ><a class="card" href="projets/dockflow.html"
+              ><div class="body">
+                <div class="row">
+                  <span class="st st-dev"
+                    ><i class="fa-solid fa-gear" aria-hidden="true"></i>En
+                    développement</span
+                  >
+                </div>
+                <h3>DockFlow</h3>
+                <p>
+                  Extraction intelligente de commandes portuaires reçues par
+                  e-mail, transformées en données JSON structurées et validées.
+                </p>
+              </div></a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="apropos" class="section">
+        <div class="wrap about">
+          <img
+            class="photo-sq"
+            src="assets/yves-profile.webp"
+            alt="Yves Joseph SIKATI, fondateur de Virtuel All Tech"
+            width="260"
+            height="260"
+            loading="lazy"
+          />
+          <div>
+            <h2 class="section-title">À propos</h2>
+            <p>
+              Je m'appelle Yves Joseph SIKATI, fondateur de Virtuel All Tech, à
+              Yaoundé. Titulaire d'une Licence en mathématiques fondamentales,
+              je me spécialise en programmation Python, en développement d'API
+              et en intelligence artificielle appliquée aux processus métier.
+            </p>
+            <p>
+              J'apprends en construisant. Chaque projet présenté ici répond à un
+              problème concret, et j'indique toujours son état réel : réalisé,
+              prototype ou en développement.
+            </p>
+            <p>
+              <b>Notre philosophie :</b> la technologie doit résoudre un
+              problème réel, pas simplement impressionner. Virtuel All Tech est
+              une marque technologique personnelle, en construction, qui vise
+              des solutions fiables, compréhensibles et utilisées au quotidien
+              par les équipes.
+            </p>
+            <h3 style="margin-top: 24px; font-size: 1.1rem">Certifications</h3>
+            <ul class="list">
+              <li>Anthropic AI Fluency et Foundations (2026)</li>
+              <li>Anthropic AI Foundations (2025)</li>
+              <li>IBM AI Fundamentals (2025)</li>
+              <li>Hugging Face, NLP (2025)</li>
+              <li>Forage, Data Analytics (2025)</li>
+              <li>Forage, Automation (2025)</li>
+              <li>Deloitte, Data Visualisation (2025)</li>
+              <li>AI Engine (2025)</li>
+            </ul>
+            <div class="socials">
+              <a
+                href="assets/CV _Yves_update02_2026.pdf"
+                target="_blank"
+                rel="noopener"
+                class="btn-ghost"
+                style="font-size: 0.9rem; padding: 9px 18px"
+                ><i class="fa-solid fa-file-pdf" aria-hidden="true"></i
+                >Télécharger mon CV</a
+              >
+              <a
+                href="https://www.linkedin.com/in/sikati-yves-joseph-039215330"
+                aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin"></i></a
+              ><a href="https://github.com/virtuelalltech" aria-label="GitHub"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61592080066219"
+                aria-label="Facebook"
+                ><i class="fa-brands fa-facebook"></i></a
+              ><a
+                href="https://www.tiktok.com/@virtuel.all.tech"
+                aria-label="TikTok"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+              <a
+                href="https://whatsapp.com/channel/0029Vb6fWEdCcW4hXGiJyR3b"
+                aria-label="Chaîne WhatsApp"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="domaines" class="section alt">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Domaines d'intervention</h2>
+            <p>Des problèmes concrets, avant les technologies.</p>
+          </div>
+          <div class="grid g2">
+            <article class="card">
+              <div class="body">
+                <i class="fa-solid fa-bolt icon" aria-hidden="true"></i>
+                <h3>Automatisation des processus métier</h3>
+                <p>
+                  <b>Le problème :</b> Vos équipes recopient les mêmes
+                  informations d'un outil à l'autre.
+                </p>
+                <p>
+                  <b>Ce que je fais :</b> Je relie vos outils pour que chaque
+                  information ne soit saisie qu'une fois.
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="body">
+                <i class="fa-solid fa-code icon" aria-hidden="true"></i>
+                <h3>Applications et API métier</h3>
+                <p>
+                  <b>Le problème :</b> Vos données sont dispersées entre
+                  fichiers, messages et tableurs.
+                </p>
+                <p>
+                  <b>Ce que je fais :</b> Je conçois de petites applications et
+                  des interfaces (API) qui les centralisent proprement.
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="body">
+                <i class="fa-solid fa-brain icon" aria-hidden="true"></i>
+                <h3>Intelligence artificielle appliquée</h3>
+                <p>
+                  <b>Le problème :</b> Vos documents et e-mails contiennent des
+                  informations utiles, mais difficiles à exploiter.
+                </p>
+                <p>
+                  <b>Ce que je fais :</b> J'utilise l'IA pour les lire et les
+                  structurer, puis je vérifie les résultats avant tout usage.
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="body">
+                <i class="fa-solid fa-plug icon" aria-hidden="true"></i>
+                <h3>Intégration de systèmes et ERP</h3>
+                <p>
+                  <b>Le problème :</b> Vos outils ne communiquent pas avec votre
+                  logiciel de gestion.
+                </p>
+                <p>
+                  <b>Ce que je fais :</b> Je travaille notamment sur Odoo pour
+                  connecter vos outils à vos données de gestion.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="projets" class="section">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Projets et réalisations</h2>
+            <p>
+              Chaque projet porte son statut réel. Les pages détaillées
+              indiquent aussi les limites actuelles.
+            </p>
+          </div>
+          <div class="legend">
+            <span class="st st-done"
+              ><i class="fa-solid fa-circle-check" aria-hidden="true"></i
+              >Réalisé</span
+            ><span class="st st-proto"
+              ><i class="fa-solid fa-flask" aria-hidden="true"></i
+              >Prototype</span
+            ><span class="st st-dev"
+              ><i class="fa-solid fa-gear" aria-hidden="true"></i>En
+              développement</span
+            ><span class="st st-poc"
+              ><i class="fa-solid fa-lightbulb" aria-hidden="true"></i>Preuve de
+              concept</span
+            >
+          </div>
+          <div class="grid g2">
+            <article class="card">
+              <div class="body">
+                <div class="row">
+                  <i class="fa-brands fa-facebook icon" aria-hidden="true"></i
+                  ><span class="st st-done"
+                    ><i class="fa-solid fa-circle-check" aria-hidden="true"></i
+                    >Réalisé</span
+                  >
+                </div>
+                <h3>VATPOST</h3>
+                <p>
+                  <b>Problème abordé :</b> Publier à la main sur plusieurs pages
+                  Facebook prend du temps chaque jour.
+                </p>
+                <p>
+                  Publication automatique de textes et d'images sur plusieurs
+                  pages Facebook à partir d'un Google Sheet, pour une agence
+                  immobilière de Yaoundé.
+                </p>
+                <div class="chips">
+                  <span>n8n</span><span>API Meta Graph</span
+                  ><span>Google Sheets</span>
+                </div>
+                <a
+                  href="projets/vatpost.html"
+                  class="btn-sm"
+                  aria-label="Voir le projet VATPOST"
+                  >Voir le projet
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+                ></a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="body">
+                <div class="row">
+                  <i class="fa-solid fa-ship icon" aria-hidden="true"></i
+                  ><span class="st st-dev"
+                    ><i class="fa-solid fa-gear" aria-hidden="true"></i>En
+                    développement</span
+                  >
+                </div>
+                <h3>DockFlow</h3>
+                <p>
+                  <b>Problème abordé :</b> Les commandes de main-d'œuvre
+                  arrivent par e-mail en texte libre et sont ressaisies à la
+                  main.
+                </p>
+                <p>
+                  Extraction intelligente de commandes portuaires reçues par
+                  e-mail, transformées en données JSON structurées et validées.
+                </p>
+                <div class="chips">
+                  <span>Python</span><span>FastAPI</span><span>Pydantic</span
+                  ><span>PydanticAI</span>
+                </div>
+                <a
+                  href="projets/dockflow.html"
+                  class="btn-sm"
+                  aria-label="Voir le projet DockFlow"
+                  >Voir le projet
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+                ></a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="body">
+                <div class="row">
+                  <i class="fa-solid fa-cubes icon" aria-hidden="true"></i
+                  ><span class="st st-poc"
+                    ><i class="fa-solid fa-lightbulb" aria-hidden="true"></i
+                    >Preuve de concept</span
+                  >
+                </div>
+                <h3>Odoo AI Copilot</h3>
+                <p>
+                  <b>Problème abordé :</b> Un ERP offre tant de fonctions que
+                  les utilisateurs s'y perdent.
+                </p>
+                <p>
+                  Exploration de l'interaction entre un assistant IA et un ERP
+                  Odoo, via le protocole MCP.
+                </p>
+                <div class="chips">
+                  <span>Odoo 19</span><span>MCP</span
+                  ><span>Claude Desktop</span>
+                </div>
+                <a
+                  href="projets/odoo-ai-copilot.html"
+                  class="btn-sm"
+                  aria-label="Voir le projet Odoo AI Copilot"
+                  >Voir le projet
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+                ></a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="body">
+                <div class="row">
+                  <i
+                    class="fa-solid fa-scale-balanced icon"
+                    aria-hidden="true"
+                  ></i
+                  ><span class="st st-proto"
+                    ><i class="fa-solid fa-flask" aria-hidden="true"></i
+                    >Prototype</span
+                  >
+                </div>
+                <h3>Assistant juridique</h3>
+                <p>
+                  <b>Problème abordé :</b> Trouver l'article de loi qui
+                  s'applique à sa situation est difficile pour un citoyen.
+                </p>
+                <p>
+                  Prototype qui répond à des questions de droit camerounais à
+                  partir de textes de loi indexés, en citant ses sources.
+                </p>
+                <div class="chips">
+                  <span>LlamaIndex</span><span>Qdrant</span><span>FastAPI</span
+                  ><span>Next.js</span>
+                </div>
+                <a
+                  href="projets/assistant-juridique.html"
+                  class="btn-sm"
+                  aria-label="Voir le projet Assistant juridique"
+                  >Voir le projet
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="competences" class="section alt">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Compétences techniques</h2>
+            <p>
+              Je distingue ce que je pratique en projet de ce que j'apprends
+              encore.
+            </p>
+          </div>
+          <p class="legend">
+            <span class="key on"></span>Pratiquée en projet<span
+              class="key off"
+            ></span
+            >En apprentissage
+          </p>
+          <div class="grid g3">
+            <article class="card">
+              <div class="body">
+                <h3>Programmation</h3>
+                <ul class="sk">
+                  <li class="on">
+                    Python<span class="sr"> (pratiquée en projet)</span>
+                  </li>
                 </ul>
-            </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="body">
+                <h3>Backend</h3>
+                <ul class="sk">
+                  <li class="on">
+                    FastAPI<span class="sr"> (pratiquée en projet)</span>
+                  </li>
+                  <li class="on">
+                    Pydantic<span class="sr"> (pratiquée en projet)</span>
+                  </li>
+                  <li class="on">
+                    API REST<span class="sr"> (pratiquée en projet)</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="card">
+              <div class="body">
+                <h3>Automatisation</h3>
+                <ul class="sk">
+                  <li class="on">
+                    n8n<span class="sr"> (pratiquée en projet)</span>
+                  </li>
+                  <li class="on">
+                    Webhooks<span class="sr"> (pratiquée en projet)</span>
+                  </li>
+                  <li class="on">
+                    API externes<span class="sr"> (pratiquée en projet)</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="card">
+              <div class="body">
+                <h3>IA appliquée</h3>
+                <ul class="sk">
+                  <li class="on">
+                    LLM<span class="sr"> (pratiquée en projet)</span>
+                  </li>
+                  <li class="on">
+                    RAG<span class="sr"> (pratiquée en projet)</span>
+                  </li>
+                  <li class="off">
+                    Extraction structurée <small>en apprentissage</small>
+                  </li>
+                  <li class="off">
+                    PydanticAI <small>en apprentissage</small>
+                  </li>
+                  <li class="off">
+                    Évaluation des réponses <small>en apprentissage</small>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="card">
+              <div class="body">
+                <h3>Systèmes métier</h3>
+                <ul class="sk">
+                  <li class="off">Odoo <small>en apprentissage</small></li>
+                  <li class="off">
+                    Intégration ERP <small>en apprentissage</small>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="card">
+              <div class="body">
+                <h3>Environnement</h3>
+                <ul class="sk">
+                  <li class="on">
+                    Git<span class="sr"> (pratiquée en projet)</span>
+                  </li>
+                  <li class="on">
+                    Docker<span class="sr"> (pratiquée en projet)</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
-    </div>
-</section>
-    <footer id="contact" class="bg-black text-white pt-24 pb-12 border-t border-slate-800">
-    <div class="container mx-auto px-4 max-w-6xl">
-        
-        <div class="max-w-3xl mx-auto text-center mb-20">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Démarrer un projet</h2>
-            <p class="text-slate-400 mb-10 text-lg" data-aos="fade-up" data-aos-delay="100">Prêt à automatiser votre croissance ? Envoyez-moi un message.</p>
-
-            <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-5 text-left" data-aos="zoom-in">
-                <input type="text" name="prenom" placeholder="Prénom" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-white">
-                <input type="email" name="email" placeholder="Email" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-white">
-                <input type="text" name="ville" placeholder="Ville" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-white">
-                <input type="text" name="pays" placeholder="Pays" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-white">
-                <textarea name="message" placeholder="Décrivez votre besoin en automatisation..." rows="4" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-white col-span-1 md:col-span-2"></textarea>
-                
-                <button id="submit-btn" type="submit" class="w-full bg-blue-600 py-4 rounded-xl font-bold text-lg hover:bg-blue-500 transition col-span-1 md:col-span-2 text-white shadow-lg shadow-blue-500/20">
-                    Envoyer ma demande
-                </button>
+      </section>
+      <section id="demarche" class="section">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Ma démarche</h2>
+            <p>Cinq étapes, du besoin à la solution.</p>
+          </div>
+          <ol class="steps">
+            <li>
+              <b>Comprendre</b>
+              <p>
+                J'écoute votre activité et j'identifie ce qui vous fait perdre
+                du temps.
+              </p>
+            </li>
+            <li>
+              <b>Analyser</b>
+              <p>Je cerne le vrai problème et ce qui est réellement utile.</p>
+            </li>
+            <li>
+              <b>Concevoir</b>
+              <p>
+                Je propose une solution simple, avec un périmètre clair, avant
+                d'écrire du code.
+              </p>
+            </li>
+            <li>
+              <b>Développer</b>
+              <p>
+                Je construis par petites étapes que vous pouvez voir et tester.
+              </p>
+            </li>
+            <li>
+              <b>Tester et améliorer</b>
+              <p>Je vérifie avec de vrais cas, je corrige, puis j'ajuste.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section id="ressources" class="section alt">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Ressources gratuites</h2>
+            <p>
+              Des guides pour comprendre l'IA et l'automatisation, sans jargon.
+              Des ressources Python et automatisation seront ajoutées. Retrouvez
+              aussi mes
+              <a class="link" href="blog/index.html">tutoriels sur le blog</a>.
+            </p>
+          </div>
+          <div class="res-list">
+            <div class="res">
+              <div>
+                <h3>L'Alphabet de l'IA & Data 2025</h3>
+                <p>Le glossaire essentiel pour comprendre les concepts clés.</p>
+              </div>
+              <div class="res-l">
+                <a
+                  class="btn-sm"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScZY3uhxbuNbQcCdb31_TB0-moTD7EWQKeTkEYD2XvUcc7u_Q/viewform?usp=dialog"
+                  >Version française</a
+                ><a
+                  class="btn-sm"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSd-S0y6rmAPFpzb45cftKPpZBu6cU0i7eTCvSWORE_DuCTsSw/viewform"
+                  >English version</a
+                >
+              </div>
+            </div>
+            <div class="res">
+              <div>
+                <h3>20 prompts prêts à l'emploi</h3>
+                <p>Gagnez du temps au travail dès aujourd'hui.</p>
+              </div>
+              <div class="res-l">
+                <a
+                  class="btn-sm"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScBOIeIABBexYtjmOOAK7B7H5SW5waUnJQVWOjO973vHHz1Tg/viewform?usp=header"
+                  >Version française</a
+                ><a
+                  class="btn-sm"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScK3tdYA0dxHaCXSfFLI3c3CfjgEuEjkSnoeLsPqRrfduLIoQ/viewform?usp=header"
+                  >English version</a
+                >
+              </div>
+            </div>
+            <div class="res">
+              <div>
+                <h3>Comprendre le RAG : simple guide</h3>
+                <p>
+                  Cas d'usage et applications pratiques (version anglaise
+                  bientôt).
+                </p>
+              </div>
+              <div class="res-l">
+                <a
+                  class="btn-sm"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSekd-M6k285MsJXHRNF2Gc4XHogAq6K5tY5MmvLiq1e3Yk7kw/viewform?usp=publish-editor"
+                  >Version française</a
+                >
+              </div>
+            </div>
+            <div class="res">
+              <div>
+                <h3>Centre de ressources Notion</h3>
+                <p>Documentation et outils réunis dans un espace unique.</p>
+              </div>
+              <div class="res-l">
+                <a
+                  class="btn-sm"
+                  href="https://safe-taxicab-e9d.notion.site/Centre-de-Ressources-Yves-Virtuel-2a872d336c2e805892d5f712eec114e0"
+                  >Ouvrir Notion</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="section">
+        <div class="wrap contact">
+          <div>
+            <h2 class="section-title">
+              Un problème à résoudre ou un projet à explorer ?
+            </h2>
+            <p class="section-subtitle">
+              Vous souhaitez échanger autour d'un besoin d'automatisation,
+              d'intégration logicielle ou d'intelligence artificielle appliquée
+              ? Contactez-moi pour discuter de votre projet.
+            </p>
+            <ul>
+              <li>
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+                ><a href="https://wa.me/237673219281" class="link"
+                  >+237 673 21 92 81</a
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i
+                ><a href="mailto:eufyves@gmail.com" class="link"
+                  >eufyves@gmail.com</a
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i
+                >Yaoundé, Cameroun
+              </li>
+            </ul>
+          </div>
+          <div>
+            <form id="contact-form">
+              <div>
+                <label for="contact-prenom" class="form-label">Prénom</label
+                ><input
+                  id="contact-prenom"
+                  name="prenom"
+                  type="text"
+                  required
+                  autocomplete="given-name"
+                  class="form-field"
+                />
+              </div>
+              <div>
+                <label for="contact-email" class="form-label">Email</label
+                ><input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                  class="form-field"
+                />
+              </div>
+              <div>
+                <label for="contact-ville" class="form-label">Ville</label
+                ><input
+                  id="contact-ville"
+                  name="ville"
+                  type="text"
+                  required
+                  autocomplete="address-level2"
+                  class="form-field"
+                />
+              </div>
+              <div>
+                <label for="contact-pays" class="form-label">Pays</label
+                ><input
+                  id="contact-pays"
+                  name="pays"
+                  type="text"
+                  required
+                  autocomplete="country-name"
+                  class="form-field"
+                />
+              </div>
+              <div class="full">
+                <label for="contact-message" class="form-label"
+                  >Décrivez votre besoin</label
+                ><textarea
+                  id="contact-message"
+                  name="message"
+                  rows="4"
+                  required
+                  class="form-field"
+                ></textarea>
+              </div>
+              <button id="submit-btn" type="submit" class="btn-primary full">
+                Envoyer ma demande
+              </button>
             </form>
-
-            <div id="success-message" class="hidden mt-6 bg-green-500/20 border border-green-500 text-green-400 p-6 rounded-2xl font-bold">
-                Merci ! Votre demande a été reçue. Je vous recontacte très vite. 🚀
-            </div>
+            <p id="form-error" class="error hidden" role="alert">
+              L'envoi a échoué. Écrivez-moi directement sur
+              <a class="link" href="https://wa.me/237673219281">WhatsApp</a> ou
+              à
+              <a class="link" href="mailto:eufyves@gmail.com"
+                >eufyves@gmail.com</a
+              >.
+            </p>
+            <p id="success-message" class="success hidden" role="status">
+              Merci, votre demande a bien été transmise. Je vous réponds dès que
+              possible.
+            </p>
+          </div>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 border-t border-slate-900 pt-16 items-start">
-            
-            <div data-aos="fade-right">
-                <h3 class="text-xl font-bold mb-6 text-white border-b border-blue-600 pb-2 inline-block">Mes Réalisations</h3>
-                <ul class="text-slate-400 space-y-4 text-sm">
-                    <li>
-                        <i class="fa-solid fa-check-circle text-blue-500 mr-2"></i>
-                        <strong class="text-slate-200">Automatisation des publications pour une agence Immobilière a Yaoundé sur Facebook 
-                            </strong>
-                        <br><span class="text-xs text-slate-500 ml-6">▸Objectif: suppression d'un processus manuel chronophage et élimination des coûts d'abonnements logiciels tiers</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-check-circle text-blue-500 mr-2"></i>
-                        <strong class="text-slate-200">Conception d'un prototype Assistant Support 24h/24</strong> : entraînée sur données internes.
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-check-circle text-blue-500 mr-2"></i>
-                        <strong class="text-slate-200">OneClickPromt</strong> : Application web d'Abstraction de Prompting.
-                    <br><span class="text-xs text-slate-500 ml-6">▸Pour des personnes, employés qui n'ont pas le temps de devenir des experts en prompts. OneClickPrompt répond exactement à ce besoin de productivité immédiate.</span>
-                    
-                    </li>
-                </ul>
-            </div>
-
-            <div class="md:justify-self-end text-left md:w-64" data-aos="fade-left">
-                <h3 class="text-xl font-bold mb-6 text-white border-b border-blue-600 pb-2 inline-block">Expertise Technique</h3>
-                <ul class="space-y-4 text-sm">
-                    <li class="flex items-center gap-3 text-slate-400">
-                        <i class="fa-solid fa-robot text-blue-500 w-5"></i>
-                        <span class="font-semibold text-blue-400">n8n (Automatisation)</span>
-                    </li>
-                    <li class="flex items-center gap-3 text-slate-400">
-                        <i class="fa-brands fa-python text-blue-500 w-5"></i>
-                        <span class="font-semibold text-blue-400">Python for Data Analysis</span>
-                    </li>
-                    <li class="flex items-center gap-3 text-slate-400">
-                        <i class="fa-solid fa-brain text-blue-500 w-5"></i>
-                        <span class="font-semibold text-blue-400">GenAI (IA Générative)</span>
-                    </li>
-                    <li class="flex items-center gap-3 text-slate-400">
-                        <i class="fa-solid fa-chart-column text-blue-500 w-5"></i>
-                        <span class="font-semibold text-blue-400">Power BI Desktop</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="border-t border-slate-900 pt-10 text-center text-slate-500 text-xs">
-            <div class="mb-4 text-slate-400">
-                <i class="fa-solid fa-location-dot text-blue-500 mr-2"></i> Yaoundé, Cameroun
-            </div>
-            <p>&copy; 2026 Yves <span class="notranslate">Virtuel</span> - <span class="notranslate">Virtuel All Tech</span>.  /Tous droits réservés.</p>
-        </div>
-    </div>
-</footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      </section>
+    </main>
+    <footer class="foot">
+      <div class="wrap">
+        <img
+          src="assets/logo-mark.webp"
+          alt=""
+          width="40"
+          height="32"
+          style="margin: 0 auto 10px"
+        />
+        <p class="notranslate">
+          <b>Virtuel All Tech</b> — Together, we find a solution.
+        </p>
+        <p style="margin-top: 6px">
+          <a href="index.html#projets">Projets</a> ·
+          <a href="blog/index.html">Blog</a> ·
+          <a href="index.html#contact">Contact</a> ·
+          <a href="https://github.com/virtuelalltech">GitHub</a>
+        </p>
+        <p style="margin-top: 10px">
+          &copy; 2026 SIKATI Yves Joseph. Yaoundé, Cameroun.
+        </p>
+      </div>
+    </footer>
+    <a
+      href="https://wa.me/237673219281"
+      class="wa"
+      aria-label="Écrire sur WhatsApp"
+      ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+    ></a>
     <script src="JS/script.js"></script>
-    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "db24ebf8fad44c9cbbed8fff01a108ca"}'></script><!-- End Cloudflare Web Analytics -->
-</body>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "db24ebf8fad44c9cbbed8fff01a108ca"}'
+    ></script>
+  </body>
 </html>

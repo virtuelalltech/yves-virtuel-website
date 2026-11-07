@@ -4,70 +4,76 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for **Yves Virtuel / Virtuel All Tech** — a consultant in AI, automation, and generative AI based in Yaoundé, Cameroon. Single-page static site, content in French.
+Page d'accueil vendeur (index.html) : sections dans l'ordre logique (Ce que vous gagnez, Services, Preuves, Projet pilote, FAQ, CTA). Les détails approfondis sont sur projets.html. Design Tailwind (CDN) + custom CSS, sans build. Contenu en français, pas d'invention de témoignages, chiffres, clients ou prix.
 
 ## Tech Stack
 
-- **HTML5** — single `index.html` entry point
+- **HTML5** — `index.html` (accueil) + `projets.html` (détails projets) + `blog/` (articles)
 - **Tailwind CSS** — loaded via CDN (`cdn.tailwindcss.com`), utility-first classes inline
-- **Custom CSS** — `CSS/style.css` for overrides (CSS variables, scrollbar, glassmorphism, AOS tweaks)
-- **Vanilla JavaScript** — `JS/script.js` for navigation, form handling, and analytics
-- **Libraries (CDN)**: AOS (scroll animations), Font Awesome 6 (icons), Google Fonts (Inter, Orbitron)
-- **Backend**: n8n webhook endpoints for form submission and analytics tracking
-- **Analytics**: Cloudflare Web Analytics + custom n8n event tracking
+- **Custom CSS** — `CSS/style.css` pour les overrides (variables CSS, scrollbar, glassmorphism, tweaks AOS)
+- **JavaScript Vanilla** — `JS/script.js` pour la navigation, la gestion du formulaire et l'analytics
+- **Bibliothèques (CDN)** : AOS (animations au défilement), Font Awesome 6 (icônes), Google Fonts (Inter, Orbitron)
+- **Backend** : points de terminaison webhook n8n pour la soumission du formulaire et le suivi analytique
+- **Analytics** : Cloudflare Web Analytics + suivi d'événements personnalisé via n8n
 
-## Project Structure
+## Structure du projet
 
 ```
-├── index.html          # Single page: nav, hero, services, resources, bio, contact
-├── CSS/style.css       # Custom styles and CSS variables
-├── JS/script.js        # Navigation, AOS init, form submission, tracking
-├── assets/             # Images (logo, profile photos), CV PDF, certificate PNGs
+├── index.html          # Page d'accueil vendeur (Hero + 6 sections + formulaire contact)
+├── projets.html        # Détails des projets réalisés (cas réels, démonstrations, liens)
+├── CSS/style.css       # Styles personnalisés et variables CSS
+├── JS/script.js        # Navigation, initialisation AOS, gestion du formulaire, suivi
+├── assets/             # Images (logo, photos de profil), CV PDF, certificats PNG
+├── blog/               # Articles (n8n/Gmail, Telegram local, filigranes IA Claude)
 └── CLAUDE.md
 ```
 
-## Key Architecture Decisions
+## Décisions d'architecture clés
 
-- **No build step**: Tailwind is loaded from CDN at runtime. No `package.json`, no bundler, no transpilation.
-- **No framework**: Pure vanilla HTML/CSS/JS. No React, Vue, or other framework.
-- **n8n webhooks**: The contact form (`#contact-form`) POSTs JSON to `formwebsite` webhook. Analytics events POST to `stats` webhook. Both use `fetch()` with `mode: 'no-cors'`.
-- **Google Translate exclusion**: Elements with `.notranslate` class are excluded from auto-translation (brand names).
-- **Session tracking**: `sessionStorage` generates a unique `session_id` per browser session for analytics.
+- **Pas d'étape de build** : Tailwind est chargé depuis le CDN à l'exécution. Aucun `package.json`, aucun bundler, aucune transpilation.
+- **Pas de framework** : HTML/CSS/JS pur. Aucun React, Vue ou autre framework.
+- **Webhooks n8n** : Le formulaire de contact (`#contact-form`) envoie du JSON vers le webhook `formwebsite`. Les événements d'analytics envoient vers le webhook `stats`. Tous deux utilisent `fetch()` avec `mode: 'no-cors'`.
+- **Exclusion de Google Translate** : Les éléments possédant la classe `.notranslate` sont exclus de la traduction automatique (noms de marque).
+- **Suivi de session** : `sessionStorage` génère un `session_id` unique par session de navigateur pour l'analytics.
 
-## Sections (index.html)
+## Sections (index.html - accueil vendeur)
 
-| ID | Purpose |
-|---|---|
-| `#offres` | Services (AutoPost, RAG Assistant, Automation) |
-| `#ressources` | Free downloadable resources (PDFs via Google Forms) |
-| `#bio` | About / certifications |
-| `#contact` | Contact form (n8n webhook) + footer |
+| ID / Section        | Contenu (dans l'ordre)                                                                              |
+|---------------------|-----------------------------------------------------------------------------------------------------|
+| Hero                | Logo, titre, slogan, image de profil, coordonnées, CTA                                               |
+| Ce que vous gagnez  | 3 cartes : gagner du temps, réduire les erreurs, se concentrer sur l'essentiel                       |
+| Services            | 3 cartes : automatisation de processus, assistants IA sur mesure, conseil et accompagnement IA      |
+| Preuves             | Cas réel (agence immobilière Yaoundé), démo de l'assistant juridique, GitHub, certifications, ressources |
+| Projet pilote       | Encadré avec tarif 50 000 FCFA, suivi 20 000 FCFA/mois, paiement Mobile Money                      |
+| Questions fréquentes| 4 questions : durée, sécurité des données, coût, maintenance                                         |
+| Contact             | Formulaire (n8n webhook) dans le footer                                                            |
+| Bouton WhatsApp     | Flottant discret sur mobile (lien déjà présent)                                                     |
 
-## Common Tasks
+## Tâches courantes
 
-**Local preview**: Open `index.html` directly in a browser, or use a local server:
+**Aperçu local** : Ouvrez `index.html` directement dans un navigateur, ou utilisez un serveur local :
 ```bash
 # Python
 python -m http.server 8000
 
-# Node.js (if available)
+# Node.js (si disponible)
 npx serve .
 ```
 
-**No lint/test/build commands** — this is a static site with no tooling configured.
+**Pas de commandes lint/test/build** — il s'agit d'un site statique sans outil de configuration.
 
-## External Integrations
+## Intégrations externes
 
-- **n8n webhooks** (self-hosted on Hugging Face Spaces):
-  - Form: `https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/formwebsite`
-  - Stats: `https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/stats`
-- **Google Forms**: Resource download links (FR/EN variants per resource)
-- **Notion**: Resource center link
-- **Cloudflare Web Analytics**: Beacon script in footer
-- **WhatsApp**: Direct contact link (`wa.me/237673219281`)
+- **Webhooks n8n** (auto-hébergés sur Hugging Face Spaces) :
+  - Formulaire : `https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/formwebsite`
+  - Statistiques : `https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/stats`
+- **Google Forms** : liens de téléchargement des ressources (variantes FR/EN par ressource)
+- **Notion** : lien vers le centre de ressources
+- **Cloudflare Web Analytics** : script beacon dans le footer
+- **WhatsApp** : lien de contact direct (`wa.me/237673219281`)
 
-## Content Guidelines
+## Directives de contenu
 
-- All visible text is in French; do not translate brand names (`.notranslate` class)
-- Social links: LinkedIn, Facebook, WhatsApp, TikTok
-- Profile images in `assets/` — optimized formats (.webp) preferred over raw .jpg/.png
+- Tout le texte visible est en français ; ne pas traduire les marques de commerce (classe `.notranslate`)
+- Liens sociaux : LinkedIn, Facebook, WhatsApp, TikTok
+- Images de profil dans `assets/` : privilégier les formats optimisés (.webp) plutôt que les .jpg/.png bruts

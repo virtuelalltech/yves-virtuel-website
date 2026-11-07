@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIKATI Yves Joseph — Concepteur de solutions métier intelligentes | Virtuel All Tech</title>
+
+    <!-- Meta description -->
+    <meta name="description" content="SIKATI Yves Joseph, concepteur de solutions métier intelligentes (Python, IA appliquée, automatisation, intégration Odoo). Virtuel All Tech : des solutions technologiques pensées pour vos défis métier. Together, we find a solution.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Virtuel All Tech">
+    <meta property="fb:app_id" content="1017580981146172">
+    <meta property="og:title" content="SIKATI Yves Joseph — Concepteur de solutions métier intelligentes">
+    <meta property="og:description" content="Des solutions technologiques pensées pour vos défis métier : automatisation, IA appliquée, intégration de systèmes. Virtuel All Tech.">
+    <meta property="og:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp">
+    <meta property="og:image:alt" content="Sikati Yves Joseph — Consultant en Automatisation & IA Générative">
+    <meta property="og:url" content="https://yves-virtuel-website.eufyves.workers.dev/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yves Joseph SIKATI | Consultant en Automatisation & IA Générative pour PME">
+    <meta name="twitter:description" content="Gagnez du temps et réduisez vos coûts grâce à l'IA générative et l'automatisation. AutoPost réseaux sociaux, Assistant IA RAG et automatisation sur mesure via n8n et Python.">
+    <meta name="twitter:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp">
+    <meta name="twitter:image:alt" content="Sikati Yves Joseph — Consultant en Automatisation & IA Générative">
+
+    <!-- Schema.org : Profil + Service professionnel -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves-virtuel",
+          "name": "Sikati Yves Joseph",
+          "alternateName": "Yves Joseph SIKATI / Virtuel All Tech",
+          "jobTitle": "Consultant en Automatisation & IA Générative pour PME",
+          "email": "eufyves@gmail.com",
+          "image": "https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp",
+          "url": "https://yves-virtuel-website.eufyves.workers.dev/",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Yaoundé",
+            "addressCountry": "CM"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/sikati-yves-joseph-039215330",
+            "https://web.facebook.com/profile.php?id=61592080066219",
+            "https://www.tiktok.com/@virtuel.all.tech",
+            "https://whatsapp.com/channel/0029Vb6fWEdCcW4hXGiJyR3b"
+          ],
+          "knowsAbout": ["Automatisation", "IA Générative", "n8n", "Python", "RAG", "Data"]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://yves-virtuel-website.eufyves.workers.dev/#service",
+          "name": "Virtuel All Tech",
+          "description": "Consulting en automatisation et IA générative pour PME : AutoPost réseaux sociaux, Assistant IA RAG et automatisation sur mesure.",
+          "image": "https://yves-virtuel-website.eufyves.workers.dev/assets/logo-virtuel-all-tech.webp",
+          "url": "https://yves-virtuel-website.eufyves.workers.dev/",
+          "email": "eufyves@gmail.com",
+          "areaServed": "Cameroun",
+          "slogan": "L'IA & l'Automatisation au service de votre Croissance",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Yaoundé",
+            "addressCountry": "CM"
+          },
+          "founder": { "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves-virtuel" },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Services d'automatisation et IA",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AutoPost Réseaux Sociaux",
+                  "description": "Automatisez vos publications Facebook et LinkedIn : planifiez, publiez et économisez jusqu'à plusieurs heures de gestion manuelle par jour. Pour agences et indépendants. Sur base de n8n + API Facebook Graph / LinkedIn."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Assistant IA RAG",
+                  "description": "Assistant IA qui connaît vos documents et répond à vos clients 24h/7. Prototype / démo — ex. assistant juridique (code pénal et civil camerounais) et assistant support client e-commerce. IA générative + RAG."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Automatisation / Automatisation + IA",
+                  "description": "Connectez vos outils et automatisez vos tâches répétitives sans effort — ex. Gmail, Google Calendar ou votre ERP. Webhooks + n8n + Python."
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
+
+        <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    bg: 'var(--bg)',
+                    'bg-alt': 'var(--bg-alt)',
+                    text: 'var(--text)',
+                    navy: 'var(--navy)',
+                    'text-muted': 'var(--text-muted)',
+                    border: 'var(--border)',
+                    accent: 'var(--accent)',
+                    'accent-hover': 'var(--accent-hover)'
+                }
+            }
+        }
+    };
+    </script>
+<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body class="bg-[var(--bg)] text-[var(--text)] font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[var(--bg)]/95 backdrop-blur-md border-b border-[var(--border)] shadow-sm">
+    <div class="container mx-auto px-4 h-20 flex justify-between items-center" style="max-width: var(--maxw);">
+    <a href="#" class="flex items-center gap-4">
+        <img src="assets/logo-virtuel-all-tech.webp" alt="Logo Virtuel All Tech" class="h-16 md:h-20 w-auto drop-shadow-2xl block">
+
+        <span class="notranslate flex flex-col justify-center" translate="no" style="font-family: 'Orbitron', sans-serif;">
+            <span class="text-xl md:text-3xl font-black tracking-wider text-[var(--accent)]">
+            Virtuel All Tech
+            </span>
+            <span class="h-0.5 w-12 bg-[var(--accent)]/50 mt-1 rounded-full"></span>
+        </span>
+    </a>
+
+        <div class="hidden md:flex space-x-8 font-semibold text-base items-center">
+            <a href="#apropos" class="nav-item">À propos</a>
+            <a href="#domaines" class="nav-item">Domaines d'intervention</a>
+            <a href="#projets" class="nav-item">Projets</a>
+            <a href="#competences" class="nav-item">Compétences</a>
+            <a href="#ressources" class="nav-item">Ressources</a>
+            <a href="blog/index.html" class="nav-item">Blog</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </div>
+
+        <a href="#contact" class="hidden md:inline-flex btn-primary">Contact</a>
+
+        <button id="menu-toggle" class="md:hidden text-[var(--text)] p-2" aria-label="Ouvrir le menu" aria-expanded="false">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-[var(--bg)] border-b border-[var(--border)] w-full p-6 space-y-4 shadow-2xl text-center">
+        <a href="#apropos" class="block py-2 text-[var(--text)] hover:text-[var(--accent)]">À propos</a>
+        <a href="#domaines" class="block py-2 text-[var(--text)] hover:text-[var(--accent)]">Domaines d'intervention</a>
+        <a href="#projets" class="block py-2 text-[var(--text)] hover:text-[var(--accent)]">Projets</a>
+        <a href="#competences" class="block py-2 text-[var(--text)] hover:text-[var(--accent)]">Compétences</a>
+        <a href="#ressources" class="block py-2 text-[var(--text)] hover:text-[var(--accent)]">Ressources</a>
+        <a href="blog/index.html" class="block py-2 text-[var(--text)] hover:text-[var(--accent)]">Blog</a>
+        <a href="#contact" class="block text-[var(--accent)] font-bold py-2 border-t border-[var(--border)] mt-2">Contact</a>
+    </div>
+</nav>
+
+    <header class="pt-40 pb-20 px-4 bg-gradient-to-b from-[var(--bg-alt)] to-[var(--bg)] overflow-hidden">
+        <div class="container mx-auto max-w-5xl text-center flex flex-col items-center">
+            <span class="bg-[var(--accent)]/50 text-[var(--accent)] border border-[var(--accent)]/20 px-5 py-1.5 rounded-full text-sm font-bold uppercase tracking-wide" data-aos="fade-down">Bienvenue 👋</span>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[var(--text)] mt-8 mb-6 leading-tight" data-aos="fade-up" data-aos-delay="200">
+                L'IA & l'Automatisation au service de votre <span class="text-[var(--accent)] italic">Croissance</span>
+            </h1>
+            <p class="text-lg md:text-xl text-[var(--text-muted)] mb-12 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="400">
+                Gagnez du temps et réduisez vos coûts grâce à l'IA générative et aux systèmes connectés. Une automatisation à la fois.
+            </p>
+            
+            <div class="mb-16 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="600">
+    <div class="w-64 h-64 rounded-2xl bg-[var(--border)] overflow-hidden shadow-2xl shadow-[var(--accent)]/20 border-4 border-[var(--border)] hero-image-container">
+        <img src="assets/yves-profile.webp" alt="Yves Joseph SIKATI" loading="eager" fetchpriority="high" class="w-full h-full object-cover transition-all duration-500 hover:grayscale cursor-pointer">
+    </div>
+    
+    <div class="mt-5 flex flex-wrap justify-center gap-3">
+        <div class="bg-[var(--border)] px-6 py-2.5 rounded-full shadow-lg border border-[var(--border)] text-[var(--text)] font-semibold text-sm flex items-center">
+            <i class="fa-solid fa-envelope text-[var(--accent)] mr-3"></i> eufyves@gmail.com
+        </div>
+
+        <a href="assets/cv-yves-sikati.pdf" target="_blank" class="bg-[var(--accent)]/10 px-6 py-2.5 rounded-full shadow-lg border border-[var(--accent)]/30 text-[var(--accent)] font-semibold text-sm flex items-center hover:bg-[var(--accent)] hover:text-[var(--text)] transition-all duration-300">
+            <i class="fa-solid fa-file-pdf mr-3"></i> Voir mon CV
+        </a>
+        </div>
+    </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-5" data-aos="fade-up" data-aos-delay="800">
+                <a href="#contact" class="bg-[var(--accent)] text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-[var(--accent)]/30 hover:bg-[var(--accent)] transition-colors">Démarrer un projet</a>
+                <a href="#ressources" class="bg-[var(--border)] border border-[var(--border)] text-[var(--text)] px-10 py-4 rounded-xl font-bold hover:bg-[var(--border)] transition">Voir mes Ebooks</a>
+            </div>
+        </div>
+    </header>
+<section id="gain" class="py-16 bg-[var(--bg)] border-t border-[var(--border)]"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-center mb-12 text-[var(--text)]" data-aos="fade-up">Ce que vous gagnez</h2><div class="grid md:grid-cols-3 gap-6"><div class="p-8 rounded-[12px] border border-[var(--border)] bg-white shadow-sm" data-aos="fade-up"><h3 class="font-bold text-xl text-[var(--text)] mb-3">Gagner du temps</h3><p class="text-[var(--text-muted)] leading-relaxed">Les tâches répétitives s'exécutent toutes seules : des heures libérées chaque semaine.</p></div><div class="p-8 rounded-[12px] border border-[var(--border)] bg-white shadow-sm" data-aos="fade-up" data-aos-delay="100"><h3 class="font-bold text-xl text-[var(--text)] mb-3">Réduire les erreurs</h3><p class="text-[var(--text-muted)] leading-relaxed">Moins de saisies manuelles, donc moins d'oubli et de fautes.</p></div><div class="p-8 rounded-[12px] border border-[var(--border)] bg-white shadow-sm" data-aos="fade-up" data-aos-delay="200"><h3 class="font-bold text-xl text-[var(--text)] mb-3">Se concentrer sur l'essentiel</h3><p class="text-[var(--text-muted)] leading-relaxed">Vous et votre équipe vous consacrez à ce qui fait vraiment avancer votre activité : clients, qualité, développement.</p></div></div></div><section id="offres" class="py-16 bg-[var(--bg-alt)] border-t border-[var(--border)]"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-center mb-12 text-[var(--text)]" data-aos="fade-up">Services</h2><div class="grid md:grid-cols-3 gap-6"><div class="p-8 rounded-[12px] border border-[var(--border)] bg-white shadow-sm"><h3 class="font-bold text-lg text-[var(--text)] mb-2">Automatisation de processus</h3><p class="text-sm font-semibold text-[var(--accent)] mb-2">Pour qui : PME, agences et indépendants avec des tâches répétitives.</p><p class="text-[var(--text-muted)] text-sm mb-2">Vous obtenez : un workflow connecté à vos outils (Google Sheets, e-mail, réseaux sociaux, Odoo), par exemple la publication automatique de texte et d'images sur vos pages Facebook.</p><p class="text-xs text-[var(--text-muted)]">Délai : estimé après un premier échange.</p></div><div class="p-8 rounded-[12px] border border-[var(--border)] bg-white shadow-sm"><h3 class="font-bold text-lg text-[var(--text)] mb-2">Assistants IA sur mesure</h3><p class="text-sm font-semibold text-[var(--accent)] mb-2">Pour qui : entreprises avec des documents à exploiter (support, base de connaissances).</p><p class="text-[var(--text-muted)] text-sm mb-2">Vous obtenez : un assistant qui répond à partir de vos documents, en citant ses sources.</p><p class="text-xs text-[var(--text-muted)]">Délai : estimé après analyse de vos documents.</p></div><div class="p-8 rounded-[12px] border border-[var(--border)] bg-white shadow-sm"><h3 class="font-bold text-lg text-[var(--text)] mb-2">Conseil et accompagnement IA</h3><p class="text-sm font-semibold text-[var(--accent)] mb-2">Pour qui : entreprises et indépendants qui veulent intégrer l'IA mais ne savent pas par où commencer.</p><p class="text-[var(--text-muted)] text-sm mb-2">Vous obtenez : un état des lieux de vos tâches répétitives, des recommandations de solutions adaptées à votre budget et à vos outils, et un accompagnement pour les mettre en place.</p><p class="text-xs text-[var(--text-muted)]">Délai : estimé après un premier échange.</p></div></div><div class="text-center mt-10"><a href="#contact" class="inline-block bg-[var(--accent)] text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-[var(--accent)]/30 hover:bg-[var(--accent-hover)] transition">Démarrer un projet</a></div></div></section>
+
+    <section id="preuves" class="py-16 bg-[var(--bg)] border-t border-[var(--border)]"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-center mb-12 text-[var(--text)]" data-aos="fade-up">Preuves</h2><div class="space-y-6"><div class="p-6 rounded-[12px] border border-[var(--border)] bg-white shadow-sm" data-aos="fade-up"><h3 class="font-bold text-lg text-[var(--navy)] mb-2">Cas réel — agence immobilière à Yaoundé (client anonymisé)</h3><p class="text-[var(--text-muted)] text-sm mb-2"><strong>Problème :</strong> publication manuelle chronophage sur plusieurs pages Facebook.</p><p class="text-[var(--text-muted)] text-sm mb-2"><strong>Solution :</strong> 4 workflows n8n, un par page, alimentés par un Google Sheet, avec publication de texte et d'images.</p><p class="text-[var(--text-muted)] text-sm"><strong>Résultat :</strong> suppression d'un processus manuel chronophage (jusqu'à 4 h minimum gagnées par jour) et des abonnements logiciels tiers.</p>
+<p class="text-xs text-[var(--text-muted)]">Client anonymisé — CAMEROUN MAISON.</p></div><div class="p-6 rounded-[12px] border border-[var(--border)] bg-white shadow-sm" data-aos="fade-up"><h3 class="font-bold text-lg text-[var(--navy)] mb-3">Démo de l'assistant juridique</h3><p class="text-[var(--text-muted)] text-sm mb-3">Prototype démontrant un assistant IA RAG sur données juridiques (code pénal et civil camerounais).</p><a href="#contact" class="inline-block bg-[var(--accent)] text-white px-6 py-2 rounded-lg font-bold text-sm hover:bg-[var(--accent-hover)] transition">Demander l'accès à la démo</a></div><div class="p-6 rounded-[12px] border border-[var(--border)] bg-white shadow-sm" data-aos="fade-up"><h3 class="font-bold text-lg text-[var(--navy)] mb-3">GitHub</h3><p class="text-[var(--text-muted)] text-sm mb-2">Profil : <a href="https://github.com/virtuelalltech" class="text-[var(--accent)] hover:underline font-semibold">github.com/virtuelalltech</a></p><p class="text-xs text-[var(--text-muted)]">Projet source : <code>yves-virtuel-website</code> (déduit de <code>git remote get-url origin</code>).</p></div><div class="p-6 rounded-[12px] border border-[var(--border)] bg-white shadow-sm" data-aos="fade-up"><h3 class="font-bold text-lg text-[var(--navy)] mb-3">Certifications (8)</h3><ul class="text-sm text-[var(--text-muted)] space-y-1"><li>Anthropic AI Fluency &amp; Foundations (2026)</li><li>Anthropic AI Foundations (2025)</li><li>Hugging Face — NLP (2025)</li><li>IBM AI Fundamentals (2025)</li><li>Forage — Data Analytics (2025)</li><li>Forage — Automation (2025)</li><li>Data Visualisation — Deloitte (2025)</li><li>AI Engine — Certification (2025)</li></ul></div><div class="p-6 rounded-[12px] border border-[var(--border)] bg-white shadow-sm" data-aos="fade-up"><h3 class="font-bold text-lg text-[var(--navy)] mb-3">Ressources</h3><p class="text-sm text-[var(--text-muted)]">L'Alphabet de l'IA &amp; Data : <strong>+200 téléchargements</strong> (France 39%). Aucune autre statistique inventée.</p></div></div></div></section>
+<section id="pilot" class="py-16 bg-[var(--bg-alt)] border-t border-[var(--border)]"><div class="container mx-auto px-4 max-w-3xl text-center"><div class="p-8 rounded-[12px] border border-[var(--border)] bg-white shadow-sm" data-aos="fade-up"><h2 class="text-2xl font-bold text-[var(--navy)] mb-3">Projet pilote</h2><p class="text-[var(--text-muted)] mb-6 leading-relaxed">Une automatisation, un périmètre défini ensemble, une livraison testée.</p><p class="font-bold text-lg text-[var(--accent)] mb-2">À partir de 50 000 FCFA</p><p class="text-xs text-[var(--text-muted)] mb-6">Suivi mensuel optionnel : 20 000 FCFA/mois. Paiement par Mobile Money (MTN, Orange).</p><a href="#contact" class="inline-block bg-[var(--accent)] text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-[var(--accent)]/30 hover:bg-[var(--accent-hover)] transition">Démarrer un projet</a></div></div></section>
+<section id="faq" class="py-16 bg-[var(--bg)] border-t border-[var(--border)]"><div class="container mx-auto px-4 max-w-3xl"><h2 class="text-3xl font-bold text-center mb-10 text-[var(--text)]" data-aos="fade-up">Questions fréquentes</h2><div class="space-y-4" data-aos="fade-up"><div class="p-6 rounded-[12px] border border-[var(--border)] bg-white shadow-sm"><h3 class="font-bold text-[var(--navy)] mb-2">Combien de temps ça prend ?</h3><p class="text-[var(--text-muted)] text-sm">Un projet pilote simple prend environ moins de deux semaines. Les projets plus complexes sont estimés après un premier échange.</p></div><div class="p-6 rounded-[12px] border border-[var(--border)] bg-white shadow-sm"><h3 class="font-bold text-[var(--navy)] mb-2">Mes données sont-elles en sécurité ?</h3><p class="text-[var(--text-muted)] text-sm">Je demande uniquement les accès nécessaires au projet, je ne partage jamais vos données ni vos identifiants, et les accès sont supprimés à la fin de la mission. Un accord de confidentialité peut être signé sur demande.</p></div><div class="p-6 rounded-[12px] border border-[var(--border)] bg-white shadow-sm"><h3 class="font-bold text-[var(--navy)] mb-2">Combien ça coûte ?</h3><p class="text-[var(--text-muted)] text-sm">À partir de 50 000 FCFA par automatisation. Le prix exact est annoncé avant de commencer.</p></div><div class="p-6 rounded-[12px] border border-[var(--border)] bg-white shadow-sm"><h3 class="font-bold text-[var(--navy)] mb-2">Et la maintenance ?</h3><p class="text-[var(--text-muted)] text-sm">Un suivi mensuel optionnel à 20 000 FCFA par mois couvre les corrections et les ajustements.</p></div></div></div></section>
+
+    <section id="offres" class="py-24 bg-[var(--bg)] border-t border-[var(--border)]">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-[var(--text)]" data-aos="fade-up">Mes Services 💼</h2>
+            <div class="h-1 w-16 bg-[var(--accent)] mx-auto mt-4 rounded-full" data-aos="fade-up"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-[2rem] border border-[var(--border)] bg-[var(--border)]/50 hover:bg-[var(--border)] hover:border-[var(--accent)] transition-all duration-300 group shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-[var(--bg)] w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-[var(--border)] group-hover:border-[var(--accent)] transition-colors">
+                    <i class="fa-solid fa-share-nodes text-3xl text-[var(--accent)]"></i>
+                </div>
+                <h3 class="mb-4 text-sm font-bold uppercase tracking-wide text-[var(--text)]">AutoPost Réseaux Sociaux</h3>
+                <p class="text-[var(--text-muted)] text-sm mb-3 leading-relaxed">Automatisation intelligente de vos contenus sur Facebook & LinkedIn.</p>
+                <span class="text-xs font-bold text-[var(--accent)] uppercase tracking-wider block mb-3">n8n + API Facebook Graph/LinkedIn</span>
+                <p class="text-[var(--text-muted)] text-xs leading-relaxed">Résultat client : jusqu'à 4h de gestion manuelle récupérées par jour, pour une agence immobilière à Yaoundé.</p>
+            </div>
+            
+            <div class="p-8 rounded-[2rem] border border-[var(--border)] bg-[var(--border)]/50 hover:bg-[var(--border)] hover:border-[var(--accent)] transition-all duration-300 group shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-[var(--bg)] w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-[var(--border)] group-hover:border-[var(--accent)] transition-colors">
+                    <i class="fa-solid fa-robot text-3xl text-[var(--accent)]"></i>
+                </div>
+                <h3 class="mb-4 text-sm font-bold uppercase tracking-wide text-[var(--text)]">Assistant IA RAG</h3>
+                <p class="text-[var(--text-muted)] text-sm mb-3 leading-relaxed">Un assistant intelligent qui connaît vos documents pour un support client 24h/24, 7j/7.</p>
+                <span class="text-xs font-bold text-[var(--accent)] uppercase tracking-wider block mb-3">IA Générative + RAG</span>
+                <p class="text-[var(--text-muted)] text-xs leading-relaxed">Prototype / Démo | ex. : assistant juridique s'appuyant sur le droit code pénal / civil camerounais etc.</p>
+            </div>
+            
+            <div class="p-8 rounded-[2rem] border border-[var(--border)] bg-[var(--border)]/50 hover:bg-[var(--border)] hover:border-[var(--accent)] transition-all duration-300 group shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                <div class="bg-[var(--bg)] w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-[var(--border)] group-hover:border-[var(--accent)] transition-colors">
+                    <i class="fa-solid fa-bolt text-3xl text-[var(--accent)]"></i>
+                </div>
+                <h3 class="mb-4 text-sm font-bold uppercase tracking-wide text-[var(--text)]">Automatisation / Automatisation + IA</h3>
+                <p class="text-[var(--text-muted)] text-sm mb-3 leading-relaxed">Connectez vos outils et automatisez vos tâches répétitives sans effort.</p>
+                <span class="text-xs font-bold text-[var(--accent)] uppercase tracking-wider block mb-3">Webhooks + n8n + Python</span>
+                <p class="text-[var(--text-muted)] text-xs leading-relaxed">Ex. : connexion Gmail, Google Calendar, ou votre ERP à des workflows automatisés.</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-16" data-aos="fade-up">
+            <p class="text-[var(--text-muted)] text-sm mb-4 italic">Un projet urgent ?</p>
+            <a href="https://wa.me/237673219281" class="inline-flex items-center gap-2 bg-green-600/10 text-green-500 border border-green-600/20 px-6 py-3 rounded-xl hover:bg-green-600 hover:text-[var(--text)] transition-all font-bold">
+                <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp Direct
+            </a>
+        </div>
+        
+    </div>
+</section>
+
+    <section id="ressources" class="py-24 bg-[var(--bg-alt)] border-t border-[var(--border)]">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl font-bold text-center mb-4 text-[var(--text)]" data-aos="fade-up">🎁 Ressources Gratuites</h2>
+        <p class="text-[var(--text-muted)] text-center mb-16" data-aos="fade-up" data-aos-delay="200">Des outils pour vous former et automatiser votre quotidien.</p>
+        
+        <div class="space-y-6">
+            <div class="bg-[var(--border)]/80 p-6 rounded-2xl shadow-lg border border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-up">
+                <div class="flex items-center gap-5 text-left">
+                    <div class="bg-[var(--bg)] border border-[var(--border)] p-4 rounded-xl text-[var(--accent)] font-bold">PDF</div>
+                    <div>
+                        <h4 class="font-bold text-[var(--text)] text-lg">L’Alphabet de l’IA & Data 2025</h4>
+                        <p class="text-sm text-[var(--text-muted)] italic mb-2">Le glossaire essentiel pour comprendre les concepts clés.</p>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[var(--accent)]/10 border border-[var(--accent)]/20 rounded-lg text-[10px] font-bold text-[var(--accent)] uppercase tracking-wider">
+                            <i class="fa-solid fa-download"></i> +200 téléchargements | France 39%
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-3 w-full md:w-auto">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScZY3uhxbuNbQcCdb31_TB0-moTD7EWQKeTkEYD2XvUcc7u_Q/viewform?usp=dialog" class="flex-1 md:flex-none text-center bg-[var(--accent)] text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-[var(--accent)] transition">FR</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-S0y6rmAPFpzb45cftKPpZBu6cU0i7eTCvSWORE_DuCTsSw/viewform" class="flex-1 md:flex-none text-center bg-[var(--border)] text-[var(--text)] px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-[var(--border)] transition border border-[var(--border)]">EN</a>
+                </div>
+            </div>
+            
+            <div class="bg-[var(--border)]/80 p-6 rounded-2xl shadow-lg border border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-up" data-aos-delay="150">
+                <div class="flex items-center gap-5 text-left">
+                    <div class="bg-[var(--bg)] border border-[var(--border)] p-4 rounded-xl text-[var(--accent)] font-bold text-xs uppercase tracking-widest">PDF</div>
+                    <div>
+                        <h4 class="font-bold text-[var(--text)] text-lg">20 Prompts prêts à l'emploi</h4>
+                        <p class="text-sm text-[var(--text-muted)] italic mb-2">Gagnez du temps au travail dès aujourd'hui.</p>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[var(--accent)]/10 border border-[var(--accent)]/20 rounded-lg text-[10px] font-bold text-[var(--accent)] uppercase tracking-wider">
+                            <i class="fa-solid fa-download"></i> +178 téléchargements | Cameroun 23%
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-3 w-full md:w-auto">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScBOIeIABBexYtjmOOAK7B7H5SW5waUnJQVWOjO973vHHz1Tg/viewform?usp=header" class="flex-1 md:flex-none text-center bg-[var(--accent)] text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-[var(--accent)] transition">FR</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScK3tdYA0dxHaCXSfFLI3c3CfjgEuEjkSnoeLsPqRrfduLIoQ/viewform?usp=header" class="flex-1 md:flex-none text-center bg-[var(--border)] text-[var(--text)] px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-[var(--border)] transition border border-[var(--border)]">EN</a>
+                </div>
+            </div>
+
+            <div class="bg-[var(--border)]/80 p-6 rounded-2xl shadow-lg border border-[var(--accent)]/20 border-l-4 border-l-[var(--accent)] flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex items-center gap-5 text-left">
+                    <div class="bg-[var(--bg)] border border-[var(--border)] p-4 rounded-xl text-[var(--accent)] font-bold text-xs uppercase tracking-widest">PDF</div>
+                    <div>
+                        <h4 class="font-bold text-[var(--text)] text-lg">Comprendre le RAG : Simple Guide </h4>
+                        <p class="text-sm text-[var(--text-muted)] italic mb-2">Cas d'usage et applications pratiques.</p>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[var(--accent)]/10 border border-[var(--accent)]/20 rounded-lg text-[10px] font-bold text-[var(--accent)] uppercase tracking-wider">
+                            <i class="fa-solid fa-download"></i> +50 téléchargements
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center md:items-end gap-2 w-full md:w-auto">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSekd-M6k285MsJXHRNF2Gc4XHogAq6K5tY5MmvLiq1e3Yk7kw/viewform?usp=publish-editor" class="w-full md:w-auto text-center bg-[var(--accent)] text-white px-8 py-2.5 rounded-lg text-sm font-bold hover:bg-[var(--accent)] transition">FR</a>
+                    <span class="text-xs text-[var(--text-muted)] italic mt-1">Version EN bientôt disponible</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 bg-gradient-to-br from-[var(--bg)] to-[var(--bg-alt)] p-8 rounded-3xl border border-[var(--border)] text-center" data-aos="fade-up">
+            <h3 class="text-xl font-bold text-[var(--text)] mb-4">🚀 Découvrir plus de ressources</h3>
+            <p class="text-[var(--text-muted)] text-sm mb-8 max-w-lg mx-auto">
+                Accédez à mon espace Notion dédié : Documentation MCP , Gemini, outils.
+            </p>
+            <a href="https://safe-taxicab-e9d.notion.site/Centre-de-Ressources-Yves-Virtuel-2a872d336c2e805892d5f712eec114e0" target="_blank" class="inline-flex items-center gap-3 bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-[var(--accent)] hover:text-[var(--text)] transition-all duration-300">
+                <i class="fa-solid fa-up-right-from-square"></i> Explorer sur Notion
+            </a>
+        </div>
+    </div>
+</section>
+    
+    <section id="bio" class="py-24 bg-[var(--bg)] border-t border-[var(--border)] overflow-hidden">
+    <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--text)] mb-4">👨‍💼 Qui suis-je ?</h2>
+            <div class="w-24 h-1 bg-[var(--accent)] mx-auto rounded-full"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+            <div class="md:w-1/2" data-aos="fade-right">
+                <p class="text-[var(--text-muted)] mb-6 text-lg leading-relaxed">
+                    Moi c’est <strong class="text-[var(--text)]">Yves Joseph SIKATI</strong>. Titulaire d’une Licence en Mathématiques fondamentales, je crois que l’IA et la Data doivent être au service des humains, et non l’inverse.
+                </p>
+                <p class="text-[var(--text-muted)] mb-6 text-lg leading-relaxed">
+                    Autodidacte en IA et Data, je combine rigueur mathématique et maîtrise de l’IA Générative pour concevoir des solutions d’automatisation concrètes apprises en construisant, pas seulement en théorie.
+                </p>
+                <p class="text-[var(--text-muted)] mb-8 text-lg leading-relaxed">
+                    Ma mission est de démocratiser l’IA pour le marché africain, aider les entreprises et indépendants à l’intégrer de manière sécurisée et progressive, et gagner du temps en automatisant leurs tâches répétitives.
+                </p>
+
+                <div class="flex items-center gap-6 mt-10">
+                    <span class="text-[var(--text)] font-bold text-sm uppercase tracking-wider">Me suivre :</span>
+                    <div class="flex gap-4">
+                        <a href="https://whatsapp.com/channel/0029Vb6fWEdCcW4hXGiJyR3b" class="text-[var(--text-muted)] hover:text-green-500 text-2xl transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sikati-yves-joseph-039215330" class="text-[var(--text-muted)] hover:text-[var(--accent)] text-2xl transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61593783300118" class="text-[var(--text-muted)] hover:text-[var(--accent)] text-2xl transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://github.com/virtuelalltech" class="text-[var(--text-muted)] hover:text-[var(--accent)] text-2xl transition-all duration-300 hover:-translate-y-1" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.tiktok.com/@virtuel.all.tech" class="text-[var(--text-muted)] hover:text-[var(--text)] text-2xl transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 bg-[var(--border)]/50 p-10 rounded-[3rem] border border-[var(--border)] w-full" data-aos="fade-left">
+                <h3 class="text-xl font-bold mb-8 text-[var(--text)] text-center md:text-left">Parcours & Certifications 🎓</h3>
+                <ul class="space-y-4">
+                    <li class="flex gap-4 items-center bg-[var(--bg)] p-5 rounded-2xl border border-[var(--border)] shadow-sm">
+                        <i class="fa-solid fa-graduation-cap text-[var(--accent)] text-xl"></i>
+                        <span class="text-sm font-bold uppercase tracking-wide text-[var(--text)]">Anthropic AI Fluency & Foundations (2026)</span>
+                    </li>
+                    <li class="flex gap-4 items-center bg-[var(--bg)] p-5 rounded-2xl border border-[var(--border)] shadow-sm">
+                        <i class="fa-solid fa-award text-[var(--accent)] text-xl"></i>
+                        <span class="text-sm font-bold uppercase tracking-wide text-[var(--text)]">IBM AI Fundamentals (2025)</span>
+                    </li>
+                    <li class="flex gap-4 items-center bg-[var(--bg)] p-5 rounded-2xl border border-[var(--border)] shadow-sm">
+                        <i class="fa-solid fa-chart-pie text-[var(--accent)] text-xl"></i>
+                        <span class="text-sm font-bold uppercase tracking-wide text-[var(--text)]">Data Visualisation - Deloitte (2025)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+    <footer id="contact" class="bg-[var(--bg-alt)] text-[var(--text)] pt-24 pb-12 border-t border-[var(--border)]">
+    <div class="container mx-auto px-4 max-w-6xl">
+        
+        <div class="max-w-3xl mx-auto text-center mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Démarrer un projet</h2>
+            <p class="text-[var(--text-muted)] mb-10 text-lg" data-aos="fade-up" data-aos-delay="100">Prêt à automatiser votre croissance ? Envoyez-moi un message.</p>
+
+            <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-5 text-left" data-aos="zoom-in">
+                <input type="text" name="prenom" placeholder="Prénom" required class="w-full bg-[var(--bg)] border border-[var(--border)] rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-[var(--text)]">
+                <input type="email" name="email" placeholder="Email" required class="w-full bg-[var(--bg)] border border-[var(--border)] rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-[var(--text)]">
+                <input type="text" name="ville" placeholder="Ville" required class="w-full bg-[var(--bg)] border border-[var(--border)] rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-[var(--text)]">
+                <input type="text" name="pays" placeholder="Pays" required class="w-full bg-[var(--bg)] border border-[var(--border)] rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-[var(--text)]">
+                <textarea name="message" placeholder="Décrivez votre besoin en automatisation..." rows="4" required class="w-full bg-[var(--bg)] border border-[var(--border)] rounded-xl px-5 py-4 focus:ring-2 focus:ring-blue-500 outline-none text-[var(--text)] col-span-1 md:col-span-2"></textarea>
+                
+                <button id="submit-btn" type="submit" class="w-full bg-[var(--accent)] py-4 rounded-xl font-bold text-lg hover:bg-[var(--accent)] transition col-span-1 md:col-span-2 text-[var(--text)] shadow-lg shadow-[var(--accent)]/20">
+                    Envoyer ma demande
+                </button>
+            </form>
+
+            <div id="success-message" class="hidden mt-6 bg-green-500/20 border border-green-500 text-green-400 p-6 rounded-2xl font-bold">
+                Merci ! Votre demande a été reçue. Je vous recontacte très vite. 🚀
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 border-t border-[var(--border)] pt-16 items-start">
+            
+            <div data-aos="fade-right">
+                <h3 class="text-xl font-bold mb-6 text-[var(--text)] border-b border-[var(--accent)] pb-2 inline-block">Mes Réalisations</h3>
+                <ul class="text-[var(--text-muted)] space-y-4 text-sm">
+                    <li>
+                        <i class="fa-solid fa-check-circle text-[var(--accent)] mr-2"></i>
+                        <strong class="text-[var(--text)]">Automatisation des publications — agence immobilière Yaoundé (Facebook)</strong>
+                        <br><span class="text-xs text-[var(--text-muted)] ml-6">▸ Problème : processus manuel chronophage, coûts d'abonnements tiers. ▸ Solution : workflow n8n + API Facebook Graph / LinkedIn. ▸ Résultat : jusqu'à 4h/jour récupérées.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check-circle text-[var(--accent)] mr-2"></i>
+                        <strong class="text-[var(--text)]">Prototype Assistant Support 24h/24</strong> — entraîné sur données internes (accès sur demande : lien démo).
+                        <br><span class="text-xs text-[var(--text-muted)] ml-6">▸ Problème : support client limité aux heures de bureau. ▸ Solution : assistant IA RAG. ▸ Résultat : réponse continue 24h/24, 7j/7.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check-circle text-[var(--accent)] mr-2"></i>
+                        <strong class="text-[var(--text)]">OneClickPrompt</strong> — application web d'abstraction de prompting.
+                        <br><span class="text-xs text-[var(--text-muted)] ml-6">▸ Problème : employés sans temps d'apprendre le prompting. ▸ Solution : interface simplifiée. ▸ Résultat : productivité immédiate, sans expertise préalable.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="md:justify-self-end text-left md:w-64" data-aos="fade-left">
+                <h3 class="text-xl font-bold mb-6 text-[var(--text)] border-b border-[var(--accent)] pb-2 inline-block">Expertise Technique</h3>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-center gap-3 text-[var(--text-muted)]">
+                        <i class="fa-solid fa-robot text-[var(--accent)] w-5"></i>
+                        <span class="font-semibold text-[var(--accent)]">n8n (Automatisation)</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-[var(--text-muted)]">
+                        <i class="fa-brands fa-python text-[var(--accent)] w-5"></i>
+                        <span class="font-semibold text-[var(--accent)]">Python for Data Analysis</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-[var(--text-muted)]">
+                        <i class="fa-solid fa-brain text-[var(--accent)] w-5"></i>
+                        <span class="font-semibold text-[var(--accent)]">GenAI (IA Générative)</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-[var(--text-muted)]">
+                        <i class="fa-solid fa-chart-column text-[var(--accent)] w-5"></i>
+                        <span class="font-semibold text-[var(--accent)]">Power BI Desktop</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-[var(--border)] pt-10 text-center text-[var(--text-muted)] text-xs">
+            <div class="mb-4 text-[var(--text-muted)]">
+                <i class="fa-solid fa-location-dot text-[var(--accent)] mr-2"></i> Yaoundé, Cameroun
+            </div>
+            <p>&copy; 2026 Yves <span class="notranslate">Virtuel</span> - <span class="notranslate">Virtuel All Tech</span>.  /Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <a href="https://wa.me/237673219281" class="whatsapp-float md:hidden" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <script src="JS/script.js"></script>
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "db24ebf8fad44c9cbbed8fff01a108ca"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

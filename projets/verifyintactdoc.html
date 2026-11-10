@@ -135,14 +135,14 @@
         <nav class="crumb" aria-label="Fil d'Ariane">
           <a href="../index.html">Accueil</a> ›
           <a href="../index.html#projets">Projets</a> ›
-          <span aria-current="page">CertifyVatDoc</span>
+          <span aria-current="page">VerifyIntactDoc</span>
         </nav>
         <div class="row" style="margin-top: 20px">
           <span class="st st-proto"
             ><i class="fa-solid fa-flask" aria-hidden="true"></i>Prototype</span
           >
         </div>
-        <h1>CertifyVatDoc</h1>
+        <h1>VerifyIntactDoc</h1>
         <p class="lead2">
           Infrastructure de confiance cryptographique pour sceller des documents
           PDF et lutter contre la fraude documentaire.
@@ -188,11 +188,10 @@
         <h2>Fonctionnalités réellement développées</h2>
         <ul class="bul">
           <li>
-            Génération de clés et certificats X.509 avec
-            <code>cryptography</code>
+            Génération de clés et certificats X.509 
           </li>
           <li>Signature cryptographique de PDF validée par Adobe Acrobat</li>
-          <li>Génération de QR codes avec logo intégré (Pillow)</li>
+          <li>Génération de QR codes avec logo intégré </li>
           <li>
             Pipeline de fusion des métadonnées (conservation de l'historique)
           </li>
@@ -214,8 +213,8 @@
             </li>
             <li>
               <strong>Vérification en un scan :</strong> le QR code mène à une
-              page qui répond clairement : vert (authentique) ou rouge
-              (falsifié).
+              page qui répond clairement : vert (non modifié, conforme à celle produit ) ou rouge
+              (modifié).
             </li>
             <li>
               <strong>Signature reconnue :</strong> le scellement PAdES est
@@ -223,13 +222,11 @@
             </li>
             <li>
               <strong>Statut :</strong> prototype qui scelle déjà des PDF de
-              bout en bout. [À COMPLÉTER : version de démonstration disponible
-              ?]
+              bout en bout.
             </li>
             <li>
               <strong>Potentiel :</strong> entreprises, universités, ONG
-              (factures, diplômes, contrats). [À COMPLÉTER : prospects ou
-              commandes en cours]
+              (factures, diplômes, contrats).
             </li>
           </ul>
         </div>

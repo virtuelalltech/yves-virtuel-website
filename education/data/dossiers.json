@@ -1,0 +1,36 @@
+{
+  "gratuit": {
+    "Troisième": {
+      "label": "Pack découverte — Troisième",
+      "url": "https://drive.google.com/drive/folders/1rO0T9gJewUzqxLvgFG4MhiH9CQnssz1e?usp=sharing",
+      "actif": true
+    },
+    "Première": {
+      "label": "Pack découverte — Première",
+      "url": "https://drive.google.com/drive/folders/REMPLACER_ID_PREMIERE_GRATUIT",
+      "actif": true
+    },
+    "Terminale": {
+      "label": "Pack découverte — Terminale",
+      "url": "https://drive.google.com/drive/folders/REMPLACER_ID_TERMINALE_GRATUIT",
+      "actif": true
+    }
+  },
+  "payant": {
+    "Troisième": {
+      "label": "Banque complète — Troisième",
+      "url": "https://drive.google.com/drive/folders/REMPLACER_ID_TROISIEME_PAYANT",
+      "actif": false
+    },
+    "Première": {
+      "label": "Banque complète — Première",
+      "url": "https://drive.google.com/drive/folders/REMPLACER_ID_PREMIERE_PAYANT",
+      "actif": false
+    },
+    "Terminale": {
+      "label": "Banque complète — Terminale",
+      "url": "https://drive.google.com/drive/folders/REMPLACER_ID_TERMINALE_PAYANT",
+      "actif": false
+    }
+  }
+}

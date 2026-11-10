@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accéder au pack gratuit — Virtuel All Éducation</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Aller au contenu</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="wrap container">
+        <a href="../index.html" class="brand notranslate" translate="no">
+          <img src="../assets/logo-mark.webp" alt="" width="40" height="32" />
+          <span>Virtuel All Tech</span>
+        </a>
+        <div class="links">
+          <a href="../index.html">Accueil</a>
+          <a href="education.html">Education</a>
+          <a
+            href="education.html#acces"
+            class="btn-primary"
+            style="padding: 9px 20px; color: #fff"
+            >S'abonner</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <section class="section">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="eyebrow">Étape 2 sur 2</span>
+            <h2>Choisissez votre classe</h2>
+            <p>
+              Sélectionnez la classe pour laquelle vous souhaitez recevoir le
+              pack découverte gratuit.
+            </p>
+          </div>
+
+          <div class="narrow">
+            <!-- Écran 1 : choix de la classe -->
+            <div id="step-classe" class="acces-box">
+              <h3 class="acces-title">
+                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                Votre classe
+              </h3>
+              <div class="classe-options">
+                <label class="classe-option">
+                  <input type="radio" name="classe" value="Troisieme" />
+                  <span class="classe-card">
+                    <b>Troisième</b>
+                    <small>Pack découverte</small>
+                  </span>
+                </label>
+                <label class="classe-option">
+                  <input type="radio" name="classe" value="Premiere" />
+                  <span class="classe-card">
+                    <b>Première</b>
+                    <small>Pack découverte</small>
+                  </span>
+                </label>
+                <label class="classe-option">
+                  <input type="radio" name="classe" value="Terminale" />
+                  <span class="classe-card">
+                    <b>Terminale</b>
+                    <small>Pack découverte</small>
+                  </span>
+                </label>
+              </div>
+              <button id="btn-voir" class="btn-primary full" disabled>
+                Voir mon pack
+              </button>
+              <p
+                id="acces-msg"
+                class="note"
+                role="status"
+                style="color: #8a1c12"
+              ></p>
+            </div>
+
+            <!-- Écran 2 : lien Drive révélé -->
+            <div id="step-drive" class="acces-box hidden">
+              <div class="drive-success">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <h3>Votre pack est prêt !</h3>
+                <p id="drive-label">—</p>
+              </div>
+              <a
+                id="drive-link"
+                class="btn-primary full"
+                href="#"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-brands fa-google-drive" aria-hidden="true"></i>
+                Ouvrir le dossier Drive
+              </a>
+              <p class="note" style="margin-top: 14px">
+                Le dossier s'ouvre dans un nouvel onglet. Vous pouvez y voir et
+                télécharger les épreuves.
+              </p>
+              <hr
+                style="
+                  border: 0;
+                  border-top: 1px solid var(--line);
+                  margin: 24px 0;
+                "
+              />
+              <div class="upsell-inline">
+                <span
+                  class="upsell-tag"
+                  style="background: var(--sky); color: var(--blue)"
+                  >Pour aller plus loin</span
+                >
+                <p style="margin: 10px 0 14px; color: var(--muted)">
+                  Le pack gratuit est un aperçu. L'abonnement à
+                  <strong>1 500 FCFA</strong> débloque toutes les épreuves.
+                </p>
+                <a
+                  href="acces-payant.html"
+                  class="btn-primary full"
+                  style="margin-top: 15px"
+                >
+                  Passer à l'abonnement complet (1 500 FCFA)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap">
+        <p class="notranslate">
+          <b>Virtuel All Tech</b> — Together, we find a solution.
+        </p>
+        <p style="margin-top: 10px">
+          &copy; 2026 Virtuel All Tech. Yaoundé, Cameroun.
+        </p>
+      </div>
+    </footer>
+
+    <!-- SCRIPT SIMPLIFIÉ SANS FICHIER JSON -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ⚠️ REMPLACEZ CES LIENS PAR VOS VRAIS LIENS DRIVE
+        const liensDrive = {
+          Troisieme:
+            "https://drive.google.com/drive/folders/1rO0T9gJewUzqxLvgFG4MhiH9CQnssz1e?usp=sharing",
+          Premiere:
+            "https://drive.google.com/drive/folders/1rO0T9gJewUzqxLvgFG4MhiH9CQnssz1e?usp=sharing",
+          Terminale:
+            "https://drive.google.com/drive/folders/1rO0T9gJewUzqxLvgFG4MhiH9CQnssz1e?usp=sharing",
+        };
+
+        const btn = document.getElementById("btn-voir");
+        const msg = document.getElementById("acces-msg");
+        const stepClasse = document.getElementById("step-classe");
+        const stepDrive = document.getElementById("step-drive");
+        const driveLink = document.getElementById("drive-link");
+        const driveLabel = document.getElementById("drive-label");
+
+        // 1. Activer le bouton quand on clique sur une classe
+        const radios = document.querySelectorAll('input[name="classe"]');
+        radios.forEach((radio) => {
+          radio.addEventListener("change", () => {
+            btn.disabled = false;
+            msg.textContent = ""; // Efface les erreurs
+          });
+        });
+
+        // 2. Action au clic sur le bouton
+        btn.addEventListener("click", () => {
+          const selection = document.querySelector(
+            'input[name="classe"]:checked',
+          );
+
+          if (!selection) {
+            msg.textContent = "Veuillez sélectionner une classe.";
+            return;
+          }
+
+          const classe = selection.value;
+          const lien = liensDrive[classe];
+
+          if (!lien || lien.includes("ID_DU_DOSSIER")) {
+            msg.textContent =
+              "Le lien pour la classe " +
+              classe +
+              " n'est pas encore configuré.";
+            return;
+          }
+
+          // Afficher l'écran 2
+          driveLink.href = lien;
+          driveLabel.textContent =
+            "Pack découverte — " +
+            selection.nextElementSibling.querySelector("b").textContent;
+          stepClasse.classList.add("hidden");
+          stepDrive.classList.remove("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

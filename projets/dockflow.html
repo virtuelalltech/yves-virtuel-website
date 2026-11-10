@@ -177,14 +177,20 @@
         </p>
         <h2>Fonctionnalités réellement développées</h2>
         <ul class="bul">
+          <li>
+            Dectection d'injection de prompt dans la commande avant extraction
+          </li>
           <li>Extraction testée sur un lot d'e-mails d'essai</li>
           <li>Validation des données avec des modèles typés</li>
-          <li>Import de données fictives dans un Odoo 19 de test</li>
+          <li>Validation metier de la commande metier</li>
+          <li>Un ochestrateur genrant toute la chaine de l'extraction jusqu'a de la response final
+            pour le service suivant.
+          </li>
         </ul>
         <h2>Résultats observés</h2>
         <p>
-          Les résultats de l'extraction sur les e-mails d'essai sont en cours
-          d'analyse. Aucun taux de réussite n'est publié à ce stade.
+          Les résultats de l'extraction sur les 10 e-mails d'essai sont positif.
+          Aucun taux d'echec à ce stade.
         </p>
         <div class="strengths">
           <h2>Points forts et perspectives</h2>
@@ -203,8 +209,8 @@
               tout usage, pour détecter les erreurs d'extraction.
             </li>
             <li>
-              <strong>Statut :</strong> version 1.0 MVP pret , résultat  en attente pour la
-              production par le partenaire.
+              <strong>Statut :</strong> version 1.0 MVP pret , résultat en
+              attente pour la production par le partenaire.
             </li>
           </ul>
         </div>
@@ -223,7 +229,7 @@
         </div>
         <h2>Prochaines étapes</h2>
         <ul class="bul">
-          <li>Analyser et documenter les résultats de l'extraction.</li>
+          <li>Analyser et documenter les résultats de l'extraction en condition réelle.</li>
           <li>Brancher la réception des e-mails via n8n.</li>
           <li>Intégrer les données validées dans Odoo.</li>
         </ul>

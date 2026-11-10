@@ -144,65 +144,133 @@
         </div>
         <h1>CertifyVatDoc</h1>
         <p class="lead2">
-          Infrastructure de confiance cryptographique pour sceller des documents PDF et lutter contre la fraude documentaire.
+          Infrastructure de confiance cryptographique pour sceller des documents
+          PDF et lutter contre la fraude documentaire.
         </p>
         <div class="chips">
-          <span>Python</span><span>PyHanko</span><span>Cryptography</span><span>FastAPI</span>
+          <span>Python</span><span>PyHanko</span><span>Cryptography</span
+          ><span>FastAPI</span>
         </div>
-        
+
         <h2>Contexte</h2>
         <p>
-          À l'ère de l'intelligence artificielle générative, il est devenu extrêmement facile de falsifier des documents (fausses factures, faux diplômes, faux contrats). Les méthodes traditionnelles comme les signatures scannées ou les logos ne prouvent plus rien.
+          À l'ère de l'intelligence artificielle générative, il est devenu
+          extrêmement facile de falsifier des documents (fausses factures, faux
+          diplômes, faux contrats). Les méthodes traditionnelles comme les
+          signatures scannées ou les logos ne prouvent plus rien.
         </p>
-        
+
         <h2>Le problème</h2>
         <p>
-          Comment une entreprise, une université ou un particulier peut-il prouver mathématiquement qu'un document numérique (PDF) provient bien de lui et n'a pas été altéré après sa création ?
+          Comment une entreprise, une université ou un particulier peut-il
+          prouver mathématiquement qu'un document numérique (PDF) provient bien
+          de lui et n'a pas été altéré après sa création ?
         </p>
-        
+
         <h2>L'objectif</h2>
         <p>
-          Fournir un service de certification qui scelle le document avec une signature cryptographique standard (PAdES) et intègre un QR code permettant à n'importe qui de vérifier son intégrité en quelques secondes, même sans compétences techniques.
+          Fournir un service de certification qui scelle le document avec une
+          signature cryptographique standard (PAdES) et intègre un QR code
+          permettant à n'importe qui de vérifier son intégrité en quelques
+          secondes, même sans compétences techniques.
         </p>
-        
+
         <h2>L'approche technique</h2>
         <p>
-          Le système lit le PDF, calcule une empreinte numérique unique (hash SHA-256) et l'insère dans les métadonnées. Il génère ensuite un QR code (contenant une URL de vérification et le logo du client) qui est inséré dans le document. Enfin, le fichier est scellé avec <code>pyHanko</code> (standard PAdES) en mode <em>NO_CHANGES</em>. Si le fichier est modifié, la signature casse.
+          Le système lit le PDF, calcule une empreinte numérique unique (hash
+          SHA-256) et l'insère dans les métadonnées. Il génère ensuite un QR
+          code (contenant une URL de vérification et le logo du client) qui est
+          inséré dans le document. Enfin, le fichier est scellé avec
+          <code>pyHanko</code> (standard PAdES) en mode <em>NO_CHANGES</em>. Si
+          le fichier est modifié, la signature casse.
         </p>
-        
+
         <h2>Fonctionnalités réellement développées</h2>
         <ul class="bul">
-          <li>Génération de clés et certificats X.509 avec <code>cryptography</code></li>
+          <li>
+            Génération de clés et certificats X.509 avec
+            <code>cryptography</code>
+          </li>
           <li>Signature cryptographique de PDF validée par Adobe Acrobat</li>
           <li>Génération de QR codes avec logo intégré (Pillow)</li>
-          <li>Pipeline de fusion des métadonnées (conservation de l'historique)</li>
+          <li>
+            Pipeline de fusion des métadonnées (conservation de l'historique)
+          </li>
         </ul>
-        
+
         <h2>Résultats observés</h2>
         <p>
-          Le système produit des PDF dont la signature est reconnue comme "Valide" par Adobe Acrobat. Toute modification du contenu (même une virgule) invalide immédiatement la signature. Le QR code généré est scannable et pointe vers l'URL de vérification.
+          Le système produit des PDF dont la signature est reconnue comme
+          "Valide" par Adobe Acrobat. Toute modification du contenu (même une
+          virgule) invalide immédiatement la signature. Le QR code généré est
+          scannable et pointe vers l'URL de vérification.
         </p>
-        
+        <div class="strengths">
+          <h2>Points forts et perspectives</h2>
+          <ul class="bul">
+            <li>
+              <strong>Falsification détectée :</strong> la moindre modification
+              du PDF après signature est repérée.
+            </li>
+            <li>
+              <strong>Vérification en un scan :</strong> le QR code mène à une
+              page qui répond clairement : vert (authentique) ou rouge
+              (falsifié).
+            </li>
+            <li>
+              <strong>Signature reconnue :</strong> le scellement PAdES est
+              validé par Adobe Acrobat.
+            </li>
+            <li>
+              <strong>Statut :</strong> prototype qui scelle déjà des PDF de
+              bout en bout. [À COMPLÉTER : version de démonstration disponible
+              ?]
+            </li>
+            <li>
+              <strong>Potentiel :</strong> entreprises, universités, ONG
+              (factures, diplômes, contrats). [À COMPLÉTER : prospects ou
+              commandes en cours]
+            </li>
+          </ul>
+        </div>
         <div class="limits">
           <h2 style="margin-top: 0">Limites actuelles</h2>
           <ul class="bul">
-            <li>Le certificat utilisé est actuellement auto-signé (Adobe affiche "Identité non vérifiée"). Pour une confiance universelle, il faudra un certificat d'une autorité de certification reconnue.</li>
-            <li>L'API de vérification (FastAPI) et la page web dynamique sont en cours de développement. L'URL du QR code pointe pour l'instant vers une page statique.</li>
-            <li>Le déploiement en production (VPS + nom de domaine) n'est pas encore effectué.</li>
+            <li>
+              Le certificat utilisé est actuellement auto-signé (Adobe affiche
+              "Identité non vérifiée"). Pour une confiance universelle, il
+              faudra un certificat d'une autorité de certification reconnue.
+            </li>
+            <li>
+              L'API de vérification (FastAPI) et la page web dynamique sont en
+              cours de développement. L'URL du QR code pointe pour l'instant
+              vers une page statique.
+            </li>
+            <li>
+              Le déploiement en production (VPS + nom de domaine) n'est pas
+              encore effectué.
+            </li>
           </ul>
         </div>
-        
+
         <h2>Prochaines étapes</h2>
         <ul class="bul">
-          <li>Finaliser l'API locale FastAPI avec base de données SQLite pour vérifier les documents en temps réel.</li>
-          <li>Créer l'interface d'administration pour gérer les révocations de documents (ex: annulation d'un diplôme).</li>
+          <li>
+            Finaliser l'API locale FastAPI avec base de données SQLite pour
+            vérifier les documents en temps réel.
+          </li>
+          <li>
+            Créer l'interface d'administration pour gérer les révocations de
+            documents (ex: annulation d'un diplôme).
+          </li>
           <li>Déployer sur un serveur (VPS) avec Docker.</li>
         </ul>
-        
+
         <p class="note">
-          Une démonstration du processus de signature et de vérification peut être présentée sur demande.
+          Une démonstration du processus de signature et de vérification peut
+          être présentée sur demande.
         </p>
-        
+
         <div class="actions">
           <a class="btn-primary" href="../index.html#contact"
             >Discuter de ce projet</a
@@ -231,7 +299,7 @@
           <a href="https://github.com/virtuelalltech">GitHub</a>
         </p>
         <p style="margin-top: 10px">
-          &copy; 2026 SIKATI Yves Joseph. Yaoundé, Cameroun.
+          &copy; 2026 Virtuel All Tech. Yaoundé, Cameroun.
         </p>
       </div>
     </footer>

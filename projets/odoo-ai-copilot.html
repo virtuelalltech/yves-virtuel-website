@@ -1,26 +1,255 @@
-<!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Odoo AI Copilot — étude de cas | Virtuel All Tech</title><meta name="description" content="Exploration de l'interaction entre un assistant IA et un ERP Odoo, via le protocole MCP."><link rel="canonical" href="https://yves-virtuel-website.eufyves.workers.dev/projets/odoo-ai-copilot.html">
-<link rel="icon" type="image/png" href="../assets/favicon.png">
-<meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Virtuel All Tech">
-<meta property="og:title" content="Odoo AI Copilot — étude de cas | Virtuel All Tech"><meta property="og:description" content="Exploration de l'interaction entre un assistant IA et un ERP Odoo, via le protocole MCP."><meta property="og:url" content="https://yves-virtuel-website.eufyves.workers.dev/projets/odoo-ai-copilot.html">
-<meta property="og:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/og-image.png"><meta property="og:image:alt" content="Logo Virtuel All Tech"><meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves", "name": "Yves Joseph SIKATI", "jobTitle": "Concepteur de solutions métier intelligentes", "email": "eufyves@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Yaoundé", "addressCountry": "CM"}, "sameAs": ["https://www.linkedin.com/in/sikati-yves-joseph-039215330", "https://github.com/virtuelalltech", "https://www.tiktok.com/@virtuel.all.tech"]}, {"@type": "ProfessionalService", "name": "Virtuel All Tech", "url": "https://yves-virtuel-website.eufyves.workers.dev/", "areaServed": "CM", "founder": {"@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves"}}]}</script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../CSS/style.css"></head><body>
-<a class="skip" href="#main">Aller au contenu</a><nav class="nav" aria-label="Navigation principale"><div class="wrap container"><a href="../index.html" class="brand notranslate" translate="no"><img src="../assets/logo-mark.webp" alt="" width="40" height="32"><span>Virtuel All Tech</span></a>
-<div class="links"><a href="../index.html">Accueil</a><a href="../index.html#apropos">À propos</a><a href="../index.html#domaines">Domaines</a><a href="../index.html#projets">Projets</a><a href="../index.html#competences">Compétences</a><a href="../index.html#ressources">Ressources</a><a href="../blog/index.html">Blog</a><a href="../index.html#contact" class="btn-primary" style="padding:9px 20px;color:#fff">Contact</a></div>
-<button id="menu-toggle" class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button></div>
-<div id="mobile-menu" class="mobile-menu hidden"><a href="../index.html">Accueil</a><a href="../index.html#apropos">À propos</a><a href="../index.html#domaines">Domaines</a><a href="../index.html#projets">Projets</a><a href="../index.html#competences">Compétences</a><a href="../index.html#ressources">Ressources</a><a href="../blog/index.html">Blog</a><a href="../index.html#demarche">Ma démarche</a><a href="../index.html#contact" style="color:var(--blue);font-weight:600">Contact</a></div></nav><main id="main" class="case"><div class="wrap"><nav class="crumb" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a> › <a href="../index.html#projets">Projets</a> › <span aria-current="page">Odoo AI Copilot</span></nav>
-<div class="row" style="margin-top:20px"><span class="st st-poc"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i>Preuve de concept</span></div><h1>Odoo AI Copilot</h1><p class="lead2">Exploration de l'interaction entre un assistant IA et un ERP Odoo, via le protocole MCP.</p><div class="chips"><span>Odoo 19</span><span>MCP</span><span>Claude Desktop</span></div>
-<h2>Contexte</h2><p>Odoo regroupe de nombreux modules. Cette exploration teste si un assistant IA peut aider à l'utiliser en langage courant. Tests menés avec un spécialiste Odoo.</p><h2>Le problème</h2><p>Un assistant générique ne respecte pas automatiquement les règles métier d'un ERP, par exemple celles du stock.</p><h2>L'objectif</h2><p>Vérifier qu'un assistant IA peut agir dans Odoo de façon contrôlée, en respectant ces règles.</p><h2>L'approche technique</h2><p>Connexion d'une instance Odoo 19 de test à Claude Desktop grâce à un serveur MCP, avec un outil personnalisé qui encadre l'action.</p>
-<h2>Fonctionnalités réellement développées</h2><ul class="bul"><li>Connexion à une instance Odoo de test</li><li>Outil personnalisé de création de produit avec gestion du stock, l'outil standard ne respectant pas les règles métier</li></ul><h2>Résultats observés</h2><p>La création d'un produit avec gestion du stock fonctionne dans l'environnement de test.</p>
-<div class="limits"><h2 style="margin-top:0">Limites actuelles</h2><ul class="bul"><li>Preuve de concept uniquement.</li><li>Le connecteur de Claude en version web ne fonctionne pas encore avec cette instance.</li><li>Aucun test de fiabilité chiffré à ce jour.</li><li>Aucun client réel.</li></ul></div><h2>Prochaines étapes</h2><ul class="bul"><li>Passer les modèles en lecture seule.</li><li>Mesurer la fiabilité avec des tests chiffrés.</li><li>Essayer chez un client réel.</li></ul>
-<p class="note">Aucune capture ni démonstration publique n'est affichée pour l'instant. Une démonstration peut être présentée sur demande.</p>
-<div class="actions"><a class="btn-primary" href="../index.html#contact">Discuter de ce projet</a><a class="btn-ghost" href="../index.html#projets">Tous les projets</a></div></div></main><footer class="foot"><div class="wrap"><img src="../assets/logo-mark.webp" alt="" width="40" height="32" style="margin:0 auto 10px"><p class="notranslate"><b>Virtuel All Tech</b> — Together, we find a solution.</p>
-<p style="margin-top:6px"><a href="../index.html#projets">Projets</a> · <a href="../blog/index.html">Blog</a> · <a href="../index.html#contact">Contact</a> · <a href="https://github.com/virtuelalltech">GitHub</a></p>
-<p style="margin-top:10px">&copy; 2026 SIKATI Yves Joseph. Yaoundé, Cameroun.</p></div></footer>
-<a href="https://wa.me/237673219281" class="wa" aria-label="Écrire sur WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
-<script src="../JS/script.js"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "db24ebf8fad44c9cbbed8fff01a108ca"}'></script></body></html>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odoo AI Copilot — étude de cas | Virtuel All Tech</title>
+    <meta
+      name="description"
+      content="Exploration de l'interaction entre un assistant IA et un ERP Odoo, via le protocole MCP."
+    />
+    <link
+      rel="canonical"
+      href="https://yves-virtuel-website.eufyves.workers.dev/projets/odoo-ai-copilot.html"
+    />
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Virtuel All Tech" />
+    <meta
+      property="og:title"
+      content="Odoo AI Copilot — étude de cas | Virtuel All Tech"
+    />
+    <meta
+      property="og:description"
+      content="Exploration de l'interaction entre un assistant IA et un ERP Odoo, via le protocole MCP."
+    />
+    <meta
+      property="og:url"
+      content="https://yves-virtuel-website.eufyves.workers.dev/projets/odoo-ai-copilot.html"
+    />
+    <meta
+      property="og:image"
+      content="https://yves-virtuel-website.eufyves.workers.dev/assets/og-image.png"
+    />
+    <meta property="og:image:alt" content="Logo Virtuel All Tech" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves",
+            "name": "Yves Joseph SIKATI",
+            "jobTitle": "Concepteur de solutions métier intelligentes",
+            "email": "eufyves@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Yaoundé",
+              "addressCountry": "CM"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/sikati-yves-joseph-039215330",
+              "https://github.com/virtuelalltech",
+              "https://www.tiktok.com/@virtuel.all.tech"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "name": "Virtuel All Tech",
+            "url": "https://yves-virtuel-website.eufyves.workers.dev/",
+            "areaServed": "CM",
+            "founder": {
+              "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves"
+            }
+          }
+        ]
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Aller au contenu</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="wrap container">
+        <a href="../index.html" class="brand notranslate" translate="no"
+          ><img
+            src="../assets/logo-mark.webp"
+            alt=""
+            width="40"
+            height="32"
+          /><span>Virtuel All Tech</span></a
+        >
+        <div class="links">
+          <a href="../index.html">Accueil</a
+          ><a href="../index.html#apropos">À propos</a
+          ><a href="../index.html#domaines">Domaines</a
+          ><a href="../index.html#projets">Projets</a
+          ><a href="../index.html#competences">Compétences</a
+          ><a href="../index.html#ressources">Ressources</a
+          ><a href="../blog/index.html">Blog</a
+          ><a
+            href="../index.html#contact"
+            class="btn-primary"
+            style="padding: 9px 20px; color: #fff"
+            >Contact</a
+          >
+        </div>
+        <button
+          id="menu-toggle"
+          class="burger"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-menu hidden">
+        <a href="../index.html">Accueil</a
+        ><a href="../index.html#apropos">À propos</a
+        ><a href="../index.html#domaines">Domaines</a
+        ><a href="../index.html#projets">Projets</a
+        ><a href="../index.html#competences">Compétences</a
+        ><a href="../index.html#ressources">Ressources</a
+        ><a href="../blog/index.html">Blog</a
+        ><a href="../index.html#demarche">Ma démarche</a
+        ><a
+          href="../index.html#contact"
+          style="color: var(--blue); font-weight: 600"
+          >Contact</a
+        >
+      </div>
+    </nav>
+    <main id="main" class="case">
+      <div class="wrap">
+        <nav class="crumb" aria-label="Fil d'Ariane">
+          <a href="../index.html">Accueil</a> ›
+          <a href="../index.html#projets">Projets</a> ›
+          <span aria-current="page">Odoo AI Copilot</span>
+        </nav>
+        <div class="row" style="margin-top: 20px">
+          <span class="st st-poc"
+            ><i class="fa-solid fa-lightbulb" aria-hidden="true"></i>Preuve de
+            concept</span
+          >
+        </div>
+        <h1>Odoo AI Copilot</h1>
+        <p class="lead2">
+          Exploration de l'interaction entre un assistant IA et un ERP Odoo, via
+          le protocole MCP.
+        </p>
+        <div class="chips">
+          <span>Odoo 19</span><span>MCP</span><span>Claude Desktop</span>
+        </div>
+        <h2>Contexte</h2>
+        <p>
+          Odoo regroupe de nombreux modules. Cette exploration teste si un
+          assistant IA peut aider à l'utiliser en langage courant. Tests menés
+          avec un spécialiste Odoo.
+        </p>
+        <h2>Le problème</h2>
+        <p>
+          Un assistant générique ne respecte pas automatiquement les règles
+          métier d'un ERP, par exemple celles du stock.
+        </p>
+        <h2>L'objectif</h2>
+        <p>
+          Vérifier qu'un assistant IA peut agir dans Odoo de façon contrôlée, en
+          respectant ces règles.
+        </p>
+        <h2>L'approche technique</h2>
+        <p>
+          Connexion d'une instance Odoo 19 de test à Claude Desktop grâce à un
+          serveur MCP, avec un outil personnalisé qui encadre l'action.
+        </p>
+        <h2>Fonctionnalités réellement développées</h2>
+        <ul class="bul">
+          <li>Connexion à une instance Odoo de test</li>
+          <li>
+            Outil personnalisé de création de produit avec gestion du stock,
+            l'outil standard ne respectant pas les règles métier
+          </li>
+        </ul>
+        <h2>Résultats observés</h2>
+        <p>
+          La création d'un produit avec gestion du stock fonctionne dans
+          l'environnement de test.
+        </p>
+        <div class="limits">
+          <h2 style="margin-top: 0">Limites actuelles</h2>
+          <ul class="bul">
+            <li>Preuve de concept uniquement.</li>
+            <li>
+              Le connecteur de Claude en version web ne fonctionne pas encore
+              avec cette instance.
+            </li>
+            <li>Aucun test de fiabilité chiffré à ce jour.</li>
+            <li>Aucun client réel.</li>
+          </ul>
+        </div>
+        <h2>Prochaines étapes</h2>
+        <ul class="bul">
+          <li>Passer les modèles en lecture seule.</li>
+          <li>Mesurer la fiabilité avec des tests chiffrés.</li>
+          <li>Essayer chez un client réel.</li>
+        </ul>
+        <p class="note">
+          Aucune capture ni démonstration publique n'est affichée pour
+          l'instant. Une démonstration peut être présentée sur demande.
+        </p>
+        <div class="actions">
+          <a class="btn-primary" href="../index.html#contact"
+            >Discuter de ce projet</a
+          ><a class="btn-ghost" href="../index.html#projets"
+            >Tous les projets</a
+          >
+        </div>
+      </div>
+    </main>
+    <footer class="foot">
+      <div class="wrap">
+        <img
+          src="../assets/logo-mark.webp"
+          alt=""
+          width="40"
+          height="32"
+          style="margin: 0 auto 10px"
+        />
+        <p class="notranslate">
+          <b>Virtuel All Tech</b> — Together, we find a solution.
+        </p>
+        <p style="margin-top: 6px">
+          <a href="../index.html#projets">Projets</a> ·
+          <a href="../blog/index.html">Blog</a> ·
+          <a href="../index.html#contact">Contact</a> ·
+          <a href="https://github.com/virtuelalltech">GitHub</a>
+        </p>
+        <p style="margin-top: 10px">
+          &copy; 2026 Virtuel All Tech. Yaoundé, Cameroun.
+        </p>
+      </div>
+    </footer>
+    <a
+      href="https://wa.me/237673219281"
+      class="wa"
+      aria-label="Écrire sur WhatsApp"
+      ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+    ></a>
+    <script src="../JS/script.js"></script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "db24ebf8fad44c9cbbed8fff01a108ca"}'
+    ></script>
+  </body>
+</html>

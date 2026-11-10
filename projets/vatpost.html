@@ -1,26 +1,273 @@
-<!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VATPOST — étude de cas | Virtuel All Tech</title><meta name="description" content="Publication automatique de textes et d'images sur plusieurs pages Facebook à partir d'un Google Sheet, pour une agence immobilière de Yaoundé."><link rel="canonical" href="https://yves-virtuel-website.eufyves.workers.dev/projets/vatpost.html">
-<link rel="icon" type="image/png" href="../assets/favicon.png">
-<meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Virtuel All Tech">
-<meta property="og:title" content="VATPOST — étude de cas | Virtuel All Tech"><meta property="og:description" content="Publication automatique de textes et d'images sur plusieurs pages Facebook à partir d'un Google Sheet, pour une agence immobilière de Yaoundé."><meta property="og:url" content="https://yves-virtuel-website.eufyves.workers.dev/projets/vatpost.html">
-<meta property="og:image" content="https://yves-virtuel-website.eufyves.workers.dev/assets/og-image.png"><meta property="og:image:alt" content="Logo Virtuel All Tech"><meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves", "name": "Yves Joseph SIKATI", "jobTitle": "Concepteur de solutions métier intelligentes", "email": "eufyves@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Yaoundé", "addressCountry": "CM"}, "sameAs": ["https://www.linkedin.com/in/sikati-yves-joseph-039215330", "https://github.com/virtuelalltech", "https://www.tiktok.com/@virtuel.all.tech"]}, {"@type": "ProfessionalService", "name": "Virtuel All Tech", "url": "https://yves-virtuel-website.eufyves.workers.dev/", "areaServed": "CM", "founder": {"@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves"}}]}</script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../CSS/style.css"></head><body>
-<a class="skip" href="#main">Aller au contenu</a><nav class="nav" aria-label="Navigation principale"><div class="wrap container"><a href="../index.html" class="brand notranslate" translate="no"><img src="../assets/logo-mark.webp" alt="" width="40" height="32"><span>Virtuel All Tech</span></a>
-<div class="links"><a href="../index.html">Accueil</a><a href="../index.html#apropos">À propos</a><a href="../index.html#domaines">Domaines</a><a href="../index.html#projets">Projets</a><a href="../index.html#competences">Compétences</a><a href="../index.html#ressources">Ressources</a><a href="../blog/index.html">Blog</a><a href="../index.html#contact" class="btn-primary" style="padding:9px 20px;color:#fff">Contact</a></div>
-<button id="menu-toggle" class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button></div>
-<div id="mobile-menu" class="mobile-menu hidden"><a href="../index.html">Accueil</a><a href="../index.html#apropos">À propos</a><a href="../index.html#domaines">Domaines</a><a href="../index.html#projets">Projets</a><a href="../index.html#competences">Compétences</a><a href="../index.html#ressources">Ressources</a><a href="../blog/index.html">Blog</a><a href="../index.html#demarche">Ma démarche</a><a href="../index.html#contact" style="color:var(--blue);font-weight:600">Contact</a></div></nav><main id="main" class="case"><div class="wrap"><nav class="crumb" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a> › <a href="../index.html#projets">Projets</a> › <span aria-current="page">VATPOST</span></nav>
-<div class="row" style="margin-top:20px"><span class="st st-done"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Réalisé</span></div><h1>VATPOST</h1><p class="lead2">Publication automatique de textes et d'images sur plusieurs pages Facebook à partir d'un Google Sheet, pour une agence immobilière de Yaoundé.</p><div class="chips"><span>n8n</span><span>API Meta Graph</span><span>Google Sheets</span></div>
-<h2>Contexte</h2><p>Une agence immobilière de Yaoundé (client anonymisé) publiait ses annonces à la main sur plusieurs pages Facebook, avec des abonnements logiciels tiers.</p><h2>Le problème</h2><p>La publication manuelle prenait du temps chaque jour et dépendait d'outils payants.</p><h2>L'objectif</h2><p>Publier automatiquement les annonces à partir d'une source que l'équipe sait déjà utiliser : un tableur.</p><h2>L'approche technique</h2><p>Quatre workflows n8n, un par page Facebook. Chacun lit les lignes d'un Google Sheet, puis publie le texte et les images via l'API Meta Graph.</p>
-<h2>Fonctionnalités réellement développées</h2><ul class="bul"><li>Lecture des annonces depuis un Google Sheet</li><li>Publication de texte et d'images sur les pages Facebook</li><li>Un workflow dédié par page</li></ul><h2>Résultats observés</h2><p>Le processus manuel et les abonnements tiers ont été supprimés. Le client estime le gain à jusqu'à 4 heures par jour ; cette estimation n'a pas été mesurée de façon indépendante.</p>
-<div class="limits"><h2 style="margin-top:0">Limites actuelles</h2><ul class="bul"><li>Gain estimé par le client, non mesuré.</li><li>Conçu pour un seul client et pour Facebook.</li><li>Dépend des autorisations de l'API Meta, qui peuvent évoluer.</li></ul></div><h2>Prochaines étapes</h2><ul class="bul"><li>Recueillir une attestation écrite du client.</li><li>Documenter le workflow dans un dépôt public anonymisé.</li><li>Étudier l'extension à d'autres réseaux.</li></ul>
-<p class="note">Aucune capture ni démonstration publique n'est affichée pour l'instant. Une démonstration peut être présentée sur demande.</p>
-<div class="actions"><a class="btn-primary" href="../index.html#contact">Discuter de ce projet</a><a class="btn-ghost" href="../index.html#projets">Tous les projets</a></div></div></main><footer class="foot"><div class="wrap"><img src="../assets/logo-mark.webp" alt="" width="40" height="32" style="margin:0 auto 10px"><p class="notranslate"><b>Virtuel All Tech</b> — Together, we find a solution.</p>
-<p style="margin-top:6px"><a href="../index.html#projets">Projets</a> · <a href="../blog/index.html">Blog</a> · <a href="../index.html#contact">Contact</a> · <a href="https://github.com/virtuelalltech">GitHub</a></p>
-<p style="margin-top:10px">&copy; 2026 SIKATI Yves Joseph. Yaoundé, Cameroun.</p></div></footer>
-<a href="https://wa.me/237673219281" class="wa" aria-label="Écrire sur WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
-<script src="../JS/script.js"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "db24ebf8fad44c9cbbed8fff01a108ca"}'></script></body></html>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VATPOST — étude de cas | Virtuel All Tech</title>
+    <meta
+      name="description"
+      content="Publication automatique de textes et d'images sur plusieurs pages Facebook à partir d'un Google Sheet, pour une agence immobilière de Yaoundé."
+    />
+    <link
+      rel="canonical"
+      href="https://yves-virtuel-website.eufyves.workers.dev/projets/vatpost.html"
+    />
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Virtuel All Tech" />
+    <meta
+      property="og:title"
+      content="VATPOST — étude de cas | Virtuel All Tech"
+    />
+    <meta
+      property="og:description"
+      content="Publication automatique de textes et d'images sur plusieurs pages Facebook à partir d'un Google Sheet, pour une agence immobilière de Yaoundé."
+    />
+    <meta
+      property="og:url"
+      content="https://yves-virtuel-website.eufyves.workers.dev/projets/vatpost.html"
+    />
+    <meta
+      property="og:image"
+      content="https://yves-virtuel-website.eufyves.workers.dev/assets/og-image.png"
+    />
+    <meta property="og:image:alt" content="Logo Virtuel All Tech" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves",
+            "name": "Yves Joseph SIKATI",
+            "jobTitle": "Concepteur de solutions métier intelligentes",
+            "email": "eufyves@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Yaoundé",
+              "addressCountry": "CM"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/sikati-yves-joseph-039215330",
+              "https://github.com/virtuelalltech",
+              "https://www.tiktok.com/@virtuel.all.tech"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "name": "Virtuel All Tech",
+            "url": "https://yves-virtuel-website.eufyves.workers.dev/",
+            "areaServed": "CM",
+            "founder": {
+              "@id": "https://yves-virtuel-website.eufyves.workers.dev/#yves"
+            }
+          }
+        ]
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Aller au contenu</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="wrap container">
+        <a href="../index.html" class="brand notranslate" translate="no"
+          ><img
+            src="../assets/logo-mark.webp"
+            alt=""
+            width="40"
+            height="32"
+          /><span>Virtuel All Tech</span></a
+        >
+        <div class="links">
+          <a href="../index.html">Accueil</a
+          ><a href="../index.html#apropos">À propos</a
+          ><a href="../index.html#domaines">Domaines</a
+          ><a href="../index.html#projets">Projets</a
+          ><a href="../index.html#competences">Compétences</a
+          ><a href="../index.html#ressources">Ressources</a
+          ><a href="../blog/index.html">Blog</a
+          ><a
+            href="../index.html#contact"
+            class="btn-primary"
+            style="padding: 9px 20px; color: #fff"
+            >Contact</a
+          >
+        </div>
+        <button
+          id="menu-toggle"
+          class="burger"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-menu hidden">
+        <a href="../index.html">Accueil</a
+        ><a href="../index.html#apropos">À propos</a
+        ><a href="../index.html#domaines">Domaines</a
+        ><a href="../index.html#projets">Projets</a
+        ><a href="../index.html#competences">Compétences</a
+        ><a href="../index.html#ressources">Ressources</a
+        ><a href="../blog/index.html">Blog</a
+        ><a href="../index.html#demarche">Ma démarche</a
+        ><a
+          href="../index.html#contact"
+          style="color: var(--blue); font-weight: 600"
+          >Contact</a
+        >
+      </div>
+    </nav>
+    <main id="main" class="case">
+      <div class="wrap">
+        <nav class="crumb" aria-label="Fil d'Ariane">
+          <a href="../index.html">Accueil</a> ›
+          <a href="../index.html#projets">Projets</a> ›
+          <span aria-current="page">VATPOST</span>
+        </nav>
+        <div class="row" style="margin-top: 20px">
+          <span class="st st-done"
+            ><i class="fa-solid fa-circle-check" aria-hidden="true"></i
+            >Réalisé</span
+          >
+        </div>
+        <h1>VATPOST</h1>
+        <p class="lead2">
+          Publication automatique de textes et d'images sur plusieurs pages
+          Facebook à partir d'un Google Sheet, pour une agence immobilière de
+          Yaoundé.
+        </p>
+        <div class="chips">
+          <span>n8n</span><span>API Meta Graph</span><span>Google Sheets</span>
+        </div>
+        <h2>Contexte</h2>
+        <p>
+          Une agence immobilière de Yaoundé (client anonymisé) publiait ses
+          annonces à la main sur plusieurs pages Facebook, avec des abonnements
+          logiciels tiers.
+        </p>
+        <h2>Le problème</h2>
+        <p>
+          La publication manuelle prenait du temps chaque jour et dépendait
+          d'outils payants.
+        </p>
+        <h2>L'objectif</h2>
+        <p>
+          Publier automatiquement les annonces à partir d'une source que
+          l'équipe sait déjà utiliser : un tableur.
+        </p>
+        <h2>L'approche technique</h2>
+        <p>
+          Quatre workflows n8n, un par page Facebook. Chacun lit les lignes d'un
+          Google Sheet, puis publie le texte et les images via l'API Meta Graph.
+        </p>
+        <h2>Fonctionnalités réellement développées</h2>
+        <ul class="bul">
+          <li>Lecture des annonces depuis un Google Sheet</li>
+          <li>Publication de texte et d'images sur les pages Facebook</li>
+          <li>Un workflow dédié par page</li>
+        </ul>
+        <h2>Résultats observés</h2>
+        <p>
+          Le processus manuel et les abonnements tiers ont été supprimés. Le
+          client estime le gain à jusqu'à 4 heures par jour ; cette estimation
+          n'a pas été mesurée de façon indépendante.
+        </p>
+        <div class="strengths">
+          <h2>Points forts et perspectives</h2>
+          <ul class="bul">
+            <li>
+              <strong>Gain de temps quotidien :</strong> plus besoin de publier
+              à la main sur chaque page Facebook.
+            </li>
+            <li>
+              <strong>Une seule saisie :</strong> le contenu se prépare dans un
+              Google Sheet, la publication suit automatiquement.
+            </li>
+            <li>
+              <strong>Statut :</strong> réalisé pour une agence immobilière de
+              Yaoundé.
+            </li>
+            <li>
+              <strong>Potentiel :</strong> reproductible pour d'autres agences,
+              commerces ou gestionnaires de plusieurs pages.
+            </li>
+          </ul>
+        </div>
+        <div class="limits">
+          <h2 style="margin-top: 0">Limites actuelles</h2>
+          <ul class="bul">
+            <li>Gain estimé par le client, non mesuré.</li>
+            <li>
+              Dépend des autorisations de l'API Meta, qui peuvent évoluer.
+            </li>
+          </ul>
+        </div>
+        <h2>Prochaines étapes</h2>
+        <ul class="bul">
+          <li>Recueillir une attestation écrite du client.</li>
+          <li>Documenter le workflow dans un dépôt public anonymisé.</li>
+          <li>Étudier l'extension à d'autres réseaux.</li>
+        </ul>
+        <p class="note">
+          Aucune capture ni démonstration publique n'est affichée pour
+          l'instant. Une démonstration peut être présentée sur demande.
+        </p>
+        <div class="actions">
+          <a class="btn-primary" href="../index.html#contact"
+            >Discuter de ce projet</a
+          ><a class="btn-ghost" href="../index.html#projets"
+            >Tous les projets</a
+          >
+        </div>
+      </div>
+    </main>
+    <footer class="foot">
+      <div class="wrap">
+        <img
+          src="../assets/logo-mark.webp"
+          alt=""
+          width="40"
+          height="32"
+          style="margin: 0 auto 10px"
+        />
+        <p class="notranslate">
+          <b>Virtuel All Tech</b> — Together, we find a solution.
+        </p>
+        <p style="margin-top: 6px">
+          <a href="../index.html#projets">Projets</a> ·
+          <a href="../blog/index.html">Blog</a> ·
+          <a href="../index.html#contact">Contact</a> ·
+          <a href="https://github.com/virtuelalltech">GitHub</a>
+        </p>
+        <p style="margin-top: 10px">
+          &copy; 2026 Virtuel All Tech. Yaoundé, Cameroun.
+        </p>
+      </div>
+    </footer>
+    <a
+      href="https://wa.me/237673219281"
+      class="wa"
+      aria-label="Écrire sur WhatsApp"
+      ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+    ></a>
+    <script src="../JS/script.js"></script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "db24ebf8fad44c9cbbed8fff01a108ca"}'
+    ></script>
+  </body>
+</html>

@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accéder à la banque complète — Virtuel All Éducation</title>
+    <title>Accès Payant — Virtuel All Éducation</title>
+    <meta name="robots" content="noindex" />
     <link rel="icon" type="image/png" href="../assets/favicon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet" />
@@ -27,109 +28,42 @@
     </nav>
 
     <main id="main">
-      <!-- SECTION ACCES AUX DOSSIERS (Si déjà payé) -->
-      <section class="section" style="padding-top: 110px;">
+      <section class="section" style="padding-top: 120px; min-height: 70vh;">
         <div class="wrap">
-          <div class="sec-head">
-            <span class="eyebrow">Espace Abonné</span>
-            <h2>Votre banque d'épreuves</h2>
-            <p>Sélectionnez votre classe pour accéder au dossier Google Drive complet.</p>
-          </div>
-
           <div class="narrow">
-            <!-- Écran 1 : choix de la classe -->
-            <div id="step-classe" class="acces-box">
-              <h3 class="acces-title">
-                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-                Votre classe
-              </h3>
-              <div class="classe-options">
-                <label class="classe-option">
-                  <input type="radio" name="classe" value="Troisieme" />
-                  <span class="classe-card"><b>Troisième</b><small>Banque complète</small></span>
-                </label>
-                <label class="classe-option">
-                  <input type="radio" name="classe" value="Premiere" />
-                  <span class="classe-card"><b>Première</b><small>Banque complète</small></span>
-                </label>
-                <label class="classe-option">
-                  <input type="radio" name="classe" value="Terminale" />
-                  <span class="classe-card"><b>Terminale</b><small>Banque complète</small></span>
-                </label>
+            <!-- Carte de contact avec le même design (acces-box) -->
+            <div class="acces-box" style="text-align: center; padding: 40px 30px;">
+              
+              <div style="width: 70px; height: 70px; background: var(--sky); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <i class="fa-solid fa-hourglass-half" style="font-size: 2rem; color: var(--blue);"></i>
               </div>
-              <button id="btn-voir" class="btn-primary full" disabled>Accéder à mon dossier</button>
-              <p id="acces-msg" class="note" role="status" style="color: #8a1c12;"></p>
-            </div>
+              
+              <h2 style="margin-bottom: 10px; font-size: 1.6rem;">Bientôt disponible</h2>
+              <p style="color: var(--muted); margin-bottom: 30px; font-size: 1.05rem;">
+                La banque d'épreuves complète est en cours de préparation et de test. 
+                Pour y accéder dès maintenant, veuillez me contacter directement :
+              </p>
 
-            <!-- Écran 2 : lien Drive révélé -->
-            <div id="step-drive" class="acces-box hidden">
-              <div class="drive-success">
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                <h3>C'est débloqué !</h3>
-                <p id="drive-label">—</p>
+              <!-- Boutons de contact -->
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <a href="https://wa.me/237673219281" target="_blank" rel="noopener" class="btn-primary full" style="background: #25D366; border-color: #25D366; color: #fff; display: flex; justify-content: center; align-items: center; gap: 10px;">
+                  <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
+                  Écrire sur WhatsApp
+                </a>
+                
+                <a href="mailto:eufyves@gmail.com" class="btn-ghost full" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                  <i class="fa-solid fa-envelope"></i>
+                  eufyves@gmail.com
+                </a>
               </div>
-              <a id="drive-link" class="btn-primary full" href="#" target="_blank" rel="noopener">
-                <i class="fa-brands fa-google-drive" aria-hidden="true"></i>
-                Ouvrir la banque d'épreuves
+
+              <p class="note" style="margin-top: 24px; font-size: 0.9rem;">
+                Vous pouvez toujours télécharger le pack gratuit en attendant.
+              </p>
+              <a href="acces.html" class="link" style="font-weight: 600; text-decoration: underline;">
+                ← Retour au pack gratuit
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- SECTION COMMENT CA MARCHE / DEMANDER ACCES (Si pas encore payé) -->
-      <section id="payer" class="section alt" style="border-top: 1px solid var(--line);">
-        <div class="wrap">
-          <div class="sec-head">
-            <h2>Pas encore abonné ?</h2>
-            <p>Rejoignez la banque complète en 3 étapes simples.</p>
-          </div>
-          
-          <ol class="steps s3" style="margin-bottom: 40px;">
-            <li>
-              <b>Choisissez votre classe</b>
-              <p>Troisième, Première ou Terminale.</p>
-            </li>
-            <li>
-              <b>Payez 1 500 FCFA</b>
-              <p>Par Mobile Money. Valable de Septembre 2026 à Avril 2027.</p>
-            </li>
-            <li>
-              <b>Recevez l'accès</b>
-              <p>Le dossier Drive vous est partagé après vérification du paiement.</p>
-            </li>
-          </ol>
-
-          <div class="narrow">
-            <div class="acces-box" style="background: var(--mist);">
-              <h3 style="text-align: center; margin-bottom: 20px;">Demander l'accès</h3>
-              <form id="acces-form">
-                <input type="hidden" name="sujet" value="Virtuel All Éducation — demande d'accès payant" />
-                <div>
-                  <label for="a-nom" class="form-label">Nom et prénom</label>
-                  <input id="a-nom" name="nom" type="text" class="form-field" required />
-                </div>
-                <div>
-                  <label for="a-classe" class="form-label">Classe</label>
-                  <select id="a-classe" name="classe" class="form-field" required>
-                    <option value="">Choisir</option>
-                    <option>Troisième</option>
-                    <option>Première</option>
-                    <option>Terminale</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="a-email" class="form-label">Adresse e-mail Google</label>
-                  <input id="a-email" name="email" type="email" class="form-field" required />
-                </div>
-                <div>
-                  <label for="a-paiement" class="form-label">Référence du paiement Mobile Money (si déjà payé)</label>
-                  <input id="a-paiement" name="paiement" type="text" class="form-field" />
-                </div>
-                <button type="submit" class="btn-primary full">Envoyer ma demande</button>
-              </form>
-              <p class="error hidden" role="alert">L'envoi a échoué. Écrivez-moi sur <a class="link" href="https://wa.me/237673219281">WhatsApp</a>.</p>
-              <p class="success hidden" role="status">Votre demande a bien été transmise. L'accès sera envoyé à votre adresse e-mail.</p>
             </div>
           </div>
         </div>
@@ -139,51 +73,10 @@
     <footer class="foot">
       <div class="wrap">
         <p class="notranslate"><b>Virtuel All Tech</b> — Together, we find a solution.</p>
-        <p style="margin-top: 10px">&copy; 2026 Virtuel All Tech. Yaoundé, Cameroun.</p>
+        <p style="margin-top: 10px">&copy; 2026 SIKATI Yves Joseph. Yaoundé, Cameroun.</p>
       </div>
     </footer>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const liensDrive = {
-          "Troisieme": "https://drive.google.com/drive/folders/1rO0T9gJewUzqxLvgFG4MhiH9CQnssz1e?usp=sharing",
-          "Premiere": "https://drive.google.com/drive/folders/1rO0T9gJewUzqxLvgFG4MhiH9CQnssz1e?usp=sharing",
-          "Terminale": "https://drive.google.com/drive/folders/1rO0T9gJewUzqxLvgFG4MhiH9CQnssz1e?usp=sharing"
-        };
-
-        const btn = document.getElementById("btn-voir");
-        const msg = document.getElementById("acces-msg");
-        const stepClasse = document.getElementById("step-classe");
-        const stepDrive = document.getElementById("step-drive");
-        const driveLink = document.getElementById("drive-link");
-        const driveLabel = document.getElementById("drive-label");
-
-        document.querySelectorAll('input[name="classe"]').forEach((radio) => {
-          radio.addEventListener("change", () => {
-            btn.disabled = false;
-            msg.textContent = "";
-          });
-        });
-
-        btn.addEventListener("click", () => {
-          const selection = document.querySelector('input[name="classe"]:checked');
-          if (!selection) return;
-
-          const classe = selection.value;
-          const lien = liensDrive[classe];
-
-          if (!lien || lien.includes("ID_PAYANT_")) {
-            msg.textContent = "Le lien pour la classe " + classe + " n'est pas encore configuré.";
-            return;
-          }
-
-          driveLink.href = lien;
-          driveLabel.textContent = "Banque complète — " + selection.nextElementSibling.querySelector('b').textContent;
-          stepClasse.classList.add("hidden");
-          stepDrive.classList.remove("hidden");
-        });
-      });
-    </script>
+    
     <script src="../JS/script.js"></script>
   </body>
 </html>

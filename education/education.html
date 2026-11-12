@@ -73,20 +73,66 @@
           </div>
         </div>
       </header>
-            <!-- Encart Groupe WhatsApp -->
-      <section class="section" style="padding-top: 0; padding-bottom: 40px;">
+      <!-- Encart Groupe WhatsApp -->
+      <section class="section" style="padding-top: 0; padding-bottom: 40px">
         <div class="wrap">
-          <div style="background: #e6f4ea; border: 1px solid #b7dec2; border-radius: 16px; padding: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
-            <div style="display: flex; align-items: center; gap: 15px;">
-              <div style="width: 50px; height: 50px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex: none;">
-                <i class="fa-brands fa-whatsapp" style="color: #fff; font-size: 1.8rem;"></i>
+          <div
+            style="
+              background: #e6f4ea;
+              border: 1px solid #b7dec2;
+              border-radius: 16px;
+              padding: 24px;
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: space-between;
+              gap: 20px;
+            "
+          >
+            <div style="display: flex; align-items: center; gap: 15px">
+              <div
+                style="
+                  width: 50px;
+                  height: 50px;
+                  background: #25d366;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex: none;
+                "
+              >
+                <i
+                  class="fa-brands fa-whatsapp"
+                  style="color: #fff; font-size: 1.8rem"
+                ></i>
               </div>
               <div>
-                <h3 style="margin: 0 0 5px; font-size: 1.2rem; color: #0f5e2b;">Rejoignez le groupe d'informations</h3>
-                <p style="margin: 0; color: #1a5c32; font-size: 0.95rem;">Recevez les dernières actualités, les mises à jour et les nouveaux documents directement sur WhatsApp.</p>
+                <h3 style="margin: 0 0 5px; font-size: 1.2rem; color: #0f5e2b">
+                  Rejoignez le groupe d'informations
+                </h3>
+                <p style="margin: 0; color: #1a5c32; font-size: 0.95rem">
+                  Recevez les dernières actualités, les mises à jour et les
+                  nouveaux documents directement sur WhatsApp.
+                </p>
               </div>
             </div>
-            <a href="https://chat.whatsapp.com/VOTRE_LIEN_DE_GROUPE" target="_blank" rel="noopener" class="btn-primary" style="background: #25D366; border-color: #25D366; color: #fff; padding: 12px 24px; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+            <a
+              href="https://chat.whatsapp.com/VOTRE_LIEN_DE_GROUPE"
+              target="_blank"
+              rel="noopener"
+              class="btn-primary"
+              style="
+                background: #25d366;
+                border-color: #25d366;
+                color: #fff;
+                padding: 12px 24px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              "
+            >
               Rejoindre le groupe
             </a>
           </div>
@@ -271,16 +317,14 @@
           </div>
           <div class="narrow">
             <div>
-              <form id="retour-form">
+              <form id="education-form">
                 <input
                   type="hidden"
                   name="sujet"
                   value="Virtuel All Éducation — contact vitrine"
                 />
                 <div>
-                  <label for="r-nom" class="form-label"
-                    >Prénom (facultatif)</label
-                  >
+                  <label for="r-nom" class="form-label">Prénom </label>
                   <input id="r-nom" name="nom" type="text" class="form-field" />
                 </div>
                 <div>
@@ -321,6 +365,60 @@
         </div>
       </section>
     </main>
+    <!-- SECTION / TABLEAU DE BORD DE VISITE -->
+    <div
+      style="
+        text-align: center;
+        padding: 20px;
+        background: var(--sky);
+        border-radius: 12px;
+        margin-bottom: 20px;
+      "
+    >
+      <p style="margin: 0; font-size: 0.9rem; color: var(--muted)">
+        Élèves ayant visité le pack gratuit
+      </p>
+      <p
+        style="
+          margin: 5px 0 0;
+          font-size: 2rem;
+          font-weight: bold;
+          color: var(--blue);
+        "
+      >
+        <span id="total-clics">0</span>
+      </p>
+    </div>
+
+    <script>
+      // Collez ici le lien CSV de la feuille "Stats" (copié à l'étape 4)
+      const CSV_URL =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vRfE-0vLK51dwnOfp0OMnnZFIXzFdXhvX0HW8sXcGs6VYCLOSTS1upsJlN0UzbZELKp9wqfFSepMxes/pub?gid=398729885&single=true&output=csv";
+
+      fetch(CSV_URL)
+        .then((res) => res.text())
+        .then((csv) => {
+          // Le CSV ressemble à ça :
+          // "Total de clics Drive",150
+          // "Clics aujourd'hui",5
+          // "Clics ce mois-ci",42
+          const lignes = csv.split("\n");
+
+          // On cherche la ligne qui contient "Total de clics Drive"
+          const ligneTotal = lignes.find((l) =>
+            l.includes("Total de clics Drive"),
+          );
+
+          if (ligneTotal) {
+            // On sépare la ligne par la virgule et on prend la 2ème partie (le chiffre)
+            const total = ligneTotal.split(",")[1];
+            document.getElementById("total-clics").textContent = total;
+          }
+        })
+        .catch(() => {
+          // En cas d'erreur, on laisse 0
+        });
+    </script>
 
     <footer class="foot">
       <div class="wrap">

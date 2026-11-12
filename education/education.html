@@ -306,7 +306,7 @@
         </div>
       </section>
 
-      <!-- CONTACT / RETOUR -->
+      <!-- FORMULAIRE PAGE EDUCATION -->
       <section id="retour" class="section">
         <div class="wrap">
           <div class="sec-head">
@@ -321,38 +321,107 @@
                 <input
                   type="hidden"
                   name="sujet"
-                  value="Virtuel All Éducation — contact vitrine"
+                  value="Virtuel All Education — contact vitrine"
                 />
+
                 <div>
-                  <label for="r-nom" class="form-label">Prénom </label>
-                  <input id="r-nom" name="nom" type="text" class="form-field" />
-                </div>
-                <div>
-                  <label for="r-email" class="form-label">E-mail</label>
+                  <label for="edu-nom" class="form-label">Prénom </label>
                   <input
-                    id="r-email"
+                    id="edu-nom"
+                    name="nom"
+                    type="text"
+                    class="form-field"
+                  />
+                </div>
+
+                <div>
+                  <label for="edu-email" class="form-label">E-mail</label>
+                  <input
+                    id="edu-email"
                     name="email"
                     type="email"
                     class="form-field"
                     required
                   />
                 </div>
+
+                <div>
+                  <label for="edu-whatsapp" class="form-label"
+                    >Numéro WhatsApp (facultatif)</label
+                  >
+                  <input
+                    id="edu-whatsapp"
+                    name="whatsapp"
+                    type="tel"
+                    class="form-field"
+                    placeholder="+237 6XX XX XX XX"
+                  />
+                </div>
+
+                <div>
+                  <label for="edu-ville" class="form-label" required
+                    >Ville
+                  </label>
+                  <input
+                    id="edu-ville"
+                    name="ville"
+                    type="text"
+                    class="form-field"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="edu-quartier" class="form-label"
+                    >Quartier (facultatif)</label
+                  >
+                  <input
+                    id="edu-quartier"
+                    name="quartier"
+                    type="text"
+                    class="form-field"
+                  />
+                </div>
+
+                <div>
+                  <label for="edu-classe" class="form-label">Classe </label>
+                  <select
+                    id="edu-classe"
+                    name="classe"
+                    class="form-field"
+                    required
+                  >
+                    <option value="">Sélectionner une classe</option>
+                    <!-- Collège -->
+                    <option>Sixième</option>
+                    <option>Cinquième</option>
+                    <option>Quatrième</option>
+                    <option>Troisième</option>
+                    <!-- Lycée -->
+                    <option>Seconde</option>
+                    <option>Première</option>
+                    <option>Terminale</option>
+                  </select>
+                </div>
+
                 <div class="full">
-                  <label for="r-message" class="form-label"
+                  <label for="edu-message" class="form-label"
                     >Votre message</label
                   >
                   <textarea
-                    id="r-message"
+                    id="edu-message"
                     name="message"
                     rows="4"
                     class="form-field"
                     required
                   ></textarea>
                 </div>
+
                 <button type="submit" class="btn-primary full">
                   Envoyer mon message
                 </button>
               </form>
+
               <p class="error hidden" role="alert">
                 L'envoi a échoué. Écrivez-moi sur
                 <a class="link" href="https://wa.me/237673219281">WhatsApp</a>.

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // VARIABLES
   // =========================================================
   const HOOK_EDUCATION =
-    "https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook-test/website_page_education";
+    "https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/website_page_education";
   const HOOK_STATS =
     "https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/visit_page_education";
 

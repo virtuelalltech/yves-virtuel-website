@@ -2,8 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================================================
   // VARIABLES
   // =========================================================
-  const HOOK_EDUCATION = "https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/website_page_education";
-  const HOOK_STATS = "https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/visit_page_education";
+  const HOOK_EDUCATION =
+    "https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook-test/website_page_education";
+  const HOOK_STATS =
+    "https://SIKATIYvesJoseph-n8nhuggingface1.hf.space/webhook/visit_page_education";
 
   // =========================================================
   // PARTIE 1 : STATISTIQUES (Page acces.html)
@@ -14,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Créer un ID de session unique pour cette visite
     let sessionId = sessionStorage.getItem("session_id");
     if (!sessionId) {
-      sessionId = "visite_" + Math.random().toString(36).slice(2, 11) + "_" + Date.now();
+      sessionId =
+        "visite_" + Math.random().toString(36).slice(2, 11) + "_" + Date.now();
       sessionStorage.setItem("session_id", sessionId);
     }
 
@@ -38,7 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 4. Enregistrer le clic sur le Drive
     driveLink.addEventListener("click", () => {
-      const selectedRadio = document.querySelector('input[name="classe"]:checked');
+      const selectedRadio = document.querySelector(
+        'input[name="classe"]:checked',
+      );
       const classe = selectedRadio ? selectedRadio.value : "Inconnue";
       trackEvent("drive_click", { classe: classe });
     });
@@ -77,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
         formEducation.classList.add("hidden");
         const successEl = formEducation.parentElement.querySelector(".success");
         if (successEl) successEl.classList.remove("hidden");
-        
       } catch (err) {
         // Erreur
         const errEl = formEducation.parentElement.querySelector(".error");

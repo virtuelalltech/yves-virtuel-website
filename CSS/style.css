@@ -1620,7 +1620,7 @@ select.form-field {
   padding: 10px;
   box-shadow: 0 4px 15px rgba(20, 40, 90, 0.08); /* Ombre de base légère */
   overflow: hidden;
-  max-height: 480px; 
+  max-height: 480px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -1631,7 +1631,7 @@ select.form-field {
   height: auto;
   border-radius: 10px;
   object-fit: cover;
-  object-position: top; 
+  object-position: top;
   transition: all 0.4s ease; /* Transition fluide sur l'image */
 }
 
@@ -1640,4 +1640,75 @@ select.form-field {
   transform: scale(1.06); /* L'image zoome de 6% */
   box-shadow: 0 0 25px rgba(30, 80, 200, 0.4); /* Halo bleu lumineux autour de l'image */
   cursor: pointer; /* Affiche la petite main pour montrer que c'est cliquable */
+}
+/* Cache le bouton par défaut */
+.btn-selected {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+/* Affiche le bouton uniquement quand le radio est coché */
+.classe-option input:checked + .classe-card .btn-selected {
+  display: block !important;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Animation d'apparition du bouton */
+#btn-voir {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+#btn-voir.hidden {
+  display: none !important;
+}
+
+#btn-voir:not(.hidden) {
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Le conteneur du bouton à l'intérieur de la carte */
+#btn-container {
+  margin-top: 12px;
+  width: 100%;
+  animation: fadeInBtn 0.3s ease forwards;
+}
+
+#btn-container.hidden {
+  display: none !important;
+}
+
+@keyframes fadeInBtn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

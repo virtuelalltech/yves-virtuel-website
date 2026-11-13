@@ -107,9 +107,12 @@
                   </span>
                 </label>
               </div>
-              <button id="btn-voir" class="btn-primary full" disabled>
-                Voir mon pack
-              </button>
+              <!-- Ce bouton sera déplacé par le JavaScript -->
+              <div id="btn-container" class="hidden" style="margin-top: 15px">
+                <button id="btn-voir" class="btn-primary full">
+                  Voir mon pack
+                </button>
+              </div>
               <p
                 id="acces-msg"
                 class="note"
@@ -180,76 +183,6 @@
         </p>
       </div>
     </footer>
-
-    <!-- SCRIPT SIMPLIFIÉ SANS FICHIER JSON -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // ⚠️ REMPLACEZ CES LIENS PAR VOS VRAIS LIENS DRIVE
-        const liensDrive = {
-          Troisieme:
-            "https://drive.google.com/drive/folders/1rO0T9gJewUzqxLvgFG4MhiH9CQnssz1e?usp=sharing",
-          Premiere_A:
-            "https://drive.google.com/drive/folders/1nisN7oupN5GK7xq4nTItEwf9oaftysaP?usp=sharing",
-          Premiere_c:
-            "https://drive.google.com/drive/folders/1GoI2gnOBSa0dd3TelQDYLviRAeMQ8hDf?usp=sharing",
-          Premiere_D:
-            "https://drive.google.com/drive/folders/1V5EX1ew2uzdG6JBFFyIPSEU790rbHwHN?usp=sharing",
-          Terminale_A:
-            "https://drive.google.com/drive/folders/1nCMQWrzkBspIGlJ1hzaABnOFMmKiK9Rd?usp=sharing",
-          Terminale_C:
-            "https://drive.google.com/drive/folders/1OYEhmin4B4GK3k5KZqh39CIunwlm9PYH?usp=sharing",
-          Terminale_D:
-            "https://drive.google.com/drive/folders/18Ng85zoNju_8RoMhnsOefHrggNMu-my7?usp=sharing",
-        };
-
-        const btn = document.getElementById("btn-voir");
-        const msg = document.getElementById("acces-msg");
-        const stepClasse = document.getElementById("step-classe");
-        const stepDrive = document.getElementById("step-drive");
-        const driveLink = document.getElementById("drive-link");
-        const driveLabel = document.getElementById("drive-label");
-
-        // 1. Activer le bouton quand on clique sur une classe
-        const radios = document.querySelectorAll('input[name="classe"]');
-        radios.forEach((radio) => {
-          radio.addEventListener("change", () => {
-            btn.disabled = false;
-            msg.textContent = ""; // Efface les erreurs
-          });
-        });
-
-        // 2. Action au clic sur le bouton
-        btn.addEventListener("click", () => {
-          const selection = document.querySelector(
-            'input[name="classe"]:checked',
-          );
-
-          if (!selection) {
-            msg.textContent = "Veuillez sélectionner une classe.";
-            return;
-          }
-
-          const classe = selection.value;
-          const lien = liensDrive[classe];
-
-          if (!lien || lien.includes("ID_DU_DOSSIER")) {
-            msg.textContent =
-              "Le lien pour la classe " +
-              classe +
-              " n'est pas encore configuré.";
-            return;
-          }
-
-          // Afficher l'écran 2
-          driveLink.href = lien;
-          driveLabel.textContent =
-            "Pack découverte — " +
-            selection.nextElementSibling.querySelector("b").textContent;
-          stepClasse.classList.add("hidden");
-          stepDrive.classList.remove("hidden");
-        });
-      });
-    </script>
   </body>
 </html>
 <script src="../JS/education.js"></script>

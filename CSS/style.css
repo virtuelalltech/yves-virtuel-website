@@ -1712,3 +1712,9 @@ select.form-field {
     transform: translateY(0);
   }
 }
+.prose figure img.meme-image {
+    max-width: 30%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

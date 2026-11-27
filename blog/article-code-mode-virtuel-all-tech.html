@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Code Mode : une nouvelle approche pour réduire l’occupation de la fenêtre
+      de contexte des agents IA lorsqu’ils utilisent des outils | Virtuel All
+      Tech
+    </title>
+    <meta
+      name="description"
+      content="Code Mode, une approche mise en avant par Cloudflare, explore une autre façon de donner accès aux outils aux agents IA tout en réduisant leur empreinte dans le contexte."
+    />
+    <link
+      rel="canonical"
+      href="https://virtuel-all-tech.pages.dev/blog/architecture-mcp-code-mode.html"
+    />
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Aller au contenu</a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="wrap container">
+        <a href="../index.html" class="brand notranslate" translate="no">
+          <img src="../assets/logo-mark.webp" alt="" width="40" height="32" />
+          <span>Virtuel All Tech</span>
+        </a>
+        <div class="links">
+          <a href="../index.html">Accueil</a>
+          <a href="../index.html#apropos">À propos</a>
+          <a href="../blog/index.html" class="cur">Blog</a>
+          <a
+            href="../index.html#contact"
+            class="btn-primary"
+            style="padding: 9px 20px; color: #fff"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main id="main" class="case">
+      <div class="wrap">
+        <nav class="crumb" aria-label="Fil d'Ariane">
+          <a href="../index.html">Accueil</a> ›
+          <a href="../blog/index.html">Blog</a> ›
+          <span aria-current="page">MCP &amp; Code Mode</span>
+        </nav>
+
+        <div class="post-head">
+          <p class="eyebrow">Architecture &amp; Intelligence Artificielle</p>
+          <h1>
+            Code Mode : une nouvelle approche pour réduire l’occupation de la
+            fenêtre de contexte des agents IA lorsqu’ils utilisent des outils
+          </h1>
+          <div class="meta">
+            <span>Par Yves Joseph SIKATI</span> •
+            <span>27 Novembre 2026</span> • <span>3 min de lecture</span>
+          </div>
+        </div>
+        <!-- IMAGE DU MÈME : remplacer le nom du fichier si nécessaire -->
+        <figure>
+          <img
+            src="../assets/server_side_code_mode.png"
+            alt="Mème opposant les expressions Give us your data et Teach Claude a skill"
+            loading="lazy"
+            class="meme-image"
+          />
+          <figcaption>Image Server side Code Mode</figcaption>
+        </figure>
+        <div class="prose">
+          <p class="lead2">
+            Les agents IA peuvent aujourd’hui se connecter à de nombreux outils
+            et services. Mais plus leurs capacités augmentent, plus une question
+            devient importante : comment leur donner accès à ces outils sans
+            encombrer inutilement leur contexte ?
+          </p>
+
+          <p>
+            Le <strong>Model Context Protocol (MCP)</strong> facilite la
+            communication entre les applications d’intelligence artificielle et
+            les outils ou données externes. Il fournit un cadre commun pour
+            permettre à un modèle d’utiliser des capacités exposées par des
+            serveurs.
+          </p>
+
+          <p>
+            Mais lorsqu’un serveur expose un très grand catalogue d’opérations,
+            transmettre toutes leurs descriptions au modèle peut devenir coûteux
+            en tokens et occuper une part importante de sa fenêtre de contexte.
+          </p>
+
+          <h2>Code Mode : une autre façon d’utiliser les outils</h2>
+          <p>
+            C’est le problème auquel s’intéresse <strong>Code Mode</strong>, une
+            approche mise en avant par Cloudflare. Plutôt que de présenter
+            individuellement un très grand nombre d’opérations au modèle,
+            l’architecture décrite par Cloudflare s’appuie notamment sur deux
+            capacités :
+          </p>
+
+          <ul>
+            <li>
+              <code>search()</code> pour découvrir les opérations pertinentes ;
+            </li>
+            <li>
+              <code>execute()</code> pour exécuter du code capable de combiner
+              ces opérations.
+            </li>
+          </ul>
+
+          <p>
+            Le modèle peut ainsi récupérer les interfaces dont il a besoin,
+            écrire un script qui enchaîne plusieurs opérations, puis faire
+            exécuter ce script dans un environnement isolé. Les instructions du
+            script s’exécutent sans qu’un appel au modèle soit nécessaire pour
+            chacune d’elles.
+          </p>
+
+          <h2>Qu’est-ce que cela change pour MCP ?</h2>
+          <p>
+            MCP reste le protocole de communication. Code Mode ne le remplace
+            pas : il propose une autre manière de découvrir et d’orchestrer les
+            capacités mises à disposition par les outils.
+          </p>
+
+          <p>
+            L’intérêt est notamment de limiter les descriptions d’outils et les
+            résultats intermédiaires transmis au modèle, tout en permettant de
+            regrouper plusieurs opérations dans une même exécution.
+          </p>
+
+          <div class="callout tip">
+            <p>
+              <strong>Un chiffre à retenir :</strong> dans un benchmark présenté
+              par Cloudflare, l’approche Code Mode représente environ 1 000
+              tokens, contre plus d’un million pour les descriptions complètes
+              de son vaste catalogue d’API. Ce résultat dépend du scénario et ne
+              constitue pas une économie garantie pour toutes les architectures.
+            </p>
+          </div>
+
+          <h2>Une piste que je vais mettre à l’épreuve</h2>
+          <p>
+            Cette approche mérite d’être étudiée au-delà de la démonstration. Je
+            vais justement la tester dans VS Code, comparer une utilisation
+            classique de MCP à une architecture intégrant Code Mode, puis
+            observer les différences de consommation, de coût, de latence et de
+            qualité des résultats.
+          </p>
+
+          <p>
+            Car utiliser l’IA ne consiste pas uniquement à obtenir un résultat.
+            Il faut aussi comprendre les ressources mobilisées pour y parvenir
+            et chercher le bon équilibre entre performance, coût et fiabilité.
+          </p>
+          <div class="callout tip">
+            <p>
+              <strong>Pour aller plus loin :</strong> Cloudflare explique cette
+              approche dans son article technique :
+              <a
+                href="https://blog.cloudflare.com/code-mode-mcp/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Code Mode: give agents an entire API in 1,000 tokens
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square"
+                  aria-hidden="true"
+                ></i> </a
+              >. L'article présente notamment comment accéder à plus de 2 500
+              endpoints avec seulement deux outils et environ 1 000 tokens dans
+              le contexte.
+            </p>
+          </div>
+          <div class="cta">
+            <h2>Vous vous intéressez aux architectures d’agents IA ?</h2>
+            <p>
+              Je partagerai les enseignements de ces expérimentations au fur et
+              à mesure des tests.
+            </p>
+
+            <a href="../index.html#contact" class="btn-primary"
+              ><i class="fa-solid fa-envelope" aria-hidden="true"></i> Échanger
+              avec moi</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap">
+        <img
+          src="../assets/logo-mark.webp"
+          alt=""
+          width="40"
+          height="32"
+          style="margin: 0 auto 10px"
+        />
+        <p class="notranslate">
+          <b>Virtuel All Tech</b> — Together, we find a solution.
+        </p>
+        <p style="margin-top: 6px">
+          <a href="../index.html#projets">Projets</a> ·
+          <a href="../blog/index.html">Blog</a> ·
+          <a href="../index.html#contact">Contact</a> ·
+          <a href="https://github.com/virtuelalltech">GitHub</a>
+        </p>
+        <p style="margin-top: 10px">
+          &copy; 2026 Virtuel All Tech. Yaoundé, Cameroun.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
